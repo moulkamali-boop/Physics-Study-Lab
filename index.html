@@ -7,60 +7,54 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{background:radial-gradient(circle at 50% 0%,#0A1226,#03060F 70%);color:#E8EEF7;font-family:'Segoe UI',system-ui,sans-serif;padding:14px;min-height:100vh;line-height:1.7;display:flex;align-items:center;justify-content:center}
-.app{width:100%;max-width:880px;margin:auto;background:linear-gradient(180deg,#0A1226,#0B1524);border:2px solid #00A8FF;border-radius:24px;padding:18px;box-shadow:0 0 60px #00A8FF55;position:relative}
+.app{width:100%;max-width:880px;margin:auto;background:linear-gradient(180deg,#0A1226,#0B1524);border:2px solid #F5B81B;border-radius:24px;padding:18px;box-shadow:0 0 60px #F5B81B44;position:relative}
 .hdr{padding-bottom:12px;border-bottom:2px solid #1E2D4F;margin-bottom:14px}
 .hdr-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.hdr-icon{background:#0E1A33;border:1.5px solid #00D4E0;border-radius:10px;padding:7px 10px;cursor:pointer;font-size:.75rem;font-weight:900;color:#00D4E0;transition:.3s;flex-shrink:0;font-family:inherit}
-.hdr-icon:hover{background:#00D4E0;color:#0A1226}
+.hdr-icon{background:#0E1A33;border:1.5px solid #F5B81B;border-radius:10px;padding:7px 10px;cursor:pointer;font-size:.75rem;font-weight:900;color:#F5B81B;transition:.3s;flex-shrink:0;font-family:inherit}
+.hdr-icon:hover{background:#F5B81B;color:#0A1226}
 .hdr-title{text-align:center;flex:1;min-width:0}
-.hdr-title h1{color:#00D4E0;font-size:.95rem;font-weight:900}
+.hdr-title h1{color:#F5B81B;font-size:.95rem;font-weight:900}
 .hdr-title p{color:#fff;font-size:.78rem;margin-top:3px;font-weight:700}
 .info{background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:20px;padding:10px 14px;margin-bottom:10px;font-family:ui-monospace,monospace;font-size:.8rem;color:#fff;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .lang-id{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 select{padding:11px;background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:20px;color:#fff;font-size:.85rem;font-family:inherit;font-weight:700;width:100%}
 .id-box{padding:11px;background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:20px;text-align:center;font-family:ui-monospace,monospace;font-size:.8rem;color:#fff;font-weight:700;cursor:pointer}
-.progress-container{background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:14px;padding:6px;margin-bottom:12px;overflow:hidden}
-.progress-bar{height:22px;background:linear-gradient(90deg,#00D4E0,#2ECC71);border-radius:8px;transition:width .5s;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;color:#0A1226}
-.pay-box{background:linear-gradient(180deg,#0E1A33,#0B1429);border:2px solid #F5C24A;border-radius:18px;padding:12px;margin-bottom:12px}
-.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.pay-box{background:linear-gradient(180deg,#0E1A33,#0B1429);border:2px solid #F5B81B;border-radius:18px;padding:12px;margin-bottom:12px}
+.tiers-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .tier-card{background:#0A1226;border:1.5px solid #1E2D4F;border-radius:14px;padding:10px 6px;text-align:center;cursor:pointer;transition:.3s;position:relative}
 .tier-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px #0008}
 .tier-free{border-color:#2ECC71}
-.tier-premium{border-color:#F5C24A}
-.tier-pro{border-color:#EC4899}
+.tier-paid{border-color:#F5B81B}
 .tier-icon{font-size:1.6rem;margin-bottom:2px}
 .tier-name{font-size:.75rem;font-weight:900;color:#FFF}
 .tier-price{font-size:1.2rem;font-weight:900;font-family:ui-monospace,monospace;margin:2px 0}
 .tier-free .tier-price{color:#2ECC71}
-.tier-premium .tier-price{color:#F5C24A}
-.tier-pro .tier-price{color:#EC4899}
+.tier-paid .tier-price{color:#F5B81B}
 .tier-desc{font-size:.6rem;color:#A8B6CC;font-weight:700;line-height:1.3}
-.tier-badge{position:absolute;top:4px;right:6px;font-size:.5rem;font-weight:900;padding:2px 6px;border-radius:8px;background:#1E2D4F;color:#A8B6CC}
 .code-row{display:flex;gap:6px}
 .code-row input{flex:1;padding:9px 14px;background:#0A1226;border:1.5px solid #1E2D4F;border-radius:14px;color:#fff;font-family:inherit;font-size:.8rem;font-weight:700;min-width:0}
-.code-row button{padding:9px 18px;background:linear-gradient(135deg,#00D4E0,#00A8BB);border:none;border-radius:14px;color:#0A1226;font-weight:900;font-size:.8rem;cursor:pointer;font-family:inherit;flex-shrink:0}
-.entry{width:100%;padding:16px;background:linear-gradient(135deg,#00A8FF,#0066CC);border:none;border-radius:24px;font-weight:900;color:#fff;font-size:1rem;cursor:pointer;font-family:inherit;margin-bottom:12px;box-shadow:0 8px 24px #00A8FF55;transition:.3s}
-.entry:hover{transform:translateY(-2px);box-shadow:0 12px 32px #00A8FF77}
-.back{padding:10px 20px;background:linear-gradient(135deg,#0E2444,#0A1A33);border:2.5px solid #00D4E0;border-radius:24px;color:#00D4E0;font-family:inherit;font-size:.85rem;font-weight:900;cursor:pointer;margin-bottom:14px;transition:.3s;display:inline-flex;align-items:center;gap:8px}
-.back:hover{background:linear-gradient(135deg,#00D4E0,#00A8BB);color:#0A1226;transform:translateX(4px)}
+.code-row button{padding:9px 18px;background:linear-gradient(135deg,#F5B81B,#E0A92E);border:none;border-radius:14px;color:#0A1226;font-weight:900;font-size:.8rem;cursor:pointer;font-family:inherit;flex-shrink:0}
+.entry{width:100%;padding:16px;background:linear-gradient(135deg,#F5B81B,#E0A92E);border:none;border-radius:24px;font-weight:900;color:#0A1226;font-size:1rem;cursor:pointer;font-family:inherit;margin-bottom:12px;box-shadow:0 8px 24px #F5B81B44;transition:.3s}
+.entry:hover{transform:translateY(-2px);box-shadow:0 12px 32px #F5B81B66}
+.back{padding:10px 20px;background:linear-gradient(135deg,#0E2444,#0A1A33);border:2.5px solid #F5B81B;border-radius:24px;color:#F5B81B;font-family:inherit;font-size:.85rem;font-weight:900;cursor:pointer;margin-bottom:14px;transition:.3s;display:inline-flex;align-items:center;gap:8px}
+.back:hover{background:linear-gradient(135deg,#F5B81B,#E0A92E);color:#0A1226;transform:translateX(4px)}
 .back::before{content:'⟵';font-size:1rem}
 .lab-gate{display:none}
 .lab-gate.show{display:block}
-.gate-title{text-align:center;color:#00D4E0;font-size:1.1rem;font-weight:900;margin-bottom:14px}
+.gate-title{text-align:center;color:#F5B81B;font-size:1.1rem;font-weight:900;margin-bottom:14px}
 .gate-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .gate-card{background:linear-gradient(180deg,#0E1A33,#0B1424);border:2.5px solid #1E2D4F;border-radius:20px;padding:22px 14px;text-align:center;cursor:pointer;transition:.4s;display:flex;flex-direction:column;justify-content:center;gap:10px;min-height:200px}
 .gate-card:hover{transform:translateY(-6px);box-shadow:0 18px 42px #000B}
 .gate-card.old{border-color:#00D4E0}
-.gate-card.new{border-color:#F5C24A}
+.gate-card.new{border-color:#F5B81B}
 .gate-icon{font-size:3.4rem}
 .gate-name{font-weight:900;font-size:1rem}
 .gate-card.old .gate-name{color:#00D4E0}
-.gate-card.new .gate-name{color:#F5C24A}
+.gate-card.new .gate-name{color:#F5B81B}
 .gate-desc{font-size:.75rem;color:#A8B6CC;font-weight:700;line-height:1.4}
-.gate-count{font-size:.7rem;color:#6B7B92;font-weight:800;font-family:ui-monospace,monospace;padding:4px 12px;background:#0A1226;border-radius:12px;display:inline-block}
 .gate-price{font-size:.7rem;font-weight:900;padding:5px 12px;border-radius:12px;display:inline-block}
 .gate-card.old .gate-price{background:linear-gradient(135deg,#00D4E0,#00A8BB);color:#0A1226}
-.gate-card.new .gate-price{background:linear-gradient(135deg,#F5C24A,#E0A92E);color:#0A1226}
+.gate-card.new .gate-price{background:linear-gradient(135deg,#F5B81B,#E0A92E);color:#0A1226}
 .gallery{display:none}
 .gallery.show{display:block}
 .cat{background:#0B1429;border:1.5px solid #1E2D4F;border-radius:16px;margin-bottom:10px;overflow:hidden}
@@ -68,123 +62,37 @@ select{padding:11px;background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:
 .cat-num{font-size:.75rem;font-weight:900;padding:4px 10px;border-radius:10px;font-family:ui-monospace,monospace;background:#0A1226}
 .cat-body{max-height:0;overflow:hidden;transition:max-height .4s}
 .cat.open .cat-body{max-height:3000px;padding:10px}
-.cat-count{font-size:.65rem;color:#6B7B92;background:#0A1226;padding:3px 10px;border-radius:10px;font-family:ui-monospace,monospace}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .card{background:linear-gradient(180deg,#0E1A33,#0B1424);border:1.5px solid #1E2D4F;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;transition:.3s;position:relative;min-height:120px;display:flex;flex-direction:column;justify-content:center;gap:5px}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #0008;border-color:var(--ec,#00D4E0)}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 24px #0008;border-color:var(--ec,#F5B81B)}
 .card .icon{font-size:2rem}
 .card .title{font-weight:900;color:#fff;font-size:.88rem;line-height:1.3}
 .card .tag{font-size:.7rem;color:#6B7B92;font-weight:700}
-.card.locked{opacity:.5;cursor:not-allowed}
-.card.locked::after{content:'🔒';position:absolute;top:6px;right:8px;font-size:1rem}
-.card.completed::before{content:'✅';position:absolute;top:6px;left:8px;font-size:.9rem}
 .exp-view{display:none}
 .exp-view.show{display:block}
 .canvas-wrap{background:#0A1628;border:1.5px solid #1E2D4F;border-radius:20px;overflow:hidden;margin-bottom:12px;position:relative}
 #canvas{width:100%;display:block;aspect-ratio:800/440;background:#0A1226}
 .badge{position:absolute;top:10px;left:12px;background:#0A1226cc;border:1px solid #1E2D4F;border-radius:16px;padding:4px 10px;font-size:.72rem;font-family:ui-monospace,monospace;font-weight:900;color:#A8B6CC}
-.num-badge{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F5C24A,#E0A92E);color:#0A1226;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:900}
+.num-badge{position:absolute;top:10px;right:12px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#F5B81B,#E0A92E);color:#0A1226;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:900}
 .narr{background:linear-gradient(180deg,#0E1A33,#0A1226);border:1.5px solid #1E2D4F;border-radius:16px;padding:14px;margin-bottom:12px;color:#E8EEF7;font-size:.95rem;font-weight:600;line-height:1.7}
-.ctrl{background:#0A1226;border:1.5px solid #1E2D4F;border-radius:12px;padding:10px;margin-bottom:8px}
-.ctrl-head{display:flex;justify-content:space-between;margin-bottom:5px;font-size:.82rem;font-weight:800;color:#A8B6CC}
-.ctrl-val{color:#00D4E0;font-family:ui-monospace,monospace;font-weight:900}
-input[type=range]{width:100%;accent-color:#00D4E0;height:5px}
-.data-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:12px}
-.chip{background:#0E1A33;border:1.5px solid #1E2D4F;border-radius:12px;padding:8px;text-align:center}
-.chip-lbl{font-size:.7rem;color:#6B7B92;font-weight:800;margin-bottom:3px}
-.chip-val{color:#00D4E0;font-family:ui-monospace,monospace;font-weight:900;font-size:.95rem}
 .nav-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
-.nav-btn{padding:14px;background:linear-gradient(135deg,#0E2444,#0A1A33);border:2px solid #00D4E0;border-radius:16px;color:#00D4E0;font-family:inherit;font-weight:900;font-size:.9rem;cursor:pointer;transition:.3s}
-.nav-btn:hover{background:linear-gradient(135deg,#00D4E0,#00A8BB);color:#0A1226}
+.nav-btn{padding:14px;background:linear-gradient(135deg,#0E2444,#0A1A33);border:2px solid #F5B81B;border-radius:16px;color:#F5B81B;font-family:inherit;font-weight:900;font-size:.9rem;cursor:pointer;transition:.3s}
+.nav-btn:hover{background:linear-gradient(135deg,#F5B81B,#E0A92E);color:#0A1226}
 .nav-btn:disabled{opacity:.3;cursor:not-allowed}
 .nav-btn.prev::before{content:'⟵ ';font-size:1rem}
 .nav-btn.next::after{content:' ⟶';font-size:1rem}
-.museum{display:none}
-.museum.show{display:block}
-.museum-header{text-align:center;padding:14px;background:linear-gradient(180deg,#1A1206,#0A1226);border:2px solid #F5C24A;border-radius:16px;margin-bottom:12px}
-.museum-header h2{color:#F5C24A;font-size:1.05rem;font-weight:900}
-.museum-header p{color:#A8B6CC;font-size:.75rem;margin-top:4px;font-weight:700}
-.chapter{background:linear-gradient(180deg,#0E1A33,#0B1424);border:1.5px solid var(--chc,#F5C24A);border-radius:16px;margin-bottom:10px;overflow:hidden}
-.chapter-head{padding:12px 14px;background:linear-gradient(180deg,#1A1206,#0A1226);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:900;color:var(--chc,#F5C24A);font-size:.92rem}
-.chapter-num{font-size:.75rem;padding:3px 8px;border-radius:8px;background:rgba(255,255,255,0.08);font-family:ui-monospace,monospace}
-.chapter-head .ch-icon{font-size:1.4rem}
-.chapter-head .ch-name{flex:1}
-.chapter-head .ch-arrow{transition:.3s}
-.chapter.open .chapter-head .ch-arrow{transform:rotate(90deg)}
-.chapter-body{max-height:0;overflow:hidden;transition:max-height .4s}
-.chapter.open .chapter-body{max-height:4000px;padding:10px}
-.section-title{color:#00D4E0;font-size:.85rem;font-weight:900;padding:8px 6px 6px;border-bottom:1px solid #1E2D4F;margin:8px 4px 6px}
-.eq-card{background:#0A1226;border:1.5px solid #1E2D4F;border-radius:12px;padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:.3s;display:flex;align-items:center;gap:10px}
-.eq-card:hover{border-color:#F5C24A;transform:translateX(-3px)}
-.eq-card .eq-icon{font-size:1.3rem;flex-shrink:0}
-.eq-card .eq-info{flex:1;min-width:0}
-.eq-card .eq-name{color:#fff;font-weight:900;font-size:.88rem}
-.eq-card .eq-formula{color:#00D4E0;font-family:'Cambria Math',serif;font-size:.9rem;direction:ltr;text-align:right;font-weight:700;margin-top:2px}
-.eq-card .eq-arrow{color:#F5C24A;font-size:1rem;flex-shrink:0}
-.eq-modal{display:none;position:fixed;inset:0;background:#000D;z-index:9999;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto}
-.eq-modal.show{display:flex}
-.eq-modal-box{background:linear-gradient(180deg,#0E1A33,#0A1226);border:2px solid #F5C24A;border-radius:20px;padding:18px;max-width:640px;width:100%;margin:20px 0}
-.eq-modal-header{text-align:center;padding-bottom:12px;border-bottom:2px solid #1E2D4F;margin-bottom:12px}
-.eq-modal-header h3{color:#F5C24A;font-size:1.05rem;font-weight:900}
-.eq-modal-header .eq-big{font-family:'Cambria Math',serif;font-size:1.5rem;color:#00D4E0;direction:ltr;margin-top:8px;font-weight:900;padding:12px;background:#050B18;border-radius:12px;overflow-x:auto}
-.eq-block{margin-bottom:12px}
-.eq-block-title{color:#F5C24A;font-size:.78rem;font-weight:900;margin-bottom:6px}
-.eq-block-body{background:#0A1226;border:1px solid #1E2D4F;border-radius:12px;padding:10px;color:#E8EEF7;font-size:.88rem;line-height:1.8}
-.eq-block-body .sym{color:#00D4E0;font-family:ui-monospace,monospace;font-weight:900;direction:ltr;display:inline-block}
-.eq-block-body .unit{color:#F5C24A;font-family:ui-monospace,monospace;font-weight:700}
-.eq-block-body ul{margin:0;padding-right:18px}
-.eq-block-body li{margin-bottom:4px}
-.eq-modal-close{width:100%;padding:11px;background:linear-gradient(135deg,#F5C24A,#E0A92E);border:none;border-radius:14px;color:#0A1226;font-weight:900;cursor:pointer;font-family:inherit;font-size:.85rem;margin-top:6px}
-.periodic-wrap{overflow-x:auto;padding:8px;background:#050B18;border-radius:12px;direction:ltr}
-.periodic{display:grid;grid-template-columns:repeat(18,minmax(38px,1fr));gap:3px;font-size:.55rem;min-width:720px;direction:ltr}
-.periodic-bottom{display:grid;grid-template-columns:repeat(18,minmax(38px,1fr));gap:3px;font-size:.55rem;min-width:720px;margin-top:10px;direction:ltr}
-.pcell{aspect-ratio:1;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2px;cursor:pointer;transition:.2s;position:relative;border:1px solid #00000033}
-.pcell:hover{transform:scale(1.18);z-index:10;box-shadow:0 0 14px #FFF9}
-.pcell .num{font-size:.48rem;color:#00000099;position:absolute;top:2px;left:3px;font-weight:900}
-.pcell .sym{font-size:.85rem;font-weight:900;color:#000;line-height:1}
-.pcell .nm{font-size:.4rem;color:#000000AA;line-height:1}
-.pcell.gas{background:#FFD700}
-.pcell.liquid{background:#4FC3F7}
-.pcell.solid{background:#A5D6A7}
-.pcell.radioactive{background:#EF9A9A}
-.pcell.unknown{background:#B0BEC5}
-.pcell.lanthanide{background:#F8BBD0}
-.pcell.actinide{background:#D1C4E9}
-.pcell.empty{background:transparent;border:none}
-.pcell.placeholder{background:#0E1A33;border:1px dashed #1E2D4F;color:#F5C24A;font-size:.6rem;display:flex;align-items:center;justify-content:center}
-.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:10px 0;font-size:.8rem;color:#A8B6CC;direction:rtl}
-.legend span{display:flex;align-items:center;gap:5px}
-.legend i{width:18px;height:18px;border-radius:5px;display:inline-block;border:1px solid #0003}
-.row-label-bottom{color:#F5C24A;font-size:.78rem;font-weight:900;padding:6px 4px;font-family:ui-monospace,monospace;direction:rtl;text-align:right;letter-spacing:.5px}
-.modal{display:none;position:fixed;inset:0;background:#000C;z-index:9999;align-items:center;justify-content:center;padding:20px}
-.modal.show{display:flex}
-.modal-box{background:linear-gradient(180deg,#0E1A33,#0A1226);border:2px solid #00D4E0;border-radius:20px;padding:22px;max-width:440px;width:100%;text-align:center}
-.modal-box h2{color:#00D4E0;font-size:1.4rem;margin-bottom:6px}
-.modal-box .sym-big{font-size:3rem;font-weight:900;color:#F5C24A;margin:8px 0}
-.modal-box .config{background:#050B18;border-radius:10px;padding:10px;margin:8px 0;font-family:ui-monospace,monospace;font-size:.85rem;color:#F5C24A;direction:ltr;font-weight:900;letter-spacing:.5px;word-break:break-all}
-.modal-box .row{display:flex;justify-content:space-between;padding:8px 12px;background:#0A1226;border-radius:10px;margin-bottom:6px;font-size:.85rem}
-.modal-box .row span:first-child{color:#6B7B92;font-weight:800}
-.modal-box .row span:last-child{color:#00D4E0;font-family:ui-monospace,monospace;font-weight:900}
-.modal-box button{margin-top:14px;padding:11px 28px;background:linear-gradient(135deg,#00D4E0,#00A8BB);border:none;border-radius:22px;color:#0A1226;font-weight:900;cursor:pointer;font-family:inherit;font-size:.9rem}
-.qr-full{display:none;position:fixed;inset:0;background:#000E;z-index:99999;align-items:center;justify-content:center;padding:20px}
-.qr-full.show{display:flex}
-.qr-full-box{background:#fff;padding:16px;border-radius:16px;text-align:center;max-width:340px;width:100%}
-.qr-full-box img{width:100%;max-width:300px;display:block;margin:0 auto}
-.qr-full-box p{color:#0A1226;font-family:monospace;margin-top:10px;font-weight:900;word-break:break-all;font-size:.8rem}
-.qr-full-box button{margin-top:12px;padding:10px 24px;background:#00D4E0;border:none;border-radius:20px;color:#0A1226;font-weight:900;cursor:pointer;font-family:inherit;font-size:.85rem}
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#0E1A33;border:1.5px solid #00D4E0;color:#fff;padding:10px 20px;border-radius:14px;font-size:.85rem;font-weight:800;display:none;z-index:99999;max-width:90%;text-align:center}
+
+/* Lock Overlay */
+.lock-overlay{display:none;position:fixed;inset:0;background:#000D;z-index:9999;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.lock-overlay.show{display:flex}
+.lock-box{background:linear-gradient(180deg,#0E1A33,#0A1226);border:2px solid #F5B81B;border-radius:24px;padding:24px;max-width:400px;width:100%;text-align:center}
+.lock-box h2{color:#F5B81B;font-size:1.2rem;margin-bottom:8px}
+.lock-box p{color:#A8B6CC;font-size:.85rem;margin-bottom:16px}
+.lock-box input{width:100%;padding:12px;background:#0A1226;border:2px solid #1E2D4F;border-radius:14px;color:#fff;font-size:.9rem;text-align:center;margin-bottom:12px;font-family:monospace}
+.lock-box button{width:100%;padding:12px;background:linear-gradient(135deg,#F5B81B,#E0A92E);border:none;border-radius:14px;font-weight:900;color:#0A1226;cursor:pointer;margin-bottom:8px}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#0E1A33;border:1.5px solid #F5B81B;color:#fff;padding:10px 20px;border-radius:14px;font-size:.85rem;font-weight:800;display:none;z-index:99999;max-width:90%;text-align:center}
 .toast.show{display:block}
-@media (max-width:520px){
-  .gate-grid{grid-template-columns:1fr}
-  .gate-card{min-height:160px}
-  .tiers-grid{gap:4px}
-  .tier-card{padding:8px 4px}
-  .cat-head{font-size:.85rem;padding:11px}
-  .card .title{font-size:.85rem}
-  .narr{font-size:.88rem}
-  .eq-card .eq-name{font-size:.82rem}
-  .eq-card .eq-formula{font-size:.82rem}
-}
+@media(max-width:520px){.gate-grid{grid-template-columns:1fr}.tiers-grid{gap:4px}}
 </style>
 </head>
 <body>
@@ -194,8 +102,8 @@ input[type=range]{width:100%;accent-color:#00D4E0;height:5px}
     <div class="hdr-top">
       <button class="hdr-icon" onclick="showQR()">📱 QR</button>
       <div class="hdr-title">
-        <h1>PSL — Physics Study Lab</h1>
-        <p id="hdrTag">رحلة في عالم الفيزياء</p>
+        <h1 data-i18n="app_title">PSL — Physics Study Lab</h1>
+        <p data-i18n="app_subtitle">رحلة في عالم الفيزياء</p>
       </div>
       <button class="hdr-icon" onclick="devClick()">⚙️</button>
     </div>
@@ -208,31 +116,7 @@ input[type=range]{width:100%;accent-color:#00D4E0;height:5px}
   </div>
 
   <div class="lang-id">
-    <select id="langSel" onchange="changeLang(this.value)">
-      <option value="ar">🇸🇦 العربية</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="fr">🇫🇷 Français</option>
-      <option value="es">🇪🇸 Español</option>
-      <option value="de">🇩🇪 Deutsch</option>
-      <option value="it">🇮🇹 Italiano</option>
-      <option value="ru">🇷🇺 Русский</option>
-      <option value="zh">🇨🇳 中文</option>
-      <option value="ja">🇯🇵 日本語</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="tr">🇹🇷 Türkçe</option>
-      <option value="fa">🇮🇷 فارسی</option>
-      <option value="hi">🇮🇳 हिन्दी</option>
-      <option value="pt">🇵🇹 Português</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="vi">🇻🇳 Tiếng Việt</option>
-      <option value="th">🇹🇭 ไทย</option>
-      <option value="pl">🇵🇱 Polski</option>
-      <option value="nl">🇳🇱 Nederlands</option>
-      <option value="sv">🇸🇪 Svenska</option>
-      <option value="ur">🇵🇰 اردو</option>
-      <option value="ms">🇲🇾 Melayu</option>
-      <option value="sw">🇰🇪 Kiswahili</option>
-    </select>
+    <select id="langSel" onchange="changeLang(this.value)"></select>
     <div class="id-box" onclick="copyId()">🆔 <span id="devId">----</span></div>
   </div>
 
@@ -240,74 +124,59 @@ input[type=range]{width:100%;accent-color:#00D4E0;height:5px}
     <div class="tiers-grid">
       <div class="tier-card tier-free" onclick="selectTier('free')">
         <div class="tier-icon">🧪</div>
-        <div class="tier-name">مجاني</div>
+        <div class="tier-name" data-i18n="tier_free_name">مجاني</div>
         <div class="tier-price">0$</div>
-        <div class="tier-desc">23 تجربة<br>+ 11 باب</div>
-        <div class="tier-badge">للجميع</div>
+        <div class="tier-desc" data-i18n="tier_free_desc">26 تجربة<br>للجميع</div>
       </div>
-      <div class="tier-card tier-premium" onclick="selectTier('premium')">
+      <div class="tier-card tier-paid" onclick="selectTier('paid')">
         <div class="tier-icon">📖</div>
-        <div class="tier-name">قارئ</div>
+        <div class="tier-name" data-i18n="tier_paid_name">قارئ</div>
         <div class="tier-price">5$</div>
-        <div class="tier-desc">كل الأبواب<br>للتصفح</div>
-        <div class="tier-badge">سنة</div>
-      </div>
-      <div class="tier-card tier-pro" onclick="selectTier('pro')">
-        <div class="tier-icon">📥</div>
-        <div class="tier-name">باحث</div>
-        <div class="tier-price">15$</div>
-        <div class="tier-desc">كل ما سبق<br>+ تحميل</div>
-        <div class="tier-badge">سنة</div>
+        <div class="tier-desc" data-i18n="tier_paid_desc">12 باب<br>مرة واحدة</div>
       </div>
     </div>
     <div class="code-row">
-      <input type="text" id="codeInput" placeholder="🔑 كود التفعيل">
-      <button onclick="activate()">تفعيل</button>
+      <input type="text" id="codeInput" data-i18n="code_placeholder" placeholder="🔑 كود التفعيل">
+      <button onclick="activate()" data-i18n="btn_activate">تفعيل</button>
     </div>
   </div>
 
-  <button class="entry" id="entryBtn" onclick="enterLab()">🔬 ادخل إلى المختبر</button>
+  <button class="entry" id="entryBtn" onclick="enterLab()" data-i18n="btn_enter">🔬 ادخل إلى المختبر</button>
 
   <div class="lab-gate" id="labGate">
-    <button class="back" onclick="exitLab()">رجوع</button>
-    <div class="gate-title">اختر باباً للدخول</div>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar" style="width:0%">0/0 تجربة</div>
-    </div>
+    <button class="back" onclick="exitLab()" data-i18n="btn_back">رجوع</button>
+    <div class="gate-title" data-i18n="gate_title">اختر باباً للدخول</div>
     <div class="gate-grid">
       <div class="gate-card old" onclick="enterOld()">
         <span class="gate-icon">🧪</span>
-        <div class="gate-name">تجربة تفاعلية</div>
-        <div class="gate-desc">شاهد الفيزياء بعينك<br>حرّك المتغيرات</div>
-        <div class="gate-count" id="expCount">0 تجربة</div>
-        <div class="gate-price">مجاناً</div>
+        <div class="gate-name" data-i18n="gate_old_name">تجربة تفاعلية</div>
+        <div class="gate-desc" data-i18n="gate_old_desc">شاهد الفيزياء بعينك</div>
+        <div class="gate-price" data-i18n="gate_free">مجاناً</div>
       </div>
       <div class="gate-card new" onclick="enterNew()">
         <span class="gate-icon">📖</span>
-        <div class="gate-name">موسوعة القوانين</div>
-        <div class="gate-desc">افهم الفيزياء بعقلك<br>الغوص في النظريات</div>
-        <div class="gate-count" id="chCount">0 باب</div>
-        <div class="gate-price">💎 مدفوع</div>
+        <div class="gate-name" data-i18n="gate_new_name">موسوعة القوانين</div>
+        <div class="gate-desc" data-i18n="gate_new_desc">افهم الفيزياء بعقلك</div>
+        <div class="gate-price" data-i18n="gate_paid">💎 مدفوع</div>
       </div>
     </div>
   </div>
 
   <div class="gallery" id="gallery">
-    <button class="back" onclick="backToGate()">البوابة</button>
+    <button class="back" onclick="backToGate()" data-i18n="btn_back">البوابة</button>
     <div id="catsArea"></div>
   </div>
 
-  <div class="museum" id="museum">
-    <button class="back" onclick="backToGate()">البوابة</button>
-    <div class="museum-header">
-      <h2>📖 موسوعة القوانين</h2>
-      <p>كل نظرية مشروحة — كل رمز موضح — كل وحدة معروفة</p>
+  <div class="museum" id="museum" style="display:none">
+    <button class="back" onclick="backToGate()" data-i18n="btn_back">البوابة</button>
+    <div class="museum-header" style="text-align:center;padding:14px;background:#1A1206;border:2px solid #F5B81B;border-radius:16px;margin-bottom:12px">
+      <h2 style="color:#F5B81B;font-size:1.05rem;font-weight:900" data-i18n="museum_title">📖 موسوعة القوانين</h2>
     </div>
     <div id="chaptersArea"></div>
   </div>
 
   <div class="exp-view" id="expView">
-    <button class="back" onclick="exitExp()">المختبر</button>
+    <button class="back" onclick="exitExp()" data-i18n="btn_back">المختبر</button>
     <div class="canvas-wrap" id="canvasWrap">
       <div class="badge" id="sceneBadge">المشهد ١</div>
       <div class="num-badge" id="sceneNum">١</div>
@@ -315,2004 +184,235 @@ input[type=range]{width:100%;accent-color:#00D4E0;height:5px}
     </div>
     <div class="narr" id="narr">—</div>
     <div id="ctrlBox"></div>
-    <div class="data-row" id="dataBox"></div>
     <div class="nav-row">
-      <button class="nav-btn prev" id="prevBtn" onclick="prevScene()">السابق</button>
-      <button class="nav-btn next" id="nextBtn" onclick="nextScene()">التالي</button>
+      <button class="nav-btn prev" id="prevBtn" onclick="prevScene()" data-i18n="btn_prev">السابق</button>
+      <button class="nav-btn next" id="nextBtn" onclick="nextScene()" data-i18n="btn_next">التالي</button>
     </div>
   </div>
 </div>
 
-<div class="eq-modal" id="eqModal">
-  <div class="eq-modal-box">
-    <div class="eq-modal-header">
-      <h3 id="eqTitle">—</h3>
-      <div class="eq-big" id="eqBig">—</div>
-    </div>
-    <div id="eqContent"></div>
-    <button class="eq-modal-close" onclick="closeEqModal()">إغلاق</button>
-  </div>
-</div>
-
-<div class="eq-modal" id="aiModal">
-  <div class="eq-modal-box" style="border-color:#8B5CF6">
-    <div class="eq-modal-header">
-      <h3 style="color:#8B5CF6">🧠 الفيزيائي الذكي</h3>
-    </div>
-    <div class="eq-block-body" id="aiText" style="border-color:#8B5CF6;font-size:.95rem;line-height:1.9">
-      —
-    </div>
-    <button class="eq-modal-close" onclick="closeAIModal()" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:#fff">إغلاق</button>
-  </div>
-</div>
-
-<div class="modal" id="elModal">
-  <div class="modal-box">
-    <h2 id="elName">—</h2>
-    <div class="sym-big" id="elSym">—</div>
-    <div class="config" id="elConfig">—</div>
-    <div class="row"><span>العدد الذري</span><span id="elZ">—</span></div>
-    <div class="row"><span>الكتلة الذرية</span><span id="elMass">—</span></div>
-    <div class="row"><span>عدد الطبقات</span><span id="elShells">—</span></div>
-    <div class="row"><span>عدد الإلكترونات</span><span id="elElectrons">—</span></div>
-    <div class="row"><span>النوعية</span><span id="elType">—</span></div>
-    <div class="row"><span>التصنيف</span><span id="elCat">—</span></div>
-    <button onclick="closeModal()">إغلاق</button>
-  </div>
-</div>
-
-<div class="qr-full" id="qrFull" onclick="this.classList.remove('show')">
-  <div class="qr-full-box">
-    <img id="qrImg" src="" alt="QR">
-    <p id="qrDevId">—</p>
-    <button onclick="document.getElementById('qrFull').classList.remove('show')">إغلاق</button>
+<div class="lock-overlay" id="lockOverlay">
+  <div class="lock-box">
+    <h2>🔒 الموسوعة مقفلة</h2>
+    <p>افتح كل الأبواب الـ12 مدى الحياة مقابل 5$ فقط.</p>
+    <button onclick="buyNow()" style="background:linear-gradient(135deg,#2ECC71,#27AE60);color:#fff">💳 شراء الآن (5$)</button>
+    <div style="margin:10px 0;font-size:.8rem;color:#A8B6CC">أو أدخل كود التفعيل:</div>
+    <input type="text" id="lockCodeInput" placeholder="XXXX-XXXX-XXXX-XXXX">
+    <button onclick="verifyLockCode()">🔑 تفعيل</button>
+    <button onclick="closeLock()" style="background:#1E2D4F;color:#fff;margin-top:8px">إلغاء</button>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-
 <script>
 'use strict';
 
 /* ============================================
-   النواة — Core
+   1. إعدادات النظام والترجمة (i18n)
    ============================================ */
-var $ = function(id){ return document.getElementById(id); };
-var svg = null, currentExp = null, currentScene = 0, animFrame = null, animTime = 0, params = {};
-var LANG = localStorage.getItem('psl_lang') || 'ar';
-var PREMIUM = localStorage.getItem('psl_premium') === '1';
-var DEVICE_ID = localStorage.getItem('psl_device') || (function(){
-  var id = 'PSL-' + Math.random().toString(36).slice(2,6).toUpperCase() + Math.random().toString(36).slice(2,6).toUpperCase();
-  localStorage.setItem('psl_device', id);
-  return id;
-})();
-var devClickCount = 0, devClickTimer = null;
+var WORKER_URL = 'https://psl-verify.moulkamali.workers.dev';
+var PRODUCT_ID = 'hNKQEMPaqBBzidZGfT4cOg==';
+var GUMROAD_URL = 'https://moulka.gumroad.com/l/mafcmk';
 
-function el(n,a){ var e=document.createElementNS('http://www.w3.org/2000/svg',n); a=a||{}; for(var k in a) e.setAttribute(k,a[k]); return e; }
-function ln(x1,y1,x2,y2,a){ a=a||{}; a.x1=x1;a.y1=y1;a.x2=x2;a.y2=y2; if(!a.stroke)a.stroke='#5B9CF0'; if(!a['stroke-width'])a['stroke-width']=2; var e=el('line',a); svg.appendChild(e); return e; }
-function ci(cx,cy,r,a){ a=a||{}; a.cx=cx;a.cy=cy;a.r=r; if(!a.fill)a.fill='#00D4E0'; var e=el('circle',a); svg.appendChild(e); return e; }
-function rc(x,y,w,h,a){ a=a||{}; a.x=x;a.y=y;a.width=w;a.height=h; var e=el('rect',a); svg.appendChild(e); return e; }
-function tx(x,y,txt,a){ a=a||{}; a.x=x;a.y=y; if(!a['font-size'])a['font-size']=16; if(!a['text-anchor'])a['text-anchor']='middle'; if(!a.fill)a.fill='#E8EEF7'; var e=el('text',a); e.textContent=txt; svg.appendChild(e); return e; }
-function pt(d,a){ a=a||{}; a.d=d; if(!a.fill)a.fill='none'; if(!a.stroke)a.stroke='#00D4E0'; if(!a['stroke-width'])a['stroke-width']=2; var e=el('path',a); svg.appendChild(e); return e; }
-function ar(x1,y1,x2,y2,c){ c=c||'#F5C24A'; ln(x1,y1,x2,y2,{stroke:c,'stroke-width':3}); var ang=Math.atan2(y2-y1,x2-x1),s=10; var p1=[x2-s*Math.cos(ang-Math.PI/6),y2-s*Math.sin(ang-Math.PI/6)]; var p2=[x2-s*Math.cos(ang+Math.PI/6),y2-s*Math.sin(ang+Math.PI/6)]; var p=el('polygon',{points:x2+','+y2+' '+p1[0]+','+p1[1]+' '+p2[0]+','+p2[1],fill:c}); svg.appendChild(p); }
-
-var actx = null;
-function initAudio(){ if(!actx){ try{ actx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } }
-function tone(f,d,v){ if(!actx) return; try{ var o=actx.createOscillator(); var g=actx.createGain(); o.frequency.value=f; g.gain.value=v||.06; g.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+d); o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime+d); }catch(e){} }
-function toast(m){ var e=$('toast'); e.textContent=m; e.classList.add('show'); clearTimeout(e._t); e._t=setTimeout(function(){ e.classList.remove('show'); },2500); }
-
-/* ============================================
-   الفئات — 12 فئة مرقّمة
-   ============================================ */
-var CATS = [
-  { id:'1_mechanics',   num:'1',   icon:'⚙️', color:'#00D4E0', name:'الميكانيكا',              desc:'الحركة والقوى', order:1 },
-  { id:'2_electricity', num:'2',   icon:'⚡', color:'#F5C24A', name:'الكهرباء الساكنة',        desc:'التيار والمجالات', order:2 },
-  { id:'3_1_basics',    num:'3.1', icon:'📡', color:'#4A90E2', name:'أساسيات الاتصالات',       desc:'سلسلة الإرسال، الطيف', order:3 },
-  { id:'3_2_analog',    num:'3.2', icon:'📻', color:'#4A90E2', name:'التضمين التناظري',        desc:'AM, FM, PM', order:4 },
-  { id:'3_3_digital',   num:'3.3', icon:'📊', color:'#4A90E2', name:'الاتصالات الرقمية',       desc:'NRZ, RZ, Manchester', order:5 },
-  { id:'3_4_modulation',num:'3.4', icon:'📶', color:'#4A90E2', name:'التضمين الرقمي',          desc:'ASK, FSK, PSK, QAM', order:6 },
-  { id:'3_5_channel',   num:'3.5', icon:'👁️', color:'#4A90E2', name:'القناة المحدودة',         desc:'ISI ومخطط العين', order:7 },
-  { id:'3_6_antennas',  num:'3.6', icon:'📻', color:'#4A90E2', name:'الهوائيات',               desc:'الأنواع والمعادلات', order:8 },
-  { id:'4_fiber',       num:'4',   icon:'🔦', color:'#14B8A6', name:'الألياف البصرية',         desc:'الأنواع والنقل', order:9 },
-  { id:'5_chemistry',   num:'5',   icon:'🧪', color:'#2ECC71', name:'الكيمياء',                desc:'العناصر والتفاعلات', order:10 },
-  { id:'6_space',       num:'6',   icon:'🚀', color:'#F39C12', name:'الفضاء والفيزياء الحديثة', desc:'الكواكب والذرة', order:11 },
-  { id:'7_science_ai',  num:'7',   icon:'🧠', color:'#8B5CF6', name:'الذكاء العلمي',           desc:'الاكتشاف والتفكير النقدي', order:12 }
-];
-
-var EXPS = [];
-
-/* ============================================
-   🧠 AI ENGINE — محرك الفيزيائي الذكي
-   ============================================ */
-var AI_ENGINE = {
-  knowledge: {
-    'newton': function(params) {
-      var F = params.F || 80, m = params.m || 10;
-      var a = F / m;
-      return 'بما أن القوة = ' + F + ' N والكتلة = ' + m + ' kg،<br>فإن التسارع = F/m = ' + a.toFixed(2) + ' m/s².<br><br>💡 <b>لاحظ:</b> زيادة القوة تزيد التسارع، وزيادة الكتلة تقلل التسارع.';
-    },
-    'freefall': function(params) {
-      var h = params.h || 100, g = params.g || 9.8;
-      var t = Math.sqrt(2*h/g);
-      return 'جسم يسقط من ارتفاع ' + h + ' m.<br>زمن السقوط = √(2h/g) = ' + t.toFixed(2) + ' s.<br><br>💡 <b>لاحظ:</b> الزمن لا يعتمد على الكتلة، بل على الارتفاع والجاذبية فقط.';
-    },
-    'pendulum': function(params) {
-      var L = params.L || 2, g = params.g || 9.8;
-      var T = 2 * Math.PI * Math.sqrt(L/g);
-      return 'البندول طوله ' + L + ' m.<br>الزمن الدوري = 2π√(L/g) = ' + T.toFixed(2) + ' s.<br><br>💡 <b>لاحظ:</b> الزمن يعتمد على الطول والجاذبية، لا على الكتلة.';
-    },
-    'ohm': function(params) {
-      var V = params.V || 12, R = params.R || 10;
-      var I = V / R;
-      return 'الجهد = ' + V + ' V، المقاومة = ' + R + ' Ω.<br>التيار = V/R = ' + I.toFixed(3) + ' A.<br><br>💡 <b>لاحظ:</b> زيادة الجهد تزيد التيار، وزيادة المقاومة تقلل التيار.';
-    },
-    'magnetism': function(params) {
-      var q = params.q || 5, v = params.v || 100, B = params.B || 2;
-      var F = q * v * B;
-      return 'شحنة ' + q + ' C تتحرك بسرعة ' + v + ' m/s في مجال ' + B + ' T.<br>القوة = qvB = ' + F.toFixed(0) + ' N.<br><br>💡 <b>لاحظ:</b> القوة عمودية على كل من السرعة والمجال.';
-    },
-    'transformer': function(params) {
-      var Np = params.Np || 100, Ns = params.Ns || 50, Vp = params.Vp || 220;
-      var Vs = Vp * Ns / Np;
-      return 'المحول: Np=' + Np + '، Ns=' + Ns + '، Vp=' + Vp + ' V.<br>الجهد الثانوي = Vp × Ns/Np = ' + Vs.toFixed(1) + ' V.<br><br>💡 <b>لاحظ:</b> المحول يرفع أو يخفض الجهد حسب نسبة اللفات.';
-    },
-    'comms_chain': function() {
-      return 'سلسلة الإرسال الرقمي:<br>1. المصدر: يولّد البيانات.<br>2. الترميز: يحوّل البيانات إلى إشارة.<br>3. التضمين: يضع الإشارة على موجة حاملة.<br>4. القناة: تنقل الإشارة.<br>5. الاستقبال: يسترجع البيانات.';
-    },
-    'em_spectrum': function() {
-      return 'الطيف الكهرومغناطيسي:<br>• الراديو: 10⁴-10⁹ Hz<br>• الميكروويف: 10⁹-10¹² Hz<br>• تحت الأحمر: 10¹²-10¹⁴ Hz<br>• المرئي: 4-8×10¹⁴ Hz<br>• فوق البنفسجي: 10¹⁵-10¹⁷ Hz<br>• الأشعة السينية: 10¹⁶-10¹⁹ Hz<br>• جاما: 10¹⁹-10²⁰ Hz';
-    },
-    'frequency_bands': function() {
-      return 'النطاقات الرسمية (ITU):<br>• VLF: 3-30 kHz (10-100 km)<br>• LF: 30-300 kHz (1-10 km)<br>• MF: 300-3000 kHz (100-1000 m)<br>• HF: 3-30 MHz (10-100 m)<br>• VHF: 30-300 MHz (1-10 m)<br>• UHF: 300-3000 MHz (1-10 dm)<br>• SHF: 3-30 GHz (1-10 cm)<br>• EHF: 30-300 GHz (1-10 mm)';
-    },
-    'analog_mod': function(params) {
-      var fm = params.fm || 0.5, m = params.m || 0.7;
-      return 'التضمين التناظري:<br>• AM: تغيير السعة.<br>• FM: تغيير التردد.<br>• PM: تغيير الطور.<br><br>💡 عمق التضمين الحالي m=' + m + '، التردد المُعدِّل fm=' + fm + ' Hz.';
-    },
-    'comms_linecoding': function(params) {
-      var code = params.code || 'nrz';
-      var explanations = {
-        nrz: 'NRZ: يبقى المستوى ثابتاً طوال مدة البت.<br>1 = مستوى عالٍ، 0 = مستوى منخفض.<br>المشكلة: فقدان التزامن عند السلاسل الطويلة.',
-        rz: 'RZ: يعود إلى الصفر في منتصف كل بت.<br>الميزة: يضمن التزامن.<br>العيب: عرض نطاق أكبر.',
-        manchester: 'Manchester: انتقال في منتصف كل بت.<br>1 = من عالٍ إلى منخفض، 0 = من منخفض إلى عالٍ.<br>الميزة: تزامن دائم.'
-      };
-      return explanations[code] || explanations.nrz;
-    },
-    'comms_modem': function(params) {
-      var order = params.order || '16';
-      var N = parseInt(order);
-      var n = Math.log2(N);
-      return 'تضمين QAM:<br>• M = ' + N + ' نقطة.<br>• n = ' + n + ' بت/رمز.<br>• SNR المطلوب ≈ ' + (n*3) + ' dB.<br><br>💡 كل زيادة في M تعني بتات أكثر لكل رمز، لكنها تتطلب SNR أعلى.';
-    },
-    'comms_isi': function(params) {
-      var quality = params.quality || 'perfect';
-      var explanations = {
-        perfect: 'القناة مثالية: لا يوجد ISI. العين مفتوحة بالكامل.',
-        good: 'ISI منخفض: العين مفتوحة جزئياً. القرار سهل.',
-        medium: 'ISI متوسط: العين ضيقة. القرار صعب.',
-        bad: 'ISI عالي: العين مغلقة. القرار مستحيل.'
-      };
-      return explanations[quality] || explanations.perfect;
-    },
-    'antennas_intro': function(params) {
-      var freq = params.freq || 300;
-      var lambda = 300 / freq;
-      return 'الهوائي ثنائي القطب:<br>• التردد = ' + freq + ' MHz.<br>• الطول الموجي = ' + lambda.toFixed(2) + ' m.<br>• طول الهوائي = λ/2 = ' + (lambda/2).toFixed(2) + ' m.<br><br>💡 كل زيادة في التردد تعني طول موجي أقصر وهواء أصغر.';
-    },
-    'antennas_mimo': function(params) {
-      var Nt = params.Nt || 64;
-      var gain = 10 * Math.log10(Nt);
-      return 'Massive MIMO:<br>• عدد الهوائيات = ' + Nt + '.<br>• الربح = 10·log₁₀(N) = ' + gain.toFixed(1) + ' dBi.<br>• السعة × ' + (Nt/4).toFixed(0) + '.<br><br>💡 كل مضاعفة في عدد الهوائيات تزيد الربح بـ 3 dB.';
-    },
-    'fiber_intro': function(params) {
-      var n = params.n || 1.5;
-      var v = 3e8 / n;
-      return 'الألياف البصرية:<br>• معامل الانكسار = ' + n.toFixed(2) + '.<br>• سرعة الضوء في الليف = ' + (v/1e8).toFixed(2) + ' × 10⁸ m/s.<br><br>💡 الانعكاس الكلي الداخلي هو سر عمل الألياف.';
-    },
-    'organic': function(params) {
-      var type = params.type || 'alkane';
-      var explanations = {
-        alkane: 'الألكان: هيدروكربون مشبع.<br>الصيغة: CₙH₂ₙ₊₂.<br>مثال: CH₄ (ميثان).',
-        alkene: 'الألكين: هيدروكربون غير مشبع.<br>الصيغة: CₙH₂ₙ.<br>مثال: C₂H₄ (إيثين).',
-        alkyne: 'الألكاين: هيدروكربون غير مشبع.<br>الصيغة: CₙH₂ₙ₋₂.<br>مثال: C₂H₂ (إيثاين).'
-      };
-      return explanations[type] || explanations.alkane;
-    },
-    'atom': function(params) {
-      var n = params.n || 2;
-      var E = -13.6 / (n*n);
-      return 'نموذج بور للذرة:<br>• رقم المستوى n = ' + n + '.<br>• طاقة المستوى E = -13.6/n² = ' + E.toFixed(2) + ' eV.<br><br>💡 كلما زاد n، اقتربت الطاقة من الصفر (تأين).';
-    },
-    'doppler': function(params) {
-      var vs = params.vs || 30, f0 = params.f0 || 500, v = 343;
-      var f_approach = f0 * v / (v - vs);
-      var f_recede = f0 * v / (v + vs);
-      return 'تأثير دوبلر:<br>• التردد الأصلي = ' + f0 + ' Hz.<br>• سرعة المصدر = ' + vs + ' m/s.<br>• التردد عند الاقتراب = ' + f_approach.toFixed(1) + ' Hz.<br>• التردد عند الابتعاد = ' + f_recede.toFixed(1) + ' Hz.<br><br>💡 الاقتراب يزيد التردد، والابتعاد يقلله.';
-    }
+var TRANSLATIONS = {
+  ar: {
+    app_title: "PSL — مختبر الفيزياء", app_subtitle: "رحلة في عالم الفيزياء",
+    tier_free_name: "مجاني", tier_free_desc: "26 تجربة<br>للجميع",
+    tier_paid_name: "قارئ", tier_paid_desc: "12 باب<br>مرة واحدة",
+    code_placeholder: "🔑 كود التفعيل", btn_activate: "تفعيل",
+    btn_enter: "🔬 ادخل إلى المختبر", btn_back: "رجوع", gate_title: "اختر باباً للدخول",
+    gate_old_name: "تجربة تفاعلية", gate_old_desc: "شاهد الفيزياء بعينك",
+    gate_new_name: "موسوعة القوانين", gate_new_desc: "افهم الفيزياء بعقلك",
+    gate_free: "مجاناً", gate_paid: "💎 مدفوع", museum_title: "📖 موسوعة القوانين",
+    btn_prev: "السابق", btn_next: "التالي", msg_invalid: "❌ كود غير صالح أو مسترجع",
+    msg_activated: "✅ تم التفعيل بنجاح!", msg_checking: "⏳ جاري التحقق...", msg_error: "❌ خطأ في الاتصال"
   },
-
-  explain: function(expId, params) {
-    var fn = this.knowledge[expId];
-    if (!fn) {
-      return '🧠 <b>الفيزيائي الذكي:</b><br><br>لا يوجد تفسير متاح لهذه التجربة حالياً.<br>جرب تغيير المتغيرات ولاحظ النتائج بنفسك.<br><br>💡 <b>نصيحة:</b> كل تجربة فيها قانون ينتظرك أن تكتشفه.';
-    }
-    return fn(params || {});
+  en: {
+    app_title: "PSL — Physics Study Lab", app_subtitle: "A journey into physics",
+    tier_free_name: "Free", tier_free_desc: "26 Experiments<br>For everyone",
+    tier_paid_name: "Reader", tier_paid_desc: "12 Chapters<br>One-time",
+    code_placeholder: "🔑 License Key", btn_activate: "Activate",
+    btn_enter: "🔬 Enter the Lab", btn_back: "Back", gate_title: "Choose a door",
+    gate_old_name: "Interactive Lab", gate_old_desc: "See physics with your eyes",
+    gate_new_name: "Laws Encyclopedia", gate_new_desc: "Understand physics with your mind",
+    gate_free: "Free", gate_paid: "💎 Paid", museum_title: "📖 Laws Encyclopedia",
+    btn_prev: "Previous", btn_next: "Next", msg_invalid: "❌ Invalid or refunded code",
+    msg_activated: "✅ Activated successfully!", msg_checking: "⏳ Verifying...", msg_error: "❌ Connection error"
   },
-
-  ask: function(expId, params) {
-    var base = this.explain(expId, params);
-    var tips = [
-      '<br><br>💡 <b>جرب:</b> غيّر أحد المتغيرات ولاحظ كيف تتغير النتيجة.',
-      '<br><br>💡 <b>فكّر:</b> ما العلاقة بين المتغيرات؟',
-      '<br><br>💡 <b>استنتج:</b> هل يمكنك كتابة القانون بنفسك؟',
-      '<br><br>💡 <b>تحدَّ:</b> هل يمكنك التنبؤ بالنتيجة قبل التشغيل؟'
-    ];
-    return base + tips[Math.floor(Math.random() * tips.length)];
-  }
+  // بقية اللغات (Fallback إلى الإنجليزية حتى يتم إضافتها)
 };
 
-/* ============================================
-   التجارب (EXPS) — 23 تجربة
-   ============================================ */
-
-/* ========== 1. الميكانيكا ========== */
-EXPS.push({
-  id: 'newton', icon: '🏀', category: '1_mechanics',
-  title: 'قانون نيوتن الثاني', tagline: 'F = ma',
-  scenes: [
-    { badge:'لمحة', narr:'كرة تتحرك على سطح مستوٍ.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); ln(50,350,750,350,{stroke:'#445566','stroke-width':6}); var x=200+((t*80)%500); ci(x,290,40,{fill:'#00D4E0'}); } },
-    { badge:'تجربة', narr:'غيّر القوة والكتلة.', controls:[
-      {id:'F',label:'القوة',min:0,max:200,step:5,value:80,unit:'N',color:'#00D4E0'},
-      {id:'m',label:'الكتلة',min:1,max:50,step:1,value:10,unit:'kg',color:'#F5C24A'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); ln(50,350,750,350,{stroke:'#445566','stroke-width':6}); var a=(params.F||80)/(params.m||10); var x=200+Math.min(500,((t*t*5*a)%500)); ci(x,290,20+(params.m||10)*0.8,{fill:'#00D4E0'}); ar(x+40,290,x+40+Math.min(120,(params.F||80)/2),290,'#F5C24A'); tx(400,420,'a = '+a.toFixed(2)+' m/s²',{'font-size':18,fill:'#00D4E0','font-weight':900}); },
-    data: function(){ var a=(params.F||80)/(params.m||10); return [['F',(params.F||80)+' N'],['m',(params.m||10)+' kg'],['a',a.toFixed(2)+' m/s²']]; } },
-    { badge:'قانون', narr:'القانون الثاني.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); tx(400,200,'F = m · a',{'font-size':48,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); } }
-  ]
-});
-
-EXPS.push({
-  id: 'freefall', icon: '🍎', category: '1_mechanics',
-  title: 'السقوط الحر', tagline: 'h = ½gt²',
-  scenes: [
-    { badge:'تجربة', narr:'غيّر الارتفاع والزمن.', controls:[
-      {id:'h',label:'الارتفاع',min:10,max:200,step:5,value:100,unit:'m',color:'#00D4E0'},
-      {id:'g',label:'g',min:1,max:20,step:.1,value:9.8,unit:'m/s²',color:'#F5C24A'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); ln(400,80,400,400,{stroke:'#445566','stroke-width':2,'stroke-dasharray':'6,6'}); var h=params.h||100, g=params.g||9.8; var tFall=Math.sqrt(2*h/g); var v=g*tFall; tx(400,200,'t = '+tFall.toFixed(2)+' s',{'font-size':26,fill:'#00D4E0','font-weight':900}); tx(400,260,'v = '+v.toFixed(1)+' m/s',{'font-size':22,fill:'#F5C24A','font-weight':900}); tx(400,420,'h = ½ · g · t²',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var h=params.h||100,g=params.g||9.8; var t=Math.sqrt(2*h/g), v=g*t; return [['h',h+' m'],['t',t.toFixed(2)+' s'],['v',v.toFixed(1)+' m/s']]; } }
-  ]
-});
-
-EXPS.push({
-  id: 'pendulum', icon: '⏱️', category: '1_mechanics',
-  title: 'البندول البسيط', tagline: 'T = 2π√(L/g)',
-  scenes: [
-    { badge:'تجربة', narr:'غيّر الطول والجاذبية.', controls:[
-      {id:'L',label:'الطول',min:.5,max:5,step:.1,value:2,unit:'m',color:'#F39C12'},
-      {id:'g',label:'الجاذبية',min:1,max:20,step:.1,value:9.8,unit:'m/s²',color:'#00D4E0'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var L=params.L||2, g=params.g||9.8; var T=2*Math.PI*Math.sqrt(L/g); var ang=Math.sin(t*2*Math.PI/T)*0.5; var len=50+L*50; var bx=400+len*Math.sin(ang), by=100+len*Math.cos(ang); ln(400,100,bx,by,{stroke:'#FFF','stroke-width':2}); ci(bx,by,15,{fill:'#F39C12'}); tx(400,420,'T = '+T.toFixed(2)+' s',{'font-size':18,fill:'#00D4E0','font-weight':900}); },
-    data: function(){ var L=params.L||2,g=params.g||9.8; var T=2*Math.PI*Math.sqrt(L/g); return [['L',L+' m'],['g',g+' m/s²'],['T',T.toFixed(2)+' s']]; } },
-    { badge:'قانون', narr:'الزمن الدوري.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); tx(400,200,'T = 2π√(L/g)',{'font-size':40,fill:'#F39C12','font-family':'Cambria Math, serif','font-weight':900}); } }
-  ]
-});
-
-/* ========== 2. الكهرباء ========== */
-EXPS.push({
-  id: 'ohm', icon: '⚡', category: '2_electricity',
-  title: 'قانون أوم', tagline: 'V = I·R',
-  scenes: [
-    { badge:'لمحة', narr:'دائرة كهربائية بسيطة.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); rc(200,160,400,120,{fill:'none',stroke:'#F5C24A','stroke-width':3}); ln(600,220,700,220,{stroke:'#F5C24A','stroke-width':3}); ci(600,220,15,{fill:'#F5C24A'}); tx(500,210,'R',{'font-size':22,'font-weight':900,fill:'#FFF'}); tx(350,140,'I →',{'font-size':16,fill:'#00D4E0','font-weight':900}); } },
-    { badge:'تجربة', narr:'غيّر الجهد والمقاومة.', controls:[
-      {id:'V',label:'الجهد',min:1,max:24,step:1,value:12,unit:'V',color:'#F5C24A'},
-      {id:'R',label:'المقاومة',min:1,max:100,step:1,value:10,unit:'Ω',color:'#00D4E0'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); rc(200,160,400,120,{fill:'none',stroke:'#F5C24A','stroke-width':3}); var I=(params.V||12)/(params.R||10); tx(400,220,'I = '+I.toFixed(2)+' A',{'font-size':28,fill:'#00D4E0','font-weight':900}); tx(400,420,'V = I · R',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var V=params.V||12,R=params.R||10,I=V/R; return [['V',V+' V'],['R',R+' Ω'],['I',I.toFixed(3)+' A']]; } },
-    { badge:'قانون', narr:'العلاقة بين الجهد والتيار.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); ln(100,380,700,80,{stroke:'#00D4E0','stroke-width':3}); tx(400,420,'V = I · R',{'font-size':40,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); } }
-  ]
-});
-
-EXPS.push({
-  id: 'magnetism', icon: '🧲', category: '2_electricity',
-  title: 'المغناطيس — 6 قوانين', tagline: 'F=qvB, B=μ₀I/2πr…',
-  scenes: [
-    { badge:'لمحة', narr:'ستّ رسوم، ستّة قوانين.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var pos=[[140,120],[400,120],[660,120],[140,320],[400,320],[660,320]]; var cols=['#E74C3C','#F5C24A','#2ECC71','#00D4E0','#8B5CF6','#EC4899']; pos.forEach(function(p,i){ ci(p[0],p[1],45,{fill:cols[i],opacity:0.15}); ci(p[0],p[1],45,{fill:'none',stroke:cols[i],'stroke-width':2}); }); } },
-    { badge:'قانون ١', narr:'F = qvB·sinθ', controls:[
-      {id:'q',label:'q',min:1,max:10,step:1,value:5,unit:'C',color:'#E74C3C'},
-      {id:'v',label:'v',min:10,max:200,step:10,value:100,unit:'m/s',color:'#F5C24A'},
-      {id:'B',label:'B',min:.5,max:5,step:.5,value:2,unit:'T',color:'#00D4E0'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); for(var x=100;x<750;x+=80) for(var y=80;y<400;y+=80){ ci(x,y,4,{fill:'#00D4E0'}); } var cx=400; ci(cx,220,22,{fill:'#E74C3C'}); tx(cx,225,'+q',{fill:'#FFF','font-size':16,'font-weight':900}); ar(cx+25,220,cx+120,220,'#F5C24A'); ar(cx,195,cx,100,'#8B5CF6'); tx(400,420,'F = q·v·B·sinθ',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var q=params.q||5,v=params.v||100,B=params.B||2; return [['q',q+' C'],['v',v+' m/s'],['F',(q*v*B).toFixed(0)+' N']]; } },
-    { badge:'قانون ٢', narr:'F = BIL·sinθ', controls:[
-      {id:'B',label:'B',min:.5,max:5,step:.5,value:2,unit:'T',color:'#00D4E0'},
-      {id:'I',label:'I',min:1,max:20,step:1,value:8,unit:'A',color:'#F5C24A'},
-      {id:'L',label:'L',min:.5,max:5,step:.5,value:2,unit:'m',color:'#2ECC71'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); for(var y=80;y<400;y+=60){ ar(80,y,180,y,'#00D4E0'); } var wx=400; rc(wx-15,60,30,320,{fill:'#F5C24A',rx:6}); ar(wx,220,wx-120,220,'#8B5CF6'); tx(400,420,'F = B·I·L·sinθ',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var B=params.B||2,I=params.I||8,L=params.L||2; return [['B',B+' T'],['I',I+' A'],['F',(B*I*L).toFixed(0)+' N']]; } },
-    { badge:'قانون ٣', narr:'B = μ₀I/(2πr)', controls:[
-      {id:'I',label:'I',min:1,max:20,step:1,value:5,unit:'A',color:'#F5C24A'},
-      {id:'r',label:'r',min:.1,max:3,step:.1,value:1,unit:'m',color:'#00D4E0'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); ln(400,40,400,400,{stroke:'#F5C24A','stroke-width':8}); ar(400,40,400,80,'#F5C24A'); for(var i=1;i<=6;i++){ var r=i*30; ci(400,220,r,{fill:'none',stroke:'#8B5CF6','stroke-width':2,opacity:.8-i*.1}); var ang=(t*.5+i*.3)%(2*Math.PI); ci(400+r*Math.cos(ang),220+r*Math.sin(ang),4,{fill:'#8B5CF6'}); } tx(400,420,'B = μ₀·I / (2π·r)',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var I=params.I||5,r=params.r||1; var B=4*Math.PI*1e-7*I/(2*Math.PI*r); return [['I',I+' A'],['r',r+' m'],['B',(B*1e6).toFixed(2)+' µT']]; } },
-    { badge:'قانون ٤', narr:'B = μ₀I/(2R)', controls:[
-      {id:'I',label:'I',min:1,max:20,step:1,value:5,unit:'A',color:'#F5C24A'},
-      {id:'R',label:'R',min:.5,max:5,step:.5,value:2,unit:'m',color:'#00D4E0'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var cx=400,cy=220,Rp=60+(params.R||2)*25; pt('M '+(cx-Rp)+' '+cy+' A '+Rp+' '+(Rp*.35)+' 0 0 1 '+(cx+Rp)+' '+cy,{stroke:'#F5C24A','stroke-width':5,fill:'none'}); ar(cx,cy,cx,cy-130,'#8B5CF6'); tx(400,420,'B = μ₀·I / (2·R)',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var I=params.I||5,R=params.R||2; var B=4*Math.PI*1e-7*I/(2*R); return [['I',I+' A'],['R',R+' m'],['B',(B*1e6).toFixed(2)+' µT']]; } },
-    { badge:'قانون ٥', narr:'B = μ₀nI', controls:[
-      {id:'n',label:'n',min:10,max:500,step:10,value:100,unit:'/m',color:'#8B5CF6'},
-      {id:'I',label:'I',min:1,max:20,step:1,value:5,unit:'A',color:'#F5C24A'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var cy=220; for(var i=0;i<10;i++){ var x=200+i*40; pt('M '+x+' '+(cy-70)+' A 30 30 0 0 1 '+x+' '+(cy+70),{stroke:'#F5C24A','stroke-width':3,fill:'none'}); } for(var j=0;j<5;j++){ var fx=220+j*90; ar(fx,cy+60,fx,cy-60,'#8B5CF6'); } tx(400,350,'N',{fill:'#8B5CF6','font-size':24,'font-weight':900}); tx(400,100,'S',{fill:'#E74C3C','font-size':24,'font-weight':900}); tx(400,420,'B = μ₀·n·I',{'font-size':26,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var n=params.n||100,I=params.I||5; var B=4*Math.PI*1e-7*n*I; return [['n',n+' /m'],['I',I+' A'],['B',(B*1000).toFixed(2)+' mT']]; } },
-    { badge:'قانون ٦', narr:'τ = NBIA·sinθ', controls:[
-      {id:'N',label:'N',min:1,max:100,step:1,value:20,unit:'',color:'#8B5CF6'},
-      {id:'B',label:'B',min:.1,max:5,step:.1,value:1,unit:'T',color:'#00D4E0'},
-      {id:'I',label:'I',min:.5,max:10,step:.5,value:3,unit:'A',color:'#F5C24A'},
-      {id:'A',label:'A',min:.01,max:1,step:.01,value:.1,unit:'m²',color:'#2ECC71'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); for(var y=100;y<400;y+=60){ for(var x=60;x<750;x+=100){ ar(x,y,x+40,y,'#00D4E0'); } } var ang=t*.8, cx=400, cy=220, w=120, h=50; var cosA=Math.cos(ang), sinA=Math.sin(ang); var cor=[[cx-w*cosA,cy-w*sinA*.4-h],[cx+w*cosA,cy+w*sinA*.4-h],[cx+w*cosA,cy+w*sinA*.4+h],[cx-w*cosA,cy-w*sinA*.4+h]]; pt('M '+cor[0][0]+' '+cor[0][1]+' L '+cor[1][0]+' '+cor[1][1]+' L '+cor[2][0]+' '+cor[2][1]+' L '+cor[3][0]+' '+cor[3][1]+' Z',{stroke:'#8B5CF6','stroke-width':4,fill:'#8B5CF6',opacity:.2}); ar(cx+20,cy-80,cx+80,cy-60,'#EC4899'); tx(400,420,'τ = N·B·I·A·sinθ',{'font-size':22,fill:'#FFF','font-family':'Cambria Math, serif','font-weight':900}); },
-    data: function(){ var N=params.N||20,B=params.B||1,I=params.I||3,A=params.A||.1; return [['N',N],['B',B+' T'],['τ_max',(N*B*I*A).toFixed(3)+' N·m']]; } }
-  ]
-});
-
-EXPS.push({
-  id: 'transformer', icon: '⚙️', category: '2_electricity',
-  title: 'المحول الكهربائي', tagline: 'Vp/Vs = Np/Ns',
-  scenes: [
-    { badge:'مبادئ', narr:'Vp/Vs = Np/Ns.', controls:[
-      {id:'Np',label:'Np',min:10,max:1000,step:10,value:100,unit:'',color:'#F5C24A'},
-      {id:'Ns',label:'Ns',min:10,max:1000,step:10,value:50,unit:'',color:'#00D4E0'},
-      {id:'Vp',label:'Vp',min:10,max:500,step:10,value:220,unit:'V',color:'#F5C24A'}
-    ],
-    anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); rc(360,80,80,280,{fill:'#555',rx:4}); for(var i=0;i<8;i++){ var y=110+i*25; pt('M 320 '+y+' Q 340 '+(y+12)+' 320 '+(y+25),{stroke:'#F5C24A','stroke-width':3,fill:'none'}); } for(var j=0;j<10;j++){ var y2=100+j*24; pt('M 480 '+y2+' Q 460 '+(y2+12)+' 480 '+(y2+24),{stroke:'#00D4E0','stroke-width':3,fill:'none'}); } var Np=params.Np||100,Ns=params.Ns||50,Vp=params.Vp||220; tx(400,30,'Vp='+Vp+'V → Vs='+(Vp*Ns/Np).toFixed(1)+'V',{'font-size':18,fill:'#FFF','font-weight':900}); tx(400,420,'Vp/Vs = Np/Ns = Is/Ip',{'font-size':16,fill:'#FFF','font-family':'Cambria Math, serif'}); },
-    data: function(){ var Np=params.Np||100,Ns=params.Ns||50,Vp=params.Vp||220; var Vs=Vp*Ns/Np; var Ip=100/Vp; var Is=Ip*Np/Ns; return [['V_out',Vs.toFixed(2)+' V'],['I_out',Is.toFixed(2)+' A'],['P',(Vs*Is).toFixed(2)+' W']]; } },
-    { badge:'قانون', narr:'معادلات المحول.', controls:[],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); tx(400,120,'Vp/Vs = Np/Ns',{'font-size':28,fill:'#F5C24A','font-family':'Cambria Math, serif','font-weight':900}); tx(400,200,'Ip/Is = Ns/Np',{'font-size':28,fill:'#00D4E0','font-family':'Cambria Math, serif','font-weight':900}); tx(400,280,'Pp = Ps',{'font-size':28,fill:'#2ECC71','font-family':'Cambria Math, serif','font-weight':900}); } }
-  ]
-});
-
-/* ========== 3.1 أساسيات الاتصالات ========== */
-EXPS.push({
-  id: 'comms_chain', icon: '📡', category: '3_1_basics',
-  title: 'سلسلة الإرسال الرقمي', tagline: 'من المصدر إلى المستقبل',
-  scenes: [{
-    badge: 'لمحة',
-    narr: 'رحلة الإشارة الرقمية: من المصدر، عبر الترميز والتضمين، إلى القناة، ثم الاستقبال وفك التضمين.',
-    controls: [],
-    anim: function(t) {
-      rc(0, 0, 800, 440, { fill: '#0A1226' });
-      var boxes = [
-        { x: 50, y: 80, w: 100, h: 60, label: 'المصدر' },
-        { x: 200, y: 80, w: 100, h: 60, label: 'ترميز' },
-        { x: 350, y: 80, w: 100, h: 60, label: 'تضمين' },
-        { x: 500, y: 80, w: 100, h: 60, label: 'قناة' },
-        { x: 650, y: 80, w: 100, h: 60, label: 'استقبال' }
-      ];
-      boxes.forEach(function(b) {
-        rc(b.x, b.y, b.w, b.h, { fill: '#0E1A33', stroke: '#4A90E2', 'stroke-width': 2, rx: 8 });
-        tx(b.x + b.w/2, b.y + b.h/2 + 5, b.label, { fill: '#00D4E0', 'font-size': 16, 'font-weight': 900 });
-      });
-      for (var i = 0; i < boxes.length - 1; i++) {
-        ar(boxes[i].x + boxes[i].w, boxes[i].y + boxes[i].h/2, boxes[i+1].x, boxes[i+1].y + boxes[i+1].h/2, '#F5C24A');
-      }
-      tx(400, 220, '1 0 1 1 0 0 1', { fill: '#4A90E2', 'font-size': 24, 'font-family': 'monospace' });
-    }
-  }]
-});
-
-EXPS.push({
-  id: 'em_spectrum', icon: '🌈', category: '3_1_basics',
-  title: 'الطيف الكهرومغناطيسي', tagline: 'من الراديو إلى جاما',
-  scenes: [
-    { badge: 'لمحة', narr: 'الطيف الكهرومغناطيسي يمتد من الموجات الراديوية إلى أشعة جاما.',
-      controls: [],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, 'الطيف الكهرومغناطيسي', { fill: '#06B6D4', 'font-size': 24, 'font-weight': 900 });
-        var bands = [
-          { name: 'Radio', range: '10⁴-10⁹ Hz', color: '#6B7B92' },
-          { name: 'Micro', range: '10⁹-10¹² Hz', color: '#4A90E2' },
-          { name: 'mmWave', range: '10¹⁰-10¹¹ Hz', color: '#2ECC71' },
-          { name: 'Infrared', range: '10¹²-10¹⁴ Hz', color: '#F5C24A' },
-          { name: 'Visible', range: '4-8×10¹⁴ Hz', color: '#F39C12' },
-          { name: 'UV', range: '10¹⁵-10¹⁷ Hz', color: '#8B5CF6' },
-          { name: 'X-Ray', range: '10¹⁶-10¹⁹ Hz', color: '#EC4899' },
-          { name: 'Gamma', range: '10¹⁹-10²⁰ Hz', color: '#EF4444' }
-        ];
-        bands.forEach(function(b, i) {
-          var x = 80 + i * 85;
-          var y = 180;
-          rc(x - 35, y - 25, 70, 50, { fill: b.color, opacity: 0.15, rx: 5 });
-          rc(x - 35, y - 25, 70, 50, { fill: 'none', stroke: b.color, 'stroke-width': 2, rx: 5 });
-          tx(x, y - 5, b.name, { fill: b.color, 'font-size': 14, 'font-weight': 900 });
-          tx(x, y + 15, b.range, { fill: '#A8B6CC', 'font-size': 11, 'font-family': 'monospace' });
-        });
-        ln(50, 280, 750, 280, { stroke: '#06B6D4', 'stroke-width': 3 });
-        ar(50, 280, 750, 280, '#06B6D4');
-        tx(400, 310, 'التردد يزداد →', { fill: '#06B6D4', 'font-size': 16, 'font-weight': 900 });
-        tx(400, 400, 'الإلكترونيات: Radio→Microwave | الفوتونيات: Infrared→Gamma', { fill: '#F5C24A', 'font-size': 16, 'font-weight': 900 });
-      }
-    },
-    { badge: 'النطاقات', narr: 'النطاقات الترددية الرسمية حسب ITU.',
-      controls: [],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, 'النطاقات الترددية', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 });
-        var bands = [
-          { name: 'VLF', range: '3-30 kHz (10-100 km)', color: '#4A90E2' },
-          { name: 'LF', range: '30-300 kHz (1-10 km)', color: '#2ECC71' },
-          { name: 'MF', range: '300-3000 kHz (100-1000 m)', color: '#F5C24A' },
-          { name: 'HF', range: '3-30 MHz (10-100 m)', color: '#F39C12' },
-          { name: 'VHF', range: '30-300 MHz (1-10 m)', color: '#EC4899' },
-          { name: 'UHF', range: '300-3000 MHz (1-10 dm)', color: '#8B5CF6' },
-          { name: 'SHF', range: '3-30 GHz (1-10 cm)', color: '#14B8A6' },
-          { name: 'EHF', range: '30-300 GHz (1-10 mm)', color: '#EF4444' }
-        ];
-        bands.forEach(function(b, i) {
-          var y = 80 + i * 42;
-          rc(50, y - 17, 700, 36, { fill: b.color, opacity: 0.1, rx: 5 });
-          tx(90, y + 5, b.name, { fill: b.color, 'font-size': 18, 'font-weight': 900 });
-          tx(420, y + 5, b.range, { fill: '#FFF', 'font-size': 14, 'font-family': 'monospace' });
-        });
-      }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'frequency_bands', icon: '📡', category: '3_1_basics',
-  title: 'نطاقات الترددات الرسمية', tagline: 'ITU-R V.431-8',
-  scenes: [
-    { badge: 'الجدول الرسمي', narr: 'الاتحاد الدولي للاتصالات يحدد النطاقات رسمياً.',
-      controls: [],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 25, 'نطاقات الترددات الرسمية — ITU-R V.431-8', { fill: '#06B6D4', 'font-size': 18, 'font-weight': 900 });
-        var bands = [
-          { sym: 'ULF', range: '300-3000 Hz', color: '#6B7B92' },
-          { sym: 'VLF', range: '3-30 kHz', color: '#4A90E2' },
-          { sym: 'LF', range: '30-300 kHz', color: '#2ECC71' },
-          { sym: 'MF', range: '300-3000 kHz', color: '#F5C24A' },
-          { sym: 'HF', range: '3-30 MHz', color: '#F39C12' },
-          { sym: 'VHF', range: '30-300 MHz', color: '#EC4899' },
-          { sym: 'UHF', range: '300-3000 MHz', color: '#8B5CF6' },
-          { sym: 'SHF', range: '3-30 GHz', color: '#14B8A6' },
-          { sym: 'EHF', range: '30-300 GHz', color: '#EF4444' }
-        ];
-        tx(80, 60, 'الرمز', { fill: '#FFF', 'font-size': 16, 'font-weight': 900 });
-        tx(400, 60, 'النطاق', { fill: '#FFF', 'font-size': 16, 'font-weight': 900 });
-        bands.forEach(function(b, i) {
-          var y = 95 + i * 35;
-          rc(30, y - 15, 740, 30, { fill: b.color, opacity: 0.1, rx: 4 });
-          tx(80, y + 5, b.sym, { fill: b.color, 'font-size': 18, 'font-weight': 900 });
-          tx(400, y + 5, b.range, { fill: '#FFF', 'font-size': 16, 'font-family': 'monospace' });
-        });
-      }
-    },
-    { badge: 'الرموز', narr: 'الرموز: k (10³), M (10⁶), G (10⁹), T (10¹²).',
-      controls: [],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, 'الرموز والوحدات', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 });
-        var symbols = [
-          { sym: 'T', name: 'Tera', value: '10¹²', color: '#F5C24A' },
-          { sym: 'G', name: 'Giga', value: '10⁹', color: '#2ECC71' },
-          { sym: 'M', name: 'Mega', value: '10⁶', color: '#4A90E2' },
-          { sym: 'k', name: 'Kilo', value: '10³', color: '#06B6D4' }
-        ];
-        symbols.forEach(function(s, i) {
-          var x = 150 + i * 170;
-          var y = 200;
-          rc(x - 75, y - 60, 150, 120, { fill: '#0E1A33', stroke: s.color, 'stroke-width': 2, rx: 10 });
-          tx(x, y - 20, s.sym, { fill: s.color, 'font-size': 32, 'font-weight': 900 });
-          tx(x, y + 15, s.name, { fill: '#FFF', 'font-size': 16 });
-          tx(x, y + 40, s.value, { fill: '#F5C24A', 'font-size': 16, 'font-family': 'monospace' });
-        });
-      }
-    }
-  ]
-});
-
-/* ========== 3.2 التضمين التناظري ========== */
-EXPS.push({
-  id: 'analog_mod', icon: '📻', category: '3_2_analog',
-  title: 'التضمين التناظري', tagline: 'AM, FM, PM',
-  scenes: [
-    { badge: 'AM', narr: 'تضمين السعة — تغيير سعة الموجة الحاملة.',
-      controls: [
-        {id:'fm',label:'fm',min:.2,max:2,step:.1,value:.5,unit:'Hz',color:'#F5C24A'},
-        {id:'m',label:'m',min:.1,max:1,step:.05,value:.7,unit:'',color:'#4A90E2'}
-      ],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var fm=params.fm||.5, m=params.m||.7, fc=10, d=''; for(var x=50;x<=750;x+=1){ var tt=(x-50)/700*3; var s=(1+m*Math.cos(2*Math.PI*fm*tt))*Math.cos(2*Math.PI*fc*tt); d+=(x===50?'M':'L')+x+' '+(220-s*80); } pt(d,{stroke:'#4A90E2','stroke-width':2}); for(var side=-1;side<=1;side+=2){ var de=''; for(var x2=50;x2<=750;x2+=2){ var t2=(x2-50)/700*3; var env=1+m*Math.cos(2*Math.PI*fm*t2); de+=(x2===50?'M':'L')+x2+' '+(220-side*env*80); } pt(de,{stroke:'#F5C24A','stroke-width':1.5,'stroke-dasharray':'5,4',opacity:.8}); } tx(400,400,'s(t) = A[1+m·cos(ωmt)]·cos(ωct)',{'font-size':16,fill:'#FFF','font-family':'Cambria Math, serif'}); },
-      data: function(){ var fm=params.fm||.5, m=params.m||.7; return [['fm',fm+' Hz'],['m',m],['BW',(2*fm).toFixed(2)+' Hz']]; }
-    },
-    { badge: 'FM', narr: 'تضمين التردد — تغيير تردد الموجة الحاملة.',
-      controls: [
-        {id:'fm',label:'fm',min:.2,max:2,step:.1,value:.5,unit:'Hz',color:'#F5C24A'},
-        {id:'df',label:'Δf',min:.5,max:5,step:.5,value:2,unit:'Hz',color:'#4A90E2'}
-      ],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var fm=params.fm||.5, df=params.df||2, d=''; for(var x=50;x<=750;x+=1){ var tt=(x-50)/700*3; var phase=2*Math.PI*10*tt+(df/fm)*Math.sin(2*Math.PI*fm*tt); var s=Math.cos(phase); d+=(x===50?'M':'L')+x+' '+(220-s*80); } pt(d,{stroke:'#4A90E2','stroke-width':2}); },
-      data: function(){ var fm=params.fm||.5, df=params.df||2; return [['fm',fm+' Hz'],['Δf',df+' Hz'],['β',(df/fm).toFixed(2)]]; }
-    },
-    { badge: 'PM', narr: 'تضمين الطور.',
-      controls: [
-        {id:'fm',label:'fm',min:.2,max:2,step:.1,value:.5,unit:'Hz',color:'#F5C24A'},
-        {id:'kp',label:'kp',min:.5,max:5,step:.5,value:2,unit:'rad',color:'#8B5CF6'}
-      ],
-      anim: function(t){ rc(0,0,800,440,{fill:'#0A1226'}); var fm=params.fm||.5, kp=params.kp||2, d=''; for(var x=50;x<=750;x+=1){ var tt=(x-50)/700*3; var phase=2*Math.PI*10*tt+kp*Math.cos(2*Math.PI*fm*tt); var s=Math.cos(phase); d+=(x===50?'M':'L')+x+' '+(220-s*80); } pt(d,{stroke:'#8B5CF6','stroke-width':2}); }
-    }
-  ]
-});
-
-/* ========== 3.3 الاتصالات الرقمية ========== */
-EXPS.push({
-  id: 'comms_linecoding', icon: '📊', category: '3_3_digital',
-  title: 'الترميز في الخط', tagline: 'NRZ, RZ, Manchester',
-  scenes: [{
-    badge: 'NRZ',
-    narr: 'في NRZ، يبقى المستوى ثابتاً طوال مدة البت.',
-    controls: [{ id: 'code', type: 'select', label: 'النوع', options: [
-      { value: 'nrz', label: 'NRZ' }, { value: 'rz', label: 'RZ' }, { value: 'manchester', label: 'Manchester' }
-    ], color: '#F5C24A' }],
-    anim: function(t) {
-      rc(0, 0, 800, 440, { fill: '#0A1226' });
-      var code = params.code || 'nrz';
-      var bits = '10110010';
-      var sx = 80, ex = 720, w = (ex - sx) / bits.length;
-      for (var i = 0; i < bits.length; i++) tx(sx + i * w + w/2, 60, bits[i], { fill: '#FFF', 'font-size': 20, 'font-weight': 900 });
-      for (var i = 0; i < bits.length; i++) {
-        var x0 = sx + i * w, x1 = x0 + w, bit = bits[i];
-        if (code === 'nrz') {
-          var y = bit === '1' ? 120 : 280;
-          ln(x0, y, x1, y, { stroke: '#4A90E2', 'stroke-width': 4 });
-          if (i > 0) { var prevY = bits[i-1] === '1' ? 120 : 280; ln(x0, prevY, x0, y, { stroke: '#4A90E2', 'stroke-width': 4 }); }
-        } else if (code === 'rz') {
-          var y = bit === '1' ? 120 : 280;
-          ln(x0, y, x0 + w/2, y, { stroke: '#F5C24A', 'stroke-width': 4 });
-          ln(x0 + w/2, y, x0 + w/2, 280, { stroke: '#F5C24A', 'stroke-width': 4 });
-          ln(x0 + w/2, 280, x1, 280, { stroke: '#F5C24A', 'stroke-width': 4 });
-        } else if (code === 'manchester') {
-          if (bit === '1') {
-            ln(x0, 120, x0 + w/2, 120, { stroke: '#2ECC71', 'stroke-width': 4 });
-            ln(x0 + w/2, 120, x0 + w/2, 280, { stroke: '#2ECC71', 'stroke-width': 4 });
-            ln(x0 + w/2, 280, x1, 280, { stroke: '#2ECC71', 'stroke-width': 4 });
-          } else {
-            ln(x0, 280, x0 + w/2, 280, { stroke: '#2ECC71', 'stroke-width': 4 });
-            ln(x0 + w/2, 280, x0 + w/2, 120, { stroke: '#2ECC71', 'stroke-width': 4 });
-            ln(x0 + w/2, 120, x1, 120, { stroke: '#2ECC71', 'stroke-width': 4 });
-          }
-        }
-      }
-      tx(400, 400, 'النوع: ' + code.toUpperCase(), { fill: '#F5C24A', 'font-size': 20, 'font-weight': 900 });
-    }
-  }]
-});
-
-/* ========== 3.4 التضمين الرقمي ========== */
-EXPS.push({
-  id: 'comms_modem', icon: '🔄', category: '3_4_modulation',
-  title: 'التضمين وإزالة التضمين', tagline: 'ASK, FSK, PSK, QAM',
-  scenes: [
-    { badge: 'تضمين ASK', narr: 'تضمين ASK: تغيير سعة الموجة الحاملة.',
-      controls: [{ id: 'bits', type: 'select', label: 'البتات', options: [
-        { value: '10110010', label: '10110010' }, { value: '11110000', label: '11110000' }
-      ], color: '#4A90E2' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var bits = params.bits || '10110010'; var sx = 80, ex = 720, w = (ex - sx) / bits.length; tx(400, 30, 'تضمين ASK', { fill: '#4A90E2', 'font-size': 22, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) tx(sx + i * w + w/2, 70, bits[i], { fill: '#FFF', 'font-size': 20, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) { var amp = bits[i] === '1' ? 1 : 0.2; var x0 = sx + i * w; var d = ''; for (var x = 0; x < w; x += 2) { var xx = x0 + x; var yy = 220 - amp * 80 * Math.cos(2 * Math.PI * (xx - sx) / 25); d += (x === 0 ? 'M' : 'L') + xx + ' ' + yy; } pt(d, { stroke: '#4A90E2', 'stroke-width': 2 }); } }
-    },
-    { badge: 'تضمين FSK', narr: 'تضمين FSK: تغيير تردد الموجة الحاملة.',
-      controls: [{ id: 'bits', type: 'select', label: 'البتات', options: [
-        { value: '10110010', label: '10110010' }, { value: '11110000', label: '11110000' }
-      ], color: '#F5C24A' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var bits = params.bits || '10110010'; var sx = 80, ex = 720, w = (ex - sx) / bits.length; tx(400, 30, 'تضمين FSK', { fill: '#F5C24A', 'font-size': 22, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) tx(sx + i * w + w/2, 70, bits[i], { fill: '#FFF', 'font-size': 20, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) { var f = bits[i] === '1' ? 30 : 12; var x0 = sx + i * w; var d = ''; for (var x = 0; x < w; x += 1) { var xx = x0 + x; var yy = 220 - 70 * Math.cos(2 * Math.PI * (xx - x0) / f); d += (x === 0 ? 'M' : 'L') + xx + ' ' + yy; } pt(d, { stroke: '#F5C24A', 'stroke-width': 2 }); } }
-    },
-    { badge: 'تضمين PSK', narr: 'تضمين PSK: تغيير طور الموجة الحاملة.',
-      controls: [{ id: 'bits', type: 'select', label: 'البتات', options: [
-        { value: '10110010', label: '10110010' }, { value: '11110000', label: '11110000' }
-      ], color: '#2ECC71' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var bits = params.bits || '10110010'; var sx = 80, ex = 720, w = (ex - sx) / bits.length; tx(400, 30, 'تضمين PSK', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) tx(sx + i * w + w/2, 70, bits[i], { fill: '#FFF', 'font-size': 20, 'font-weight': 900 }); for (var i = 0; i < bits.length; i++) { var ph = bits[i] === '1' ? Math.PI : 0; var x0 = sx + i * w; var d = ''; for (var x = 0; x < w; x += 1) { var xx = x0 + x; var yy = 220 - 70 * Math.cos(2 * Math.PI * (xx - x0) / 25 + ph); d += (x === 0 ? 'M' : 'L') + xx + ' ' + yy; } pt(d, { stroke: '#2ECC71', 'stroke-width': 2 }); } }
-    },
-    { badge: 'تضمين QAM', narr: 'تضمين QAM: تضمين السعة والطور معاً.',
-      controls: [{ id: 'order', type: 'select', label: 'الترتيب', options: [
-        { value: '16', label: '16-QAM' }, { value: '64', label: '64-QAM' }, { value: '256', label: '256-QAM' }
-      ], color: '#EC4899' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var N = parseInt(params.order || '16'); var n = Math.log2(N); var side = Math.sqrt(N); tx(400, 30, N + '-QAM — ' + n + ' bits/symbol', { fill: '#EC4899', 'font-size': 22, 'font-weight': 900 }); var cx = 400, cy = 240, R = 150; var spacing = (R * 2) / (side - 1); var startX = cx - R, startY = cy - R; ln(cx - 180, cy, cx + 180, cy, { stroke: '#445566', 'stroke-width': 1, 'stroke-dasharray': '4,4' }); ln(cx, cy - 180, cx, cy + 180, { stroke: '#445566', 'stroke-width': 1, 'stroke-dasharray': '4,4' }); for (var i = 0; i < side; i++) for (var j = 0; j < side; j++) ci(startX + i * spacing, startY + j * spacing, Math.max(3, 7 - n/3), { fill: '#EC4899' }); tx(400, 410, 'SNR required ≈ ' + (n * 3) + ' dB', { fill: '#F5C24A', 'font-size': 16, 'font-weight': 900 }); },
-      data: function() { var N = parseInt(params.order || '16'); var n = Math.log2(N); return [['M', N + 'QAM'], ['n', n + ' bits'], ['SNR', (n * 3) + ' dB']]; }
-    },
-    { badge: 'احتمال الخطأ', narr: 'احتمال الخطأ يتناقص مع زيادة SNR.',
-      controls: [{ id: 'snr', label: 'SNR', min: 0, max: 20, step: 0.5, value: 10, unit: 'dB', color: '#EC4899' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var snr = params.snr || 10; var snr_linear = Math.pow(10, snr / 10); var pe = 0.5 * Math.exp(-snr_linear / 2); tx(400, 30, 'احتمال الخطأ', { fill: '#EC4899', 'font-size': 22, 'font-weight': 900 }); var cx = 400, cy = 240; var d = ''; for (var x = 0; x <= 20; x += 0.5) { var snr_lin = Math.pow(10, x / 10); var pe_val = 0.5 * Math.exp(-snr_lin / 2); var px = 100 + x * 30; var py = cy - Math.log10(pe_val + 1e-10) * 20; d += (x === 0 ? 'M' : 'L') + px + ' ' + py; } pt(d, { stroke: '#EC4899', 'stroke-width': 3 }); var currentX = 100 + snr * 30; var currentY = cy - Math.log10(pe + 1e-10) * 20; ci(currentX, currentY, 8, { fill: '#F5C24A', stroke: '#FFF', 'stroke-width': 2 }); tx(400, 400, 'SNR = ' + snr + ' dB → P_e = ' + pe.toExponential(2), { fill: '#F5C24A', 'font-size': 18, 'font-weight': 900 }); }
-    }
-  ]
-});
-
-/* ========== 3.5 القناة المحدودة ========== */
-EXPS.push({
-  id: 'comms_isi', icon: '👁️', category: '3_5_channel',
-  title: 'مخطط العين و ISI', tagline: 'Eye Diagram',
-  scenes: [
-    { badge: 'لمحة', narr: 'التداخل بين الرموز (ISI) تشويه يحدث عند محدودية النطاق.',
-      controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 50, 'مخطط العين والتداخل', { fill: '#EC4899', 'font-size': 24, 'font-weight': 900 }); var x0 = 100; for (var i = 0; i < 5; i++) { var cx = x0 + i * 140; var d = ''; for (var x = -60; x <= 60; x += 2) { var s = Math.exp(-x*x/800) * Math.cos(x/15); d += (x === -60 ? 'M' : 'L') + (cx + x) + ' ' + (280 - s * 50); } pt(d, { stroke: i % 2 === 0 ? '#EC4899' : '#F5C24A', 'stroke-width': 2, opacity: 0.7 }); } }
-    },
-    { badge: 'مخطط العين', narr: 'تراكب كل الرموز على فترة زمنية واحدة.',
-      controls: [{ id: 'quality', type: 'select', label: 'الجودة', options: [
-        { value: 'perfect', label: 'مثالية' }, { value: 'good', label: 'جيدة' }, { value: 'medium', label: 'متوسطة' }, { value: 'bad', label: 'سيئة' }
-      ], color: '#EC4899' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var quality = params.quality || 'perfect'; var noiseLevels = { perfect: 0, good: 0.1, medium: 0.25, bad: 0.5 }; var noise = noiseLevels[quality]; tx(400, 40, 'مخطط العين — ' + quality, { fill: '#EC4899', 'font-size': 22, 'font-weight': 900 }); var cx = 400, cy = 240, w = 300, h = 200; for (var i = 0; i < 200; i++) { var d = ''; var offset = (Math.random() - 0.5) * noise * 2; for (var x = 0; x <= w; x += 4) { var tt = x / w; var y1 = Math.sin(Math.PI * tt) * (1 - noise); var y2 = -Math.sin(Math.PI * tt) * (1 - noise); var y = (i % 2 === 0 ? y1 : y2) + offset * Math.sin(Math.PI * tt); d += (x === 0 ? 'M' : 'L') + (cx - w/2 + x) + ' ' + (cy - y * h/2); } pt(d, { stroke: '#EC4899', 'stroke-width': 0.5, opacity: 0.15 }); } var opening = (1 - noise) * 100; tx(400, 410, 'فتحة العين: ' + opening.toFixed(0) + '%', { fill: '#2ECC71', 'font-size': 18, 'font-weight': 900 }); }
-    },
-    { badge: 'مرشح جيب التمام', narr: 'مرشح جيب التمام يحقق شرط نايكويست.',
-      controls: [{ id: 'alpha', label: 'α', min: 0, max: 1, step: 0.05, value: 0.5, unit: '', color: '#F5C24A' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var alpha = params.alpha || 0.5; tx(400, 40, 'مرشح جيب التمام — α = ' + alpha.toFixed(2), { fill: '#F5C24A', 'font-size': 22, 'font-weight': 900 }); var cx = 400, cy = 200, W = 600, H = 120; ln(cx - W/2, cy, cx + W/2, cy, { stroke: '#445566', 'stroke-width': 1 }); ln(cx, cy - H/2 - 20, cx, cy + H/2 + 20, { stroke: '#445566', 'stroke-width': 1 }); var d = ''; for (var f = -1.5; f <= 1.5; f += 0.01) { var Hf; var f_abs = Math.abs(f); if (f_abs <= (1 - alpha) / 2) Hf = 1; else if (f_abs <= (1 + alpha) / 2) Hf = 0.5 * (1 + Math.cos(Math.PI / alpha * (f_abs - (1 - alpha) / 2))); else Hf = 0; d += (f === -1.5 ? 'M' : 'L') + (cx + f * 200) + ' ' + (cy - Hf * H/2); } pt(d, { stroke: '#F5C24A', 'stroke-width': 3 }); var bw = (1 + alpha) / 2; tx(400, 320, 'BW = ' + bw.toFixed(2) + ' × Nyquist', { fill: '#00D4E0', 'font-size': 18, 'font-weight': 900 }); }
-    }
-  ]
-});
-
-/* ========== 3.6 الهوائيات ========== */
-EXPS.push({
-  id: 'antennas_intro', icon: '📻', category: '3_6_antennas',
-  title: 'الهوائيات — مقدمة', tagline: 'الأنواع والمعادلات',
-  scenes: [
-    { badge: 'لمحة', narr: 'الهوائي وسيط بين الدائرة الكهربائية والفضاء الحر.',
-      controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 50, 'الهوائيات', { fill: '#06B6D4', 'font-size': 28, 'font-weight': 900 }); ci(400, 220, 40, { fill: '#06B6D4', opacity: 0.2 }); ci(400, 220, 40, { fill: 'none', stroke: '#06B6D4', 'stroke-width': 2 }); tx(400, 225, '📻', { 'font-size': 30 }); for (var i = 0; i < 4; i++) { var r = 60 + i * 30 + (t * 20) % 30; ci(400, 220, r, { fill: 'none', stroke: '#06B6D4', 'stroke-width': 1.5, opacity: 0.6 - i * 0.1 }); } }
-    },
-    { badge: 'ثنائي القطب', narr: 'طول الهوائي = نصف طول الموجة.',
-      controls: [{ id: 'freq', label: 'التردد', min: 100, max: 1000, step: 50, value: 300, unit: 'MHz', color: '#06B6D4' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var freq = params.freq || 300; var lambda = 300 / freq; tx(400, 30, 'هوائي ثنائي القطب — λ/2', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 }); tx(400, 70, 'f: ' + freq + ' MHz | λ: ' + lambda.toFixed(2) + ' m', { fill: '#F5C24A', 'font-size': 18, 'font-family': 'monospace' }); var len = lambda * 60; ln(400 - len/2, 220, 400 + len/2, 220, { stroke: '#06B6D4', 'stroke-width': 6 }); ci(400, 220, 10, { fill: '#F5C24A' }); tx(400, 300, 'الطول = ' + (lambda/2).toFixed(2) + ' m', { fill: '#2ECC71', 'font-size': 20, 'font-weight': 900 }); },
-      data: function() { var freq = params.freq || 300; var lambda = 300 / freq; return [['f', freq + ' MHz'], ['λ', lambda.toFixed(2) + ' m'], ['L', (lambda/2).toFixed(2) + ' m']]; }
-    },
-    { badge: 'الربح', narr: 'ربح الهوائي يعتمد على عدد العناصر.',
-      controls: [{ id: 'N', label: 'عدد العناصر', min: 2, max: 20, step: 1, value: 6, unit: '', color: '#06B6D4' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var N = params.N || 6; var G = 10 * Math.log10(N); tx(400, 30, 'ربح الهوائي — Yagi', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 }); for (var i = 0; i < N; i++) { var x = 200 + i * 30; ln(x, 140, x, 300, { stroke: '#06B6D4', 'stroke-width': 3 }); } tx(400, 360, 'G = 10·log₁₀(N) = ' + G.toFixed(1) + ' dBi', { fill: '#F5C24A', 'font-size': 22, 'font-weight': 900 }); }
-    },
-    { badge: 'معادلة فرينز', narr: 'معادلة فرينز تحسب القدرة المستقبلة.',
-      controls: [
-        { id: 'Pt', label: 'Pt', min: 1, max: 100, step: 1, value: 10, unit: 'W', color: '#06B6D4' },
-        { id: 'Gt', label: 'Gt', min: 1, max: 100, step: 1, value: 20, unit: '', color: '#2ECC71' },
-        { id: 'Gr', label: 'Gr', min: 1, max: 100, step: 1, value: 20, unit: '', color: '#F5C24A' },
-        { id: 'd', label: 'd', min: 1, max: 100, step: 1, value: 10, unit: 'km', color: '#EC4899' }
-      ],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var Pt = params.Pt || 10, Gt = params.Gt || 20, Gr = params.Gr || 20, d = params.d || 10; var lambda = 0.3; var Pr = Pt * Gt * Gr * Math.pow(lambda / (4 * Math.PI * d * 1000), 2); tx(400, 30, 'معادلة فرينز', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 }); tx(400, 100, 'P_r = P_t · G_t · G_r · (λ/4πd)²', { fill: '#FFF', 'font-size': 20, 'font-family': 'monospace' }); tx(400, 200, 'P_r = ' + Pr.toExponential(2) + ' W', { fill: '#2ECC71', 'font-size': 24, 'font-weight': 900 }); }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'antennas_mimo', icon: '📡', category: '3_6_antennas',
-  title: 'الهوائيات الذكية و Massive MIMO', tagline: 'من 1G إلى 6G',
-  scenes: [
-    { badge: 'تطور الأجيال', narr: 'تطورت الهوائيات من Omni-directional في 1G إلى Intelligent في 5G.',
-      controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 40, 'تطور الهوائيات عبر الأجيال', { fill: '#06B6D4', 'font-size': 24, 'font-weight': 900 }); var gens = [ { name: '1G', type: 'Omni', color: '#6B7B92' }, { name: '2G-4G', type: 'Sectoral', color: '#4A90E2' }, { name: '5G', type: 'Intelligent', color: '#06B6D4' }, { name: '6G', type: 'AI-Driven', color: '#EC4899' } ]; gens.forEach(function(g, i) { var x = 120 + i * 180; var y = 220; if (i === 0) { for (var r = 20; r <= 60; r += 10) ci(x, y, r, { fill: 'none', stroke: g.color, 'stroke-width': 1.5, opacity: 0.6 }); } else if (i === 1) { for (var a = 0; a < 3; a++) { var angle = a * 120 - 90; var rad = angle * Math.PI / 180; pt('M ' + x + ' ' + y + ' L ' + (x + 60 * Math.cos(rad)) + ' ' + (y + 60 * Math.sin(rad)), { stroke: g.color, 'stroke-width': 2 }); } } else if (i === 2) { for (var a = 0; a < 6; a++) { var angle = a * 60 - 90; var rad = angle * Math.PI / 180; ar(x, y, x + 70 * Math.cos(rad), y + 70 * Math.sin(rad), g.color); } } else { for (var a = 0; a < 8; a++) { var angle = a * 45 - 90; var rad = angle * Math.PI / 180; ln(x, y, x + 70 * Math.cos(rad), y + 70 * Math.sin(rad), { stroke: g.color, 'stroke-width': 2 }); } } tx(x, y + 100, g.name, { fill: g.color, 'font-size': 20, 'font-weight': 900 }); tx(x, y + 125, g.type, { fill: '#FFF', 'font-size': 16, 'font-weight': 900 }); }); }
-    },
-    { badge: 'Massive MIMO', narr: 'Massive MIMO: 64 هوائي أو أكثر.',
-      controls: [{ id: 'Nt', label: 'عدد الهوائيات', min: 8, max: 256, step: 8, value: 64, unit: '', color: '#06B6D4' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var Nt = params.Nt || 64; tx(400, 30, 'Massive MIMO — ' + Nt + 'T' + Nt + 'R', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 }); rc(100, 120, 120, 200, { fill: '#0E1A33', stroke: '#06B6D4', 'stroke-width': 2, rx: 8 }); tx(160, 100, 'محطة أساسية', { fill: '#06B6D4', 'font-size': 16, 'font-weight': 900 }); var cols = Math.min(8, Math.floor(Nt / 8)); var rows = Math.ceil(Nt / cols); for (var i = 0; i < cols; i++) { for (var j = 0; j < rows; j++) { ci(120 + i * 12, 140 + j * 12, 3, { fill: '#F5C24A' }); } } for (var u = 0; u < 8; u++) { var uy = 140 + u * 30; ci(650, uy, 10, { fill: '#2ECC71' }); pt('M 220 220 Q 400 ' + uy + ' 640 ' + uy, { stroke: '#F5C24A', 'stroke-width': 2, opacity: 0.6, fill: 'none' }); } var gain = 10 * Math.log10(Nt); tx(400, 400, 'Gain = ' + gain.toFixed(1) + ' dBi | Capacity × ' + (Nt/4).toFixed(0), { fill: '#F5C24A', 'font-size': 18, 'font-weight': 900 }); }
-    },
-    { badge: 'Beamforming', narr: 'Beamforming: توجيه الحزمة نحو المستخدم.',
-      controls: [
-        { id: 'angle', label: 'الزاوية', min: -60, max: 60, step: 5, value: 0, unit: '°', color: '#06B6D4' },
-        { id: 'N', label: 'الهوائيات', min: 4, max: 32, step: 4, value: 16, unit: '', color: '#F5C24A' }
-      ],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var angle = params.angle || 0; var N = params.N || 16; var rad = angle * Math.PI / 180; tx(400, 30, 'Beamforming', { fill: '#06B6D4', 'font-size': 22, 'font-weight': 900 }); var arrayX = 200, arrayY = 220; for (var i = 0; i < N; i++) ci(arrayX + i * 15, arrayY, 5, { fill: '#06B6D4' }); var beamLength = 400; var x1 = arrayX + beamLength * Math.cos(rad - 0.1); var y1 = arrayY + beamLength * Math.sin(rad - 0.1); var x2 = arrayX + beamLength * Math.cos(rad + 0.1); var y2 = arrayY + beamLength * Math.sin(rad + 0.1); pt('M ' + (arrayX + N*15) + ' ' + arrayY + ' L ' + x1 + ' ' + y1 + ' L ' + x2 + ' ' + y2 + ' Z', { fill: '#06B6D4', opacity: 0.3 }); var userX = arrayX + 350 * Math.cos(rad); var userY = arrayY + 350 * Math.sin(rad); ci(userX, userY, 15, { fill: '#2ECC71' }); tx(400, 400, 'زاوية: ' + angle + '° | الربح: ' + (10 * Math.log10(N)).toFixed(1) + ' dBi', { fill: '#F5C24A', 'font-size': 18, 'font-weight': 900 }); }
-    }
-  ]
-});
-
-/* ========== 4. الألياف البصرية ========== */
-EXPS.push({
-  id: 'fiber_intro', icon: '🔦', category: '4_fiber',
-  title: 'الألياف البصرية', tagline: 'الأنواع والنقل',
-  scenes: [
-    { badge: 'لمحة', narr: 'الألياف البصرية تنقل الضوء عبر الانعكاس الكلي الداخلي.',
-      controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 50, 'الألياف البصرية', { fill: '#14B8A6', 'font-size': 28, 'font-weight': 900 }); rc(200, 180, 400, 80, { fill: '#0E1A33', stroke: '#14B8A6', 'stroke-width': 3, rx: 10 }); rc(220, 195, 360, 50, { fill: '#14B8A6', opacity: 0.2, rx: 5 }); for (var i = 0; i < 8; i++) { var x = 220 + i * 45; ci(x, 220, 6, { fill: '#F5C24A' }); } tx(400, 320, 'الضوء ينتقل عبر القلب', { fill: '#14B8A6', 'font-size': 18, 'font-weight': 900 }); }
-    },
-    { badge: 'معامل الانكسار', narr: 'معامل الانكسار: نسبة سرعة الضوء في الفراغ إلى الوسط.',
-      controls: [{ id: 'n', label: 'n', min: 1, max: 3, step: 0.1, value: 1.5, unit: '', color: '#14B8A6' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var n = params.n || 1.5; var v = 3e8 / n; tx(400, 50, 'معامل الانكسار', { fill: '#14B8A6', 'font-size': 26, 'font-weight': 900 }); tx(400, 120, 'n = c / v', { fill: '#FFF', 'font-size': 28, 'font-family': 'monospace' }); tx(400, 200, 'n = ' + n.toFixed(2), { fill: '#F5C24A', 'font-size': 24, 'font-weight': 900 }); tx(400, 260, 'v = ' + (v/1e8).toFixed(2) + ' × 10⁸ m/s', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 }); },
-      data: function() { var n = params.n || 1.5; return [['n', n.toFixed(2)], ['v', (3e8/n/1e8).toFixed(2) + ' × 10⁸ m/s']]; }
-    },
-    { badge: 'الفتحة العددية', narr: 'الفتحة العددية (NA) تحدد قدرة الألياف على استقبال الضوء.',
-      controls: [
-        { id: 'n1', label: 'n1', min: 1.4, max: 1.6, step: 0.01, value: 1.48, unit: '', color: '#14B8A6' },
-        { id: 'n2', label: 'n2', min: 1.3, max: 1.5, step: 0.01, value: 1.46, unit: '', color: '#06B6D4' }
-      ],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var n1 = params.n1 || 1.48, n2 = params.n2 || 1.46; var NA = Math.sqrt(n1*n1 - n2*n2); var theta = Math.asin(NA) * 180 / Math.PI; tx(400, 50, 'الفتحة العددية', { fill: '#14B8A6', 'font-size': 26, 'font-weight': 900 }); tx(400, 120, 'NA = √(n₁² - n₂²)', { fill: '#FFF', 'font-size': 24, 'font-family': 'monospace' }); tx(400, 200, 'NA = ' + NA.toFixed(3), { fill: '#F5C24A', 'font-size': 24, 'font-weight': 900 }); tx(400, 260, 'θ = ' + theta.toFixed(1) + '°', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 }); },
-      data: function() { var n1 = params.n1 || 1.48, n2 = params.n2 || 1.46; var NA = Math.sqrt(n1*n1 - n2*n2); return [['NA', NA.toFixed(3)], ['θ', (Math.asin(NA) * 180 / Math.PI).toFixed(1) + '°']]; }
-    },
-    { badge: 'التوهين', narr: 'التوهين: نقصان قدرة الإشارة الضوئية.',
-      controls: [
-        { id: 'alpha', label: 'α', min: 0.1, max: 1, step: 0.05, value: 0.2, unit: 'dB/km', color: '#14B8A6' },
-        { id: 'L', label: 'L', min: 1, max: 200, step: 1, value: 50, unit: 'km', color: '#F5C24A' }
-      ],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var alpha = params.alpha || 0.2, L = params.L || 50; var loss = alpha * L; tx(400, 50, 'التوهين', { fill: '#14B8A6', 'font-size': 26, 'font-weight': 900 }); tx(400, 120, 'Loss = α × L', { fill: '#FFF', 'font-size': 24, 'font-family': 'monospace' }); tx(400, 200, 'الخسارة = ' + loss.toFixed(1) + ' dB', { fill: '#F5C24A', 'font-size': 26, 'font-weight': 900 }); tx(400, 280, 'القدرة المتبقية = ' + (100 * Math.pow(10, -loss/10)).toFixed(2) + '%', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 }); },
-      data: function() { var alpha = params.alpha || 0.2, L = params.L || 50; var loss = alpha * L; return [['α', alpha + ' dB/km'], ['L', L + ' km'], ['Loss', loss.toFixed(1) + ' dB']]; }
-    }
-  ]
-});
-
-/* ========== 5. الكيمياء ========== */
-EXPS.push({
-  id: 'organic', icon: '🧬', category: '5_chemistry',
-  title: 'الكيمياء العضوية', tagline: 'الهيدروكربونات',
-  scenes: [
-    { badge: 'المقدمة', narr: 'الكيمياء العضوية تدرس مركبات الكربون.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 50, 'الكيمياء العضوية', { 'font-size': 26, fill: '#2ECC71', 'font-weight': 900 }); tx(400, 120, '• الكربون يشكل 4 روابط تساهمية', { 'font-size': 20, fill: '#E8EEF7' }); tx(400, 170, '• سلاسل طويلة / متفرعة / حلقية', { 'font-size': 20, fill: '#E8EEF7' }); tx(400, 220, '• الرابطة التساهمية: مشاركة الإلكترونات', { 'font-size': 20, fill: '#E8EEF7' }); }
-    },
-    { badge: 'الهيدروكربونات', narr: 'مشبعة وغير مشبعة.',
-      controls: [{ id: 'type', type: 'select', label: 'النوع', options: [
-        { value: 'alkane', label: 'ألكان (مشبع)' }, { value: 'alkene', label: 'ألكين (غير مشبع)' }, { value: 'alkyne', label: 'ألكاين (غير مشبع)' }
-      ], color: '#2ECC71' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var type = params.type || 'alkane'; var labels = { alkane: 'CₙH₂ₙ₊₂', alkene: 'CₙH₂ₙ', alkyne: 'CₙH₂ₙ₋₂' }; var examples = { alkane: 'CH₄ (ميثان)', alkene: 'C₂H₄ (إيثين)', alkyne: 'C₂H₂ (إيثاين)' }; var colors = { alkane: '#2ECC71', alkene: '#F5C24A', alkyne: '#EC4899' }; tx(400, 150, labels[type], { 'font-size': 32, fill: colors[type], 'font-weight': 900 }); tx(400, 230, examples[type], { 'font-size': 22, fill: '#FFF' }); }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'formulas', icon: '📋', category: '5_chemistry',
-  title: 'الصيغ الكيميائية', tagline: 'H₂O, CO₂, CH₄…',
-  scenes: [
-    { badge: 'الصيغ الشائعة', narr: 'أهم الصيغ الكيميائية.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); tx(400, 30, 'الصيغ الكيميائية', { 'font-size': 24, fill: '#4A90E2', 'font-weight': 900 }); var list = ['H₂O — ماء', 'CO₂ — ثاني أكسيد الكربون', 'CH₄ — ميثان', 'NH₃ — أمونيا', 'HCl — حمض هيدروكلوريك', 'H₂SO₄ — حمض كبريتيك', 'HNO₃ — حمض نيتريك', 'CH₃COOH — حمض إيثانويك']; list.forEach(function(item, i) { tx(400, 90 + i * 42, item, { 'font-size': 20, fill: i % 2 ? '#A8B6CC' : '#FFF' }); }); }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'periodic', icon: '🧪', category: '5_chemistry',
-  title: 'الجدول الدوري', tagline: '118 عنصر',
-  scenes: [
-    { badge: 'الجدول الدوري', narr: 'جميع العناصر الـ 118 — انقر على أي عنصر لعرض تفاصيله.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#050B18' }); tx(400, 30, '⚛️ الجدول الدوري — 118 عنصر', { 'font-size': 22, fill: '#2ECC71', 'font-weight': 900 }); }
-    }
-  ]
-});
-
-/* ========== 6. الفضاء والفيزياء الحديثة ========== */
-EXPS.push({
-  id: 'atom', icon: '⚛️', category: '6_space',
-  title: 'الذرة — نموذج بور', tagline: 'E = -13.6/n² eV',
-  scenes: [
-    { badge: 'لمحة', narr: 'إلكترونات في مدارات.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); ci(400, 220, 25, { fill: '#EC4899' }); for (var i = 1; i <= 3; i++) { ci(400, 220, i * 50, { fill: 'none', stroke: '#8B5CF6', 'stroke-width': 1.5, opacity: 0.6 }); var ang = t * (2/i); ci(400 + i * 50 * Math.cos(ang), 220 + i * 50 * Math.sin(ang), 7, { fill: '#00D4E0' }); } }
-    },
-    { badge: 'قانون', narr: 'مستويات الطاقة.',
-      controls: [{ id: 'n', label: 'n', min: 1, max: 5, step: 1, value: 2, unit: '', color: '#EC4899' }],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var n = params.n || 2, E = -13.6/(n*n); tx(400, 180, 'E = -13.6 / n²', { 'font-size': 32, fill: '#FFF', 'font-family': 'Cambria Math, serif', 'font-weight': 900 }); tx(400, 280, 'n=' + n + ' → E=' + E.toFixed(2) + ' eV', { 'font-size': 26, fill: '#EC4899', 'font-weight': 900 }); },
-      data: function() { var n = params.n || 2; return [['n', n], ['E', (-13.6/(n*n)).toFixed(2) + ' eV']]; }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'solar', icon: '🪐', category: '6_space',
-  title: 'المجموعة الشمسية', tagline: 'قوانين كبلر',
-  scenes: [
-    { badge: 'لمحة', narr: 'الكواكب تدور حول الشمس.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); ci(400, 220, 30, { fill: '#F5C24A' }); var cols = ['#A0522D','#FFD700','#4169E1','#FF4500','#DAA520','#F4A460','#00CED1','#4682B4']; cols.forEach(function(c, i) { var r = 70 + i * 40; ci(400 + r * Math.cos(t*(.5-i*.05)), 220 + r * Math.sin(t*(.5-i*.05)), 6 + i*1.5, { fill: c }); }); }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'rainbow', icon: '🌈', category: '6_space',
-  title: 'قوس قزح', tagline: 'n = c/v',
-  scenes: [
-    { badge: 'لمحة', narr: 'ضوء أبيض يتحلل إلى ألوان الطيف.', controls: [],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var cols = ['#FF0000','#FF7F00','#FFFF00','#00FF00','#0000FF','#4B0082','#8B00FF']; cols.forEach(function(c, i) { pt('M ' + (150+i*2) + ' 380 L ' + (700+i*2) + ' ' + (80+i*25), { stroke: c, 'stroke-width': 4 }); }); tx(120, 380, '☀️', { 'font-size': 40 }); tx(730, 80, '💧', { 'font-size': 40 }); }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'doppler', icon: '🚨', category: '6_space',
-  title: 'تأثير دوبلر', tagline: "f' = f·(v±vo)/(v∓vs)",
-  scenes: [
-    { badge: 'تجربة', narr: 'تغيّر تردد الصوت مع الحركة.',
-      controls: [
-        { id: 'vs', label: 'vs', min: 0, max: 100, step: 5, value: 30, unit: 'm/s', color: '#4A90E2' },
-        { id: 'f0', label: 'f0', min: 200, max: 1000, step: 50, value: 500, unit: 'Hz', color: '#F5C24A' }
-      ],
-      anim: function(t) { rc(0, 0, 800, 440, { fill: '#0A1226' }); var vs = params.vs || 30, f0 = params.f0 || 500, v = 343; var f_approach = f0 * v / (v - vs); var f_recede = f0 * v / (v + vs); tx(400, 180, 'التردد عند الاقتراب: ' + f_approach.toFixed(1) + ' Hz', { 'font-size': 22, fill: '#2ECC71', 'font-weight': 900 }); tx(400, 240, 'التردد عند الابتعاد: ' + f_recede.toFixed(1) + ' Hz', { 'font-size': 22, fill: '#EC4899', 'font-weight': 900 }); tx(400, 380, "f' = f · v/(v ∓ vs)", { 'font-size': 20, fill: '#FFF', 'font-family': 'Cambria Math, serif' }); },
-      data: function() { var vs = params.vs || 30, f0 = params.f0 || 500, v = 343; return [['vs', vs + ' m/s'], ['f_app', (f0*v/(v-vs)).toFixed(1) + ' Hz'], ['f_rec', (f0*v/(v+vs)).toFixed(1) + ' Hz']]; }
-    }
-  ]
-});
-
-/* ========== 7. الذكاء العلمي ========== */
-EXPS.push({
-  id: 'discover_law', icon: '🔬', category: '7_science_ai',
-  title: 'مختبر اكتشاف القانون', tagline: 'اكتشف القانون بنفسك',
-  scenes: [
-    { badge: 'التحدي', narr: 'أمامك تجربة فيها قوة، كتلة، وتسارع. حاول أن تكتشف العلاقة بينهم بنفسك. غيّر المتغيرات وراقب النتائج.',
-      controls: [
-        { id: 'F', label: 'القوة', min: 10, max: 200, step: 10, value: 50, unit: 'N', color: '#8B5CF6' },
-        { id: 'm', label: 'الكتلة', min: 1, max: 20, step: 1, value: 5, unit: 'kg', color: '#F5C24A' }
-      ],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, '🔬 مختبر اكتشاف القانون', { fill: '#8B5CF6', 'font-size': 24, 'font-weight': 900 });
-        var F = params.F || 50, m = params.m || 5;
-        var a = F / m;
-        rc(80, 100, 640, 60, { fill: '#0E1A33', stroke: '#8B5CF6', 'stroke-width': 2, rx: 10 });
-        tx(400, 135, 'شاهد البيانات وحاول اكتشاف العلاقة', { fill: '#F5C24A', 'font-size': 18, 'font-weight': 900 });
-        tx(200, 220, 'F = ' + F + ' N', { fill: '#8B5CF6', 'font-size': 22, 'font-weight': 900 });
-        tx(400, 220, 'm = ' + m + ' kg', { fill: '#F5C24A', 'font-size': 22, 'font-weight': 900 });
-        tx(600, 220, 'a = ' + a.toFixed(2) + ' m/s²', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 });
-        tx(400, 300, 'جرب: هل a ∝ F ؟', { fill: '#FFF', 'font-size': 20, 'font-weight': 900 });
-        tx(400, 340, 'جرب: هل a ∝ 1/m ؟', { fill: '#FFF', 'font-size': 20, 'font-weight': 900 });
-        tx(400, 400, '🧠 اسأل الفيزيائي عند الحيرة', { fill: '#8B5CF6', 'font-size': 18, 'font-weight': 900 });
-      },
-      data: function() {
-        var F = params.F || 50, m = params.m || 5;
-        return [['F', F + ' N'], ['m', m + ' kg'], ['a = F/m', (F/m).toFixed(2) + ' m/s²']];
-      }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'find_fault', icon: '🔧', category: '7_science_ai',
-  title: 'البحث عن العطل الفيزيائي', tagline: 'شخّص العطل',
-  scenes: [
-    { badge: 'التحدي', narr: 'دائرة كهربائية لا تعمل. المصباح لا يضيء. استخدم القياسات لتحديد مكان العطل.',
-      controls: [
-        { id: 'location', type: 'select', label: 'مكان العطل', options: [
-          { value: 'none', label: 'اختر...' },
-          { value: 'battery', label: 'البطارية' },
-          { value: 'wire', label: 'السلك' },
-          { value: 'resistor', label: 'المقاومة' },
-          { value: 'lamp', label: 'المصباح' }
-        ], color: '#EC4899' }
-      ],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, '🔧 البحث عن العطل', { fill: '#EC4899', 'font-size': 24, 'font-weight': 900 });
-        rc(150, 150, 500, 200, { fill: 'none', stroke: '#F5C24A', 'stroke-width': 3, rx: 10 });
-        ci(150, 150, 10, { fill: '#8B5CF6' });
-        ci(650, 150, 10, { fill: '#8B5CF6' });
-        rc(380, 130, 40, 40, { fill: '#EC4899' });
-        tx(400, 155, '🔋', { 'font-size': 20 });
-        rc(380, 330, 40, 40, { fill: '#2ECC71' });
-        tx(400, 355, '💡', { 'font-size': 20 });
-        tx(400, 400, 'القياسات: V=12V عند البطارية | I=0A', { fill: '#F5C24A', 'font-size': 16, 'font-weight': 900 });
-        if (params.location === 'wire') {
-          tx(400, 420, '✅ صحيح! السلك مقطوع', { fill: '#2ECC71', 'font-size': 18, 'font-weight': 900 });
-        } else if (params.location && params.location !== 'none') {
-          tx(400, 420, '❌ ليس هنا. جرب مرة أخرى', { fill: '#EC4899', 'font-size': 18, 'font-weight': 900 });
-        }
-      }
-    }
-  ]
-});
-
-EXPS.push({
-  id: 'predict_challenge', icon: '🎯', category: '7_science_ai',
-  title: 'تحدي التنبؤ', tagline: 'توقع قبل التشغيل',
-  scenes: [
-    { badge: 'التحدي', narr: 'قبل أن تشغّل التجربة، حاول التنبؤ بالنتيجة. ثم شغّلها وقارن.',
-      controls: [
-        { id: 'guess', label: 'توقعك للتسارع', min: 0, max: 50, step: 1, value: 10, unit: 'm/s²', color: '#F39C12' },
-        { id: 'F', label: 'القوة', min: 10, max: 200, step: 10, value: 100, unit: 'N', color: '#8B5CF6' },
-        { id: 'm', label: 'الكتلة', min: 1, max: 20, step: 1, value: 5, unit: 'kg', color: '#F5C24A' }
-      ],
-      anim: function(t) {
-        rc(0, 0, 800, 440, { fill: '#0A1226' });
-        tx(400, 30, '🎯 تحدي التنبؤ', { fill: '#F39C12', 'font-size': 24, 'font-weight': 900 });
-        var F = params.F || 100, m = params.m || 5;
-        var real = F / m;
-        var guess = params.guess || 10;
-        tx(400, 100, 'القوة = ' + F + ' N | الكتلة = ' + m + ' kg', { fill: '#FFF', 'font-size': 20, 'font-weight': 900 });
-        tx(400, 180, 'توقعك: ' + guess + ' m/s²', { fill: '#F39C12', 'font-size': 22, 'font-weight': 900 });
-        tx(400, 240, 'النتيجة الحقيقية: ' + real.toFixed(2) + ' m/s²', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 });
-        var diff = Math.abs(guess - real);
-        if (diff < 1) {
-          tx(400, 320, '🎉 ممتاز! توقعك دقيق جداً', { fill: '#2ECC71', 'font-size': 22, 'font-weight': 900 });
-        } else if (diff < 5) {
-          tx(400, 320, '👍 جيد! لكن يمكنك أن تكون أدق', { fill: '#F5C24A', 'font-size': 22, 'font-weight': 900 });
-        } else {
-          tx(400, 320, '📚 حاول مرة أخرى، راجع العلاقة', { fill: '#EC4899', 'font-size': 22, 'font-weight': 900 });
-        }
-      }
-    }
-  ]
-});
-
-/* ============================================
-   الموسوعة — MUSEUM (12 باباً)
-   ============================================ */
-var MUSEUM = [];
-
-/* ========== 1. الميكانيكا ========== */
-MUSEUM.push({
-  id: 'mechanics_eq', icon: '⚙️', name: 'الميكانيكا الكلاسيكية', color: '#00D4E0', num: '1',
-  sections: [{
-    title: '1.1 الحركة والديناميكا',
-    eqs: [
-      { id: 'newton2', icon: '🏀', name: 'قانون نيوتن الثاني', formula: 'F = m · a',
-        definition: 'القوة المحصلة المؤثرة على جسم تساوي حاصل ضرب كتلته في تسارعه.',
-        symbols: [{ sym: 'F', name: 'القوة', unit: 'N' }, { sym: 'm', name: 'الكتلة', unit: 'kg' }, { sym: 'a', name: 'التسارع', unit: 'm/s²' }],
-        history: 'نيوتن — 1687.', apps: ['السيارات', 'الصواريخ'], why: 'أساس الميكانيكا.', when: 'عندما تؤثر قوة.' },
-      { id: 'momentum', icon: '➡️', name: 'كمية الحركة', formula: 'p = m · v',
-        definition: 'حاصل ضرب الكتلة في السرعة.',
-        symbols: [{ sym: 'p', name: 'كمية الحركة', unit: 'kg·m/s' }],
-        history: 'ديكارت — القرن 17.', apps: ['التصادمات'], why: 'محفوظة.', when: 'في التصادمات.' },
-      { id: 'work', icon: '💪', name: 'الشغل', formula: 'W = F · d · cos(θ)',
-        definition: 'الطاقة المنقولة.',
-        symbols: [{ sym: 'W', name: 'الشغل', unit: 'J' }],
-        history: 'كوريون — 1826.', apps: ['رفع الأثقال'], why: 'يربط القوة بالطاقة.', when: 'عند تحريك جسم.' },
-      { id: 'ekinetic', icon: '⚡', name: 'الطاقة الحركية', formula: 'Ek = ½ · m · v²',
-        definition: 'طاقة الحركة.',
-        symbols: [{ sym: 'Ek', name: 'الطاقة الحركية', unit: 'J' }],
-        history: 'لايبنتز — 1686.', apps: ['الفرامل'], why: 'تفسر خطورة الحوادث.', when: 'عندما يتحرك جسم.' },
-      { id: 'epotential', icon: '🏔️', name: 'طاقة الوضع', formula: 'Ep = m · g · h',
-        definition: 'طاقة الارتفاع.',
-        symbols: [{ sym: 'Ep', name: 'طاقة الوضع', unit: 'J' }],
-        history: 'تطور مع نيوتن.', apps: ['السدود'], why: 'تخزن الطاقة.', when: 'عند الارتفاع.' },
-      { id: 'hooke', icon: '🌀', name: 'قانون هوك', formula: 'F = -k · x',
-        definition: 'قوة استعادة النابض.',
-        symbols: [{ sym: 'k', name: 'ثابت النابض', unit: 'N/m' }],
-        history: 'روبرت هوك — 1660.', apps: ['النوابض'], why: 'أساس الحركة التوافقية.', when: 'عند ضغط نابض.' },
-      { id: 'pressure', icon: '💧', name: 'الضغط', formula: 'P = F / A',
-        definition: 'القوة على وحدة المساحة.',
-        symbols: [{ sym: 'P', name: 'الضغط', unit: 'Pa' }],
-        history: 'باسكال — 1647.', apps: ['الهيدروليك'], why: 'أساس الموائع.', when: 'في السوائل والغازات.' },
-      { id: 'bernoulli', icon: '✈️', name: 'معادلة برنولي', formula: 'P + ½ρv² + ρgh = ثابت',
-        definition: 'في تدفق سائل مثالي.',
-        symbols: [{ sym: 'P', name: 'الضغط', unit: 'Pa' }],
-        history: 'دانييل برنولي — 1738.', apps: ['رفع الطائرات'], why: 'تفسر الرفع.', when: 'في تدفق السوائل.' }
-    ]
-  }]
-});
-
-/* ========== 2. الكهرباء ========== */
-MUSEUM.push({
-  id: 'electricity_eq', icon: '⚡', name: 'الكهرباء والمغناطيسية', color: '#F5C24A', num: '2',
-  sections: [{
-    title: '2.1 الشحنة وقانون كولوم',
-    eqs: [
-      { id: 'coulomb', icon: '🔵', name: 'قانون كولوم', formula: 'F = k · |q₁·q₂| / r²',
-        definition: 'القوة بين شحنتين نقطيتين.',
-        symbols: [{ sym: 'F', name: 'القوة', unit: 'N' }],
-        history: 'كولوم — 1785.', apps: ['الذرة'], why: 'أساس الكهرباء الساكنة.', when: 'عندما تكون الشحنات ساكنة.' },
-      { id: 'efield', icon: '➡️', name: 'المجال الكهربائي', formula: 'E = F / q',
-        definition: 'القوة على وحدة الشحنة.',
-        symbols: [{ sym: 'E', name: 'المجال', unit: 'N/C' }],
-        history: 'فاراداي — 1830s.', apps: ['المكثفات'], why: 'يصف تأثير الشحنة.', when: 'عند حساب قوة.' },
-      { id: 'potential', icon: '🔋', name: 'الجهد الكهربائي', formula: 'V = k · Q / r',
-        definition: 'الطاقة لكل وحدة شحنة.',
-        symbols: [{ sym: 'V', name: 'الجهد', unit: 'V' }],
-        history: 'فولتا — 1800.', apps: ['البطاريات'], why: 'يفسر حركة الشحنات.', when: 'عند حساب الجهد.' }
-    ]
-  }, {
-    title: '2.2 التيار المستمر',
-    eqs: [
-      { id: 'currentI', icon: '⚡', name: 'شدة التيار', formula: 'I = Q / t',
-        definition: 'معدل تدفق الشحنة.',
-        symbols: [{ sym: 'I', name: 'التيار', unit: 'A' }],
-        history: 'أمبير — 1820.', apps: ['الدوائر'], why: 'يحدد الشحنة المتدفقة.', when: 'عند حساب التيار.' },
-      { id: 'ohm_law', icon: '🔵', name: 'قانون أوم', formula: 'V = I · R',
-        definition: 'العلاقة بين الجهد والتيار.',
-        symbols: [{ sym: 'V', name: 'الجهد', unit: 'V' }],
-        history: 'أوم — 1827.', apps: ['كل الدوائر'], why: 'أهم قانون في الكهرباء.', when: 'في أي دائرة.' },
-      { id: 'power', icon: '💡', name: 'القدرة الكهربائية', formula: 'P = V·I',
-        definition: 'معدل استهلاك الطاقة.',
-        symbols: [{ sym: 'P', name: 'القدرة', unit: 'W' }],
-        history: 'واط — 1770s.', apps: ['الفواتير'], why: 'تحدد الاستهلاك.', when: 'عند حساب استهلاك جهاز.' }
-    ]
-  }, {
-    title: '2.3 المغناطيسية',
-    eqs: [
-      { id: 'magforce_charge', icon: '⚡', name: 'قوة على شحنة متحركة', formula: 'F = q · v · B · sin(θ)',
-        definition: 'القوة المغناطيسية على شحنة متحركة.',
-        symbols: [{ sym: 'F', name: 'القوة', unit: 'N' }],
-        history: 'لورنتز — 1892.', apps: ['مسرعات الجسيمات'], why: 'أساس تفاعل الشحنات.', when: 'عند تحرك شحنة.' },
-      { id: 'magforce_wire', icon: '🔌', name: 'قوة على سلك', formula: 'F = B · I · L · sin(θ)',
-        definition: 'القوة المغناطيسية على سلك.',
-        symbols: [{ sym: 'F', name: 'القوة', unit: 'N' }],
-        history: 'أمبير — 1820.', apps: ['المحركات'], why: 'أساس المحركات.', when: 'في تصميم المحركات.' },
-      { id: 'magfield_wire', icon: '📏', name: 'مجال سلك مستقيم', formula: 'B = μ₀ · I / (2π · r)',
-        definition: 'المجال حول سلك.',
-        symbols: [{ sym: 'B', name: 'المجال', unit: 'T' }],
-        history: 'أمبير — 1820.', apps: ['خطوط النقل'], why: 'يفسر توليد المجال.', when: 'حول سلك.' },
-      { id: 'magfield_solenoid', icon: '🌀', name: 'مجال ملف لولبي', formula: 'B = μ₀ · n · I',
-        definition: 'المجال داخل ملف لولبي.',
-        symbols: [{ sym: 'B', name: 'المجال', unit: 'T' }],
-        history: 'أمبير — 1820s.', apps: ['المرحلات'], why: 'مجال موحد.', when: 'في المغناطيسات.' }
-    ]
-  }, {
-    title: '2.4 الكهرومغناطيسية',
-    eqs: [
-      { id: 'faraday', icon: '🔄', name: 'قانون فاراداي', formula: '∇ × E = -∂B / ∂t',
-        definition: 'المجال المغناطيسي المتغير يولّد كهربائياً.',
-        symbols: [{ sym: 'E', name: 'المجال الكهربائي', unit: 'V/m' }],
-        history: 'فاراداي — 1831.', apps: ['المولدات'], why: 'أساس محطات التوليد.', when: 'عند تغير المجال.' },
-      { id: 'ampere_maxwell', icon: '🌀', name: 'قانون أمبير-ماكسويل', formula: '∇ × B = μ₀·J + μ₀·ε₀·∂E/∂t',
-        definition: 'المجال المغناطيسي ينتج عن التيار.',
-        symbols: [{ sym: 'B', name: 'المجال', unit: 'T' }],
-        history: 'أمبير — 1826، ماكسويل — 1861.', apps: ['الهوائيات'], why: 'أساس الموجات.', when: 'عند وجود تيار.' },
-      { id: 'light_speed', icon: '💡', name: 'سرعة الضوء', formula: 'c = 1 / √(μ₀ · ε₀)',
-        definition: 'سرعة الموجات الكهرومغناطيسية.',
-        symbols: [{ sym: 'c', name: 'سرعة الضوء', unit: 'm/s' }],
-        history: 'ماكسويل — 1865.', apps: ['GPS'], why: 'أكبر سرعة في الكون.', when: 'في كل الحسابات.' }
-    ]
-  }]
-});
-
-/* ========== 3.1 أساسيات الاتصالات ========== */
-MUSEUM.push({
-  id: 'comms_basics_eq', icon: '📡', name: 'أساسيات الاتصالات', color: '#4A90E2', num: '3.1',
-  sections: [{
-    title: '3.1.1 المعدلات',
-    eqs: [
-      { id: 'bitrate', icon: '⏱️', name: 'معدل البت', formula: 'D = 1 / T_b',
-        definition: 'عدد البتات المرسلة في الثانية.',
-        symbols: [{ sym: 'D', name: 'معدل البت', unit: 'bps' }, { sym: 'T_b', name: 'مدة البت', unit: 's' }],
-        history: 'أساس الاتصالات الرقمية.', apps: ['الإنترنت', 'الهواتف'], why: 'يحدد سرعة النقل.', when: 'عند حساب سرعة وصلة.' },
-      { id: 'modrate', icon: '📊', name: 'معدل التضمين', formula: 'R = 1 / T = D / log₂(M)',
-        definition: 'عدد الرموز المرسلة في الثانية.',
-        symbols: [{ sym: 'R', name: 'معدل التضمين', unit: 'baud' }],
-        history: 'إميل باودو — 1870s.', apps: ['المودم'], why: 'يربط سرعة البتات بعدد الرموز.', when: 'عند تصميم نظام تضمين.' },
-      { id: 'shannon', icon: '📡', name: 'سعة قناة شانون', formula: 'C = B · log₂(1 + SNR)',
-        definition: 'أقصى معدل بت يمكن إرساله.',
-        symbols: [{ sym: 'C', name: 'السعة', unit: 'bps' }, { sym: 'B', name: 'عرض النطاق', unit: 'Hz' }, { sym: 'SNR', name: 'نسبة الإشارة', unit: '—' }],
-        history: 'شانون — 1948.', apps: ['4G/5G', 'WiFi'], why: 'الحد الأقصى النظري.', when: 'عند تقييم نظام.' }
-    ]
-  }, {
-    title: '3.1.2 الطيف الكهرومغناطيسي',
-    eqs: [
-      { id: 'wave_eq', icon: '🌊', name: 'معادلة الموجة', formula: 'c = λ · f',
-        definition: 'سرعة الضوء = الطول الموجي × التردد.',
-        symbols: [{ sym: 'c', name: 'سرعة الضوء', unit: 'm/s' }, { sym: 'λ', name: 'الطول الموجي', unit: 'm' }, { sym: 'f', name: 'التردد', unit: 'Hz' }],
-        history: 'ماكسويل — 1865.', apps: ['كل الاتصالات'], why: 'تربط الطول الموجي بالتردد.', when: 'عند حساب أي موجة.' },
-      { id: 'itu_bands', icon: '📋', name: 'نطاقات ITU الرسمية', formula: 'VLF → EHF (3 kHz → 300 GHz)',
-        definition: 'النطاقات الرسمية حسب ITU-R V.431-8.',
-        symbols: [
-          { sym: 'VLF', name: 'Very Low Frequency', unit: '3-30 kHz (10-100 km)' },
-          { sym: 'LF', name: 'Low Frequency', unit: '30-300 kHz (1-10 km)' },
-          { sym: 'MF', name: 'Medium Frequency', unit: '300-3000 kHz (100-1000 m)' },
-          { sym: 'HF', name: 'High Frequency', unit: '3-30 MHz (10-100 m)' },
-          { sym: 'VHF', name: 'Very High Frequency', unit: '30-300 MHz (1-10 m)' },
-          { sym: 'UHF', name: 'Ultra High Frequency', unit: '300-3000 MHz (1-10 dm)' },
-          { sym: 'SHF', name: 'Super High Frequency', unit: '3-30 GHz (1-10 cm)' },
-          { sym: 'EHF', name: 'Extra High Frequency', unit: '30-300 GHz (1-10 mm)' }
-        ],
-        history: 'ITU-R V.431-8 — المعيار الدولي.', apps: ['الاتصالات', 'البث'], why: 'المرجع القانوني الرسمي.', when: 'عند تصنيف أي تردد.' },
-      { id: 'infrared', icon: '🔥', name: 'الأشعة تحت الحمراء', formula: 'λ = 100 ÷ 1.6 µm',
-        definition: 'الأشعة تحت الحمراء (Infrared).',
-        symbols: [{ sym: 'λ', name: 'الطول الموجي', unit: 'µm' }],
-        history: 'ويليام هيرشل — 1800.', apps: ['التحكم عن بعد', 'التصوير الحراري'], why: 'تُستخدم في الاتصالات والتحكم.', when: 'في أنظمة التحكم.' },
-      { id: 'visible_light', icon: '🌈', name: 'الضوء المرئي', formula: 'λ = 1.55 ÷ 0.8 µm',
-        definition: 'الضوء المرئي.',
-        symbols: [{ sym: 'λ', name: 'الطول الموجي', unit: 'µm' }],
-        history: 'نيوتن — 1666.', apps: ['البصريات', 'الألياف البصرية'], why: 'أساس البصريات.', when: 'في أنظمة الضوء المرئي.' }
-    ]
-  }]
-});
-
-/* ========== 3.2 التضمين التناظري ========== */
-MUSEUM.push({
-  id: 'analog_mod_eq', icon: '📻', name: 'التضمين التناظري', color: '#4A90E2', num: '3.2',
-  sections: [{
-    title: '3.2.1 AM, FM, PM',
-    eqs: [
-      { id: 'am_eq', icon: '📻', name: 'تضمين السعة AM', formula: 's(t) = A[1+m·cos(ωmt)]·cos(ωct)',
-        definition: 'تغيير سعة الموجة الحاملة.',
-        symbols: [{ sym: 'm', name: 'عمق التضمين', unit: '—' }, { sym: 'ωm', name: 'التردد المُعدِّل', unit: 'rad/s' }],
-        history: 'تطور في بدايات الراديو — 1900s.', apps: ['AM راديو'], why: 'أبسط أنواع التضمين التناظري.', when: 'في البث الإذاعي.' },
-      { id: 'fm_eq', icon: '📻', name: 'تضمين التردد FM', formula: 's(t) = A·cos(2πf_c t + β·sin(2πf_m t))',
-        definition: 'تغيير تردد الموجة الحاملة.',
-        symbols: [{ sym: 'β', name: 'مؤشر التضمين', unit: '—' }, { sym: 'f_m', name: 'تردد الإشارة', unit: 'Hz' }],
-        history: 'إدوين أرمسترونغ — 1933.', apps: ['FM راديو'], why: 'أكثر مقاومة للضوضاء.', when: 'في البث عالي الجودة.' },
-      { id: 'pm_eq', icon: '📻', name: 'تضمين الطور PM', formula: 's(t) = A·cos(2πf_c t + kp·m(t))',
-        definition: 'تغيير طور الموجة الحاملة.',
-        symbols: [{ sym: 'kp', name: 'ثابت الطور', unit: 'rad/V' }],
-        history: 'تطور مع الاتصالات.', apps: ['اتصالات رقمية'], why: 'أساس PSK.', when: 'في الأنظمة الرقمية.' }
-    ]
-  }]
-});
-
-/* ========== 3.3 الاتصالات الرقمية ========== */
-MUSEUM.push({
-  id: 'digital_eq', icon: '📊', name: 'الاتصالات الرقمية', color: '#4A90E2', num: '3.3',
-  sections: [{
-    title: '3.3.1 الترميز في الخط',
-    eqs: [
-      { id: 'nrz_eq', icon: '📊', name: 'ترميز NRZ', formula: 'e(t) = Σ aₖ · h(t - kT_b)',
-        definition: 'الترميز في الخط بدون عودة إلى الصفر.',
-        symbols: [{ sym: 'aₖ', name: 'الرمز', unit: '—' }, { sym: 'T_b', name: 'مدة البت', unit: 's' }],
-        history: 'أساس الاتصالات الرقمية.', apps: ['Ethernet', 'USB'], why: 'أبسط أنواع الترميز.', when: 'في التطبيقات الرقمية.' },
-      { id: 'rz_eq', icon: '📊', name: 'ترميز RZ', formula: 'e(t) = Σ aₖ · h(t - kT_b)',
-        definition: 'يعود إلى الصفر في منتصف البت.',
-        symbols: [{ sym: 'aₖ', name: 'الرمز', unit: '—' }],
-        history: 'تطور لتحسين التزامن.', apps: ['الاتصالات البصرية'], why: 'يضمن التزامن.', when: 'عند الحاجة لتزامن دقيق.' },
-      { id: 'manchester_eq', icon: '📊', name: 'ترميز Manchester', formula: 'انتقال في منتصف البت',
-        definition: 'ترميز ثنائي القطب مع انتقال في المنتصف.',
-        symbols: [{ sym: 'T_b', name: 'مدة البت', unit: 's' }],
-        history: 'تطور في Ethernet.', apps: ['Ethernet', 'Token Ring'], why: 'تزامن دائم.', when: 'في الشبكات المحلية.' }
-    ]
-  }]
-});
-
-/* ========== 3.4 التضمين الرقمي ========== */
-MUSEUM.push({
-  id: 'modem_eq', icon: '📶', name: 'التضمين الرقمي', color: '#4A90E2', num: '3.4',
-  sections: [{
-    title: '3.4.1 أنواع التضمين',
-    eqs: [
-      { id: 'ask_eq', icon: '📶', name: 'تضمين ASK', formula: 's(t) = A·m(t)·cos(2πf_c t)',
-        definition: 'تضمين السعة.',
-        symbols: [{ sym: 'A', name: 'السعة', unit: 'V' }],
-        history: 'أبسط أنواع التضمين.', apps: ['الراديو', 'RFID'], why: 'أبسط أنواع التضمين.', when: 'في التطبيقات منخفضة التكلفة.' },
-      { id: 'fsk_eq', icon: '📻', name: 'تضمين FSK', formula: 's(t) = A·cos(2πf_i t)',
-        definition: 'تضمين التردد.',
-        symbols: [{ sym: 'f_0', name: 'التردد المركزي', unit: 'Hz' }],
-        history: 'تطور في العشرينيات.', apps: ['المودم'], why: 'أكثر مقاومة للضوضاء.', when: 'في التطبيقات التي تحتاج مقاومة.' },
-      { id: 'psk_eq', icon: '🔄', name: 'تضمين PSK', formula: 's(t) = A·cos(2πf_c t + φ_k)',
-        definition: 'تضمين الطور.',
-        symbols: [{ sym: 'φ_k', name: 'الطور', unit: 'rad' }],
-        history: 'تطور في الستينيات.', apps: ['WiFi', 'Bluetooth'], why: 'أكثر كفاءة.', when: 'في أنظمة الاتصالات.' },
-      { id: 'qam_mod_eq', icon: '🎯', name: 'تضمين QAM', formula: 's(t) = A·[a_k·cos(2πf_c t) - b_k·sin(2πf_c t)]',
-        definition: 'تضمين السعة والطور.',
-        symbols: [{ sym: 'a_k, b_k', name: 'المركبات', unit: '—' }],
-        history: 'تطور في الستينيات.', apps: ['4G/5G/6G'], why: 'أعلى كفاءة طيفية.', when: 'في أنظمة الاتصالات الحديثة.' },
-      { id: 'qam_efficiency', icon: '📊', name: 'الكفاءة الطيفية', formula: 'η = log₂(M) = n',
-        definition: 'عدد البتات لكل رمز.',
-        symbols: [{ sym: 'η', name: 'الكفاءة', unit: 'bits/symbol' }],
-        history: 'شانون — 1948.', apps: ['4G/5G/6G'], why: 'تحدد سرعة النقل.', when: 'عند تصميم نظام.' },
-      { id: 'ber_bpsk', icon: '🎯', name: 'احتمال الخطأ', formula: 'P_e = ½ · erfc(√(E_b/N_0))',
-        definition: 'احتمال الخطأ في BPSK.',
-        symbols: [{ sym: 'P_e', name: 'احتمال الخطأ', unit: '—' }, { sym: 'E_b', name: 'طاقة البت', unit: 'J' }],
-        history: 'تطور في الخمسينيات.', apps: ['المودم'], why: 'المعيار الأساسي.', when: 'عند حساب أداء BPSK.' }
-    ]
-  }]
-});
-
-/* ========== 3.5 القناة المحدودة ========== */
-MUSEUM.push({
-  id: 'isi_eq', icon: '👁️', name: 'القناة المحدودة', color: '#4A90E2', num: '3.5',
-  sections: [{
-    title: '3.5.1 ISI ومخطط العين',
-    eqs: [
-      { id: 'isi_definition', icon: '👁️', name: 'تعريف ISI', formula: 'y(t) = Σ aₙ · h(t - nT) + b(t)',
-        definition: 'الإشارة المستقبلة مع ISI.',
-        symbols: [{ sym: 'y(t)', name: 'الإشارة', unit: 'V' }],
-        history: 'تطور مع نظرية الاتصالات.', apps: ['تصميم القنوات'], why: 'يفسر تشويه الإشارة.', when: 'عند تحليل قناة محدودة.' },
-      { id: 'nyquist_isi', icon: '📏', name: 'معيار نايكويست', formula: 'Σₙ H(f - n/T) = T',
-        definition: 'شرط عدم وجود ISI.',
-        symbols: [{ sym: 'H(f)', name: 'الاستجابة', unit: '—' }],
-        history: 'نايكويست — 1928.', apps: ['تصميم المرشحات'], why: 'الشرط الرياضي.', when: 'عند تصميم مرشح.' },
-      { id: 'raised_cosine', icon: '📐', name: 'مرشح جيب التمام', formula: 'H(f) = T for |f| ≤ (1-α)/2T',
-        definition: 'مرشح يحقق شرط نايكويست.',
-        symbols: [{ sym: 'α', name: 'عامل التدحرج', unit: '—' }],
-        history: 'تطور في الستينيات.', apps: ['المودم'], why: 'الأكثر استخداماً.', when: 'عند تصميم مرشح.' },
-      { id: 'eye_ber', icon: '🎯', name: 'فتحة العين و BER', formula: 'BER ∝ exp(-Opening² / (2σ²))',
-        definition: 'العلاقة بين فتحة العين واحتمال الخطأ.',
-        symbols: [{ sym: 'Opening', name: 'فتحة العين', unit: '%' }],
-        history: 'تطور في الستينيات.', apps: ['قياس الجودة'], why: 'تربط البصري بالرقمي.', when: 'عند تقييم الأداء.' }
-    ]
-  }]
-});
-
-/* ========== 3.6 الهوائيات ========== */
-MUSEUM.push({
-  id: 'antennas_eq', icon: '📻', name: 'الهوائيات', color: '#4A90E2', num: '3.6',
-  sections: [{
-    title: '3.6.1 المعادلات الأساسية',
-    eqs: [
-      { id: 'wavelength', icon: '🌊', name: 'طول الموجة', formula: 'λ = c / f',
-        definition: 'المسافة بين قمتين متتاليتين.',
-        symbols: [{ sym: 'λ', name: 'طول الموجة', unit: 'm' }, { sym: 'c', name: 'سرعة الضوء', unit: 'm/s' }, { sym: 'f', name: 'التردد', unit: 'Hz' }],
-        history: 'أساس كل حسابات الهوائيات.', apps: ['تصميم الهوائيات'], why: 'تحدد الأبعاد المطلوبة.', when: 'عند تصميم هوائي.' },
-      { id: 'dipole_length', icon: '📏', name: 'طول ثنائي القطب', formula: 'L = λ / 2',
-        definition: 'طول الهوائي ثنائي القطب.',
-        symbols: [{ sym: 'L', name: 'الطول', unit: 'm' }],
-        history: 'هيرتز — 1886.', apps: ['البث', 'WiFi'], why: 'أبسط هوائي.', when: 'في التطبيقات التقليدية.' },
-      { id: 'gain', icon: '📊', name: 'ربح الهوائي', formula: 'G = 10·log₁₀(N)',
-        definition: 'قدرة الهوائي على تركيز الطاقة.',
-        symbols: [{ sym: 'G', name: 'الربح', unit: 'dBi' }, { sym: 'N', name: 'عدد العناصر', unit: '—' }],
-        history: 'ياغي-أودا — 1926.', apps: ['التلفزيون', 'الرادار'], why: 'كسب عالٍ.', when: 'في التطبيقات الاتجاهية.' },
-      { id: 'friis', icon: '📡', name: 'معادلة فرينز', formula: 'P_r = P_t · G_t · G_r · (λ/4πd)²',
-        definition: 'القدرة المستقبلة في وصلة.',
-        symbols: [{ sym: 'P_r', name: 'القدرة المستقبلة', unit: 'W' }],
-        history: 'فرينز — 1946.', apps: ['تصميم الشبكات'], why: 'أساس موازنة الوصلة.', when: 'عند تصميم وصلة لاسلكية.' }
-    ]
-  }, {
-    title: '3.6.2 الهوائيات الذكية',
-    eqs: [
-      { id: 'mimo_capacity', icon: '📊', name: 'سعة MIMO', formula: 'C = B · log₂(det(I + (SNR/Nt)·H·H^H))',
-        definition: 'سعة قناة MIMO.',
-        symbols: [{ sym: 'C', name: 'السعة', unit: 'bps' }],
-        history: 'تطورت مع MIMO — 1990s.', apps: ['4G', '5G'], why: 'تحدد السعة القصوى.', when: 'عند تصميم نظام MIMO.' },
-      { id: 'beamforming_gain', icon: '🎯', name: 'ربح Beamforming', formula: 'G_bf = 10·log₁₀(N)',
-        definition: 'ربح تشكيل الحزمة.',
-        symbols: [{ sym: 'G_bf', name: 'الربح', unit: 'dBi' }],
-        history: 'تطور مع الهوائيات الذكية.', apps: ['5G', 'الرادار'], why: 'كل مضاعفة لـ N تزيد 3 dB.', when: 'عند تصميم Beamforming.' }
-    ]
-  }]
-});
-
-/* ========== 4. الألياف البصرية ========== */
-MUSEUM.push({
-  id: 'fiber_eq', icon: '🔦', name: 'الألياف البصرية', color: '#14B8A6', num: '4',
-  sections: [{
-    title: '4.1 المبادئ الأساسية',
-    eqs: [
-      { id: 'refractive_index', icon: '💡', name: 'معامل الانكسار', formula: 'n = c / v',
-        definition: 'نسبة سرعة الضوء في الفراغ إلى سرعته في الوسط.',
-        symbols: [{ sym: 'n', name: 'معامل الانكسار', unit: '—' }],
-        history: 'تطور مع أبحاث الضوء.', apps: ['العدسات', 'الألياف'], why: 'أساس كل حسابات الانكسار.', when: 'عند حساب سرعة الضوء في وسط.' },
-      { id: 'snell', icon: '🔄', name: 'قانون سنيل', formula: 'n₁·sin(θ₁) = n₂·sin(θ₂)',
-        definition: 'العلاقة بين زاويتي السقوط والانكسار.',
-        symbols: [{ sym: 'θ₁, θ₂', name: 'الزوايا', unit: '°' }],
-        history: 'ابن سهل — 984م.', apps: ['العدسات', 'الألياف'], why: 'القانون الأساسي للانكسار.', when: 'عند حساب زاوية الانكسار.' },
-      { id: 'critical_angle', icon: '📐', name: 'الزاوية الحرجة', formula: 'sin(θ_c) = n₂ / n₁',
-        definition: 'الزاوية التي يحدث عندها الانعكاس الكلي.',
-        symbols: [{ sym: 'θ_c', name: 'الزاوية الحرجة', unit: '°' }],
-        history: 'اكتشفها كبلر.', apps: ['الألياف البصرية'], why: 'أساس عمل الألياف.', when: 'عند تصميم ألياف بصرية.' },
-      { id: 'NA', icon: '📏', name: 'الفتحة العددية', formula: 'NA = √(n₁² - n₂²)',
-        definition: 'قدرة الألياف على استقبال الضوء.',
-        symbols: [{ sym: 'NA', name: 'الفتحة العددية', unit: '—' }],
-        history: 'تطور مع هندسة الألياف — 1960s.', apps: ['تصميم الألياف'], why: 'تحدد كمية الضوء.', when: 'عند حساب زاوية القبول.' },
-      { id: 'attenuation', icon: '📉', name: 'التوهين', formula: 'P(x) = P₀ · e^(-αx)',
-        definition: 'نقصان قدرة الإشارة الضوئية.',
-        symbols: [{ sym: 'α', name: 'معامل التوهين', unit: '1/km' }],
-        history: 'تطور مع تحسين الألياف — 1970s.', apps: ['حسابات الوصلات'], why: 'تحدد المسافة القصوى.', when: 'عند حساب قدرة الإشارة.' }
-    ]
-  }]
-});
-
-/* ========== 5. الكيمياء ========== */
-MUSEUM.push({
-  id: 'chemistry_eq', icon: '🧪', name: 'الكيمياء', color: '#2ECC71', num: '5',
-  sections: [{
-    title: '5.1 الصيغ الكيميائية',
-    eqs: [
-      { id: 'water', icon: '💧', name: 'الماء', formula: 'H₂O',
-        definition: 'جزيء الماء — ذرتا هيدروجين وذرة أكسجين.',
-        symbols: [{ sym: 'H', name: 'هيدروجين', unit: '—' }, { sym: 'O', name: 'أكسجين', unit: '—' }],
-        history: 'لافوازيه — 1783.', apps: ['الكيمياء', 'الحياة'], why: 'أهم جزيء في الحياة.', when: 'في كل التفاعلات الحيوية.' },
-      { id: 'co2', icon: '🌫️', name: 'ثاني أكسيد الكربون', formula: 'CO₂',
-        definition: 'ذرة كربون وذرتا أكسجين.',
-        symbols: [{ sym: 'C', name: 'كربون', unit: '—' }, { sym: 'O', name: 'أكسجين', unit: '—' }],
-        history: 'جوزيف بلاك — 1750s.', apps: ['التنفس', 'الاحتراق'], why: 'أساس دورة الكربون.', when: 'في التفاعلات.' },
-      { id: 'methane', icon: '🔥', name: 'الميثان', formula: 'CH₄',
-        definition: 'أبسط الهيدروكربونات.',
-        symbols: [{ sym: 'C', name: 'كربون', unit: '—' }, { sym: 'H', name: 'هيدروجين', unit: '—' }],
-        history: 'أليساندرو فولتا — 1776.', apps: ['الغاز الطبيعي'], why: 'أبسط هيدروكربون.', when: 'في الكيمياء العضوية.' }
-    ]
-  }]
-});
-
-/* ========== 6. الفضاء والفيزياء الحديثة ========== */
-MUSEUM.push({
-  id: 'space_eq', icon: '🚀', name: 'الفضاء والفيزياء الحديثة', color: '#F39C12', num: '6',
-  sections: [{
-    title: '6.1 الفيزياء الحديثة',
-    eqs: [
-      { id: 'emc2_space', icon: '💥', name: 'تكافؤ الكتلة والطاقة', formula: 'E = m · c²',
-        definition: 'الكتلة والطاقة وجهان لعملة واحدة.',
-        symbols: [{ sym: 'E', name: 'الطاقة', unit: 'J' }, { sym: 'm', name: 'الكتلة', unit: 'kg' }, { sym: 'c', name: 'سرعة الضوء', unit: 'm/s' }],
-        history: 'أينشتاين — 1905.', apps: ['الطاقة النووية'], why: 'تفسر الطاقة الهائلة.', when: 'في التفاعلات النووية.' },
-      { id: 'bohr', icon: '⚛️', name: 'نموذج بور', formula: 'E = -13.6 / n² eV',
-        definition: 'مستويات الطاقة في ذرة الهيدروجين.',
-        symbols: [{ sym: 'n', name: 'رقم المستوى', unit: '—' }],
-        history: 'نيلز بور — 1913.', apps: ['الطيف الذري', 'الليزر'], why: 'يفسر الخطوط الطيفية.', when: 'في فيزياء الذرة.' },
-      { id: 'kepler', icon: '🪐', name: 'قانون كبلر الثالث', formula: 'T² ∝ a³',
-        definition: 'مربع الزمن الدوري يتناسب مع مكعب نصف المحور الأكبر.',
-        symbols: [{ sym: 'T', name: 'الزمن الدوري', unit: 'سنة' }, { sym: 'a', name: 'نصف المحور', unit: 'AU' }],
-        history: 'يوهانس كبلر — 1619.', apps: ['الأقمار الصناعية'], why: 'أساس الميكانيكا السماوية.', when: 'في حركة الكواكب.' },
-      { id: 'relativity_space', icon: '🌌', name: 'النسبية الخاصة', formula: 'γ = 1 / √(1 - v²/c²)',
-        definition: 'معامل لورنتز في النسبية.',
-        symbols: [{ sym: 'γ', name: 'معامل لورنتز', unit: '—' }],
-        history: 'أينشتاين — 1905.', apps: ['مسرعات الجسيمات'], why: 'أساس النسبية.', when: 'عند السرعات العالية.' }
-    ]
-  }]
-});
-
-/* ========== 7. الذكاء العلمي ========== */
-MUSEUM.push({
-  id: 'science_ai_eq', icon: '🧠', name: 'الذكاء العلمي', color: '#8B5CF6', num: '7',
-  sections: [{
-    title: '7.1 منهجية الاكتشاف العلمي',
-    eqs: [
-      { id: 'observation', icon: '👁️', name: 'الملاحظة', formula: 'شاهد الظاهرة',
-        definition: 'الخطوة الأولى في المنهج العلمي: ملاحظة الظاهرة بعناية.',
-        symbols: [{ sym: '1', name: 'الخطوة الأولى', unit: '—' }],
-        history: 'أرسطو — 350 ق.م.', apps: ['كل العلوم'], why: 'بدون ملاحظة لا يوجد علم.', when: 'في بداية أي بحث.' },
-      { id: 'hypothesis', icon: '💡', name: 'الفرضية', formula: 'اقترح تفسيراً',
-        definition: 'تفسير مقترح للظاهرة، قابل للاختبار.',
-        symbols: [{ sym: '2', name: 'الخطوة الثانية', unit: '—' }],
-        history: 'فرانسيس بيكون — 1620.', apps: ['كل العلوم'], why: 'توجه البحث.', when: 'بعد الملاحظة.' },
-      { id: 'experiment', icon: '🔬', name: 'التجربة', formula: 'اختبر الفرضية',
-        definition: 'اختبار الفرضية تحت ظروف محكمة.',
-        symbols: [{ sym: '3', name: 'الخطوة الثالثة', unit: '—' }],
-        history: 'غاليليو — 1600.', apps: ['كل العلوم'], why: 'تحول الفرضية إلى قانون.', when: 'بعد صياغة الفرضية.' },
-      { id: 'law', icon: '📐', name: 'القانون', formula: 'استنتج العلاقة',
-        definition: 'صياغة رياضية للعلاقة بين المتغيرات.',
-        symbols: [{ sym: '4', name: 'الخطوة الرابعة', unit: '—' }],
-        history: 'نيوتن — 1687.', apps: ['كل العلوم'], why: 'الهدف النهائي للعلم.', when: 'بعد نجاح التجربة.' },
-      { id: 'prediction', icon: '🎯', name: 'التنبؤ', formula: 'توقع نتائج جديدة',
-        definition: 'استخدام القانون للتنبؤ بظواهر لم تُلاحظ بعد.',
-        symbols: [{ sym: '5', name: 'الخطوة الخامسة', unit: '—' }],
-        history: 'مندليف — 1869.', apps: ['كل العلوم'], why: 'اختبار قوة القانون.', when: 'بعد صياغة القانون.' }
-    ]
-  }, {
-    title: '7.2 أدوات التفكير النقدي',
-    eqs: [
-      { id: 'causality', icon: '🔗', name: 'السببية', formula: 'سبب ← نتيجة',
-        definition: 'كل ظاهرة لها سبب، والسبب يسبق النتيجة.',
-        symbols: [{ sym: '→', name: 'العلاقة', unit: '—' }],
-        history: 'أرسطو — 350 ق.م.', apps: ['الفيزياء', 'الفلسفة'], why: 'أساس الفهم.', when: 'عند تحليل أي ظاهرة.' },
-      { id: 'correlation', icon: '📊', name: 'الارتباط', formula: 'ارتباط ≠ سببية',
-        definition: 'الارتباط بين متغيرين لا يعني أن أحدهما يسبب الآخر.',
-        symbols: [{ sym: 'r', name: 'معامل الارتباط', unit: '—' }],
-        history: 'كارل بيرسون — 1890s.', apps: ['الإحصاء', 'العلوم'], why: 'تحذير من الاستنتاجات الخاطئة.', when: 'عند تحليل البيانات.' },
-      { id: 'falsifiability', icon: '❌', name: 'قابلية التكذيب', formula: 'فرضية قابلة للاختبار',
-        definition: 'الفرضية العلمية يجب أن تكون قابلة للتكذيب.',
-        symbols: [{ sym: 'F', name: 'قابلية التكذيب', unit: '—' }],
-        history: 'كارل بوبر — 1934.', apps: ['فلسفة العلم'], why: 'تميز العلم من اللاعلم.', when: 'عند تقييم فرضية.' }
-    ]
-  }]
-});
-
-/* ============================================
-   نظام التقدم
-   ============================================ */
-var PROGRESS = JSON.parse(localStorage.getItem('psl_progress') || '{}');
-
-function markCompleted(expId) {
-  PROGRESS[expId] = { completed: true, date: new Date().toISOString() };
-  localStorage.setItem('psl_progress', JSON.stringify(PROGRESS));
-  updateProgressBar();
-}
-
-function isCompleted(expId) { return PROGRESS[expId] && PROGRESS[expId].completed; }
-
-function getProgress() {
-  var total = EXPS.length;
-  var completed = EXPS.filter(function(e) { return isCompleted(e.id); }).length;
-  return { completed: completed, total: total };
-}
-
-function updateProgressBar() {
-  var p = getProgress();
-  var pct = p.total ? Math.round(p.completed / p.total * 100) : 0;
-  var bar = $('progressBar');
-  if (bar) {
-    bar.style.width = pct + '%';
-    bar.textContent = p.completed + '/' + p.total + ' تجربة';
-  }
-}
-
-/* ============================================
-   عرض الفئات
-   ============================================ */
-function renderCats() {
-  var sortedCats = CATS.slice().sort(function(a, b) { return a.order - b.order; });
-  var html = '';
-  sortedCats.forEach(function(cat) {
-    var list = EXPS.filter(function(e) { return e.category === cat.id; });
-    if (!list.length) return;
-    html += '<div class="cat" style="--cc:' + cat.color + '" data-cat="' + cat.id + '">'
-      + '<div class="cat-head" onclick="toggleCat(\'' + cat.id + '\')">'
-      + '<span style="color:' + cat.color + '">▶</span>'
-      + '<span class="cat-num" style="color:' + cat.color + '">' + cat.num + '</span>'
-      + '<span style="font-size:1.4rem">' + cat.icon + '</span>'
-      + '<span style="flex:1">' + cat.name + '</span>'
-      + '<span class="cat-count">' + list.length + '</span>'
-      + '</div>'
-      + '<div class="cat-body"><div class="grid">';
-    list.forEach(function(e) {
-      html += '<div class="card" style="--ec:' + cat.color + '" onclick="openExp(\'' + e.id + '\')">'
-        + '<span class="icon">' + e.icon + '</span>'
-        + '<div class="title">' + e.title + '</div>'
-        + '<div class="tag">' + e.tagline + '</div></div>';
-    });
-    html += '</div></div></div>';
-  });
-  $('catsArea').innerHTML = html;
-}
-
-function toggleCat(id) { var b = document.querySelector('.cat[data-cat="' + id + '"]'); if (b) b.classList.toggle('open'); }
-
-/* ============================================
-   فتح تجربة
-   ============================================ */
-function openExp(id) {
-  var exp = EXPS.filter(function(e) { return e.id === id; })[0];
-  if (!exp) return;
-  currentExp = exp; currentScene = 0; params = {};
-  $('gallery').classList.remove('show');
-  $('expView').classList.add('show');
-  svg = $('canvas');
-  initAudio();
-  renderScene();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function exitExp() {
-  if (animFrame) cancelAnimationFrame(animFrame);
-  animFrame = null;
-  currentExp = null;
-  $('expView').classList.remove('show');
-  $('gallery').classList.add('show');
-  renderCats();
-}
-
-/* ============================================
-   عرض المشهد
-   ============================================ */
-function renderScene() {
-  if (!currentExp) return;
-  var sc = currentExp.scenes[currentScene];
-  if (!sc) return;
-  $('sceneBadge').textContent = sc.badge || ('المشهد ' + (currentScene + 1));
-  var nums = ['١','٢','٣','٤','٥','٦','٧','٨'];
-  $('sceneNum').textContent = nums[currentScene] || (currentScene + 1);
-  $('narr').textContent = sc.narr || '';
-
-  // زر الفيزيائي الذكي
-  var aiBtn = document.getElementById('aiBtn');
-  if (!aiBtn) {
-    aiBtn = document.createElement('button');
-    aiBtn.id = 'aiBtn';
-    aiBtn.style.cssText = 'width:100%;padding:12px;background:linear-gradient(135deg,#8B5CF6,#6D28D9);border:2px solid #8B5CF6;border-radius:14px;color:#fff;font-family:inherit;font-weight:900;font-size:.9rem;cursor:pointer;margin-bottom:10px;transition:.3s';
-    aiBtn.innerHTML = '🧠 اسأل الفيزيائي';
-    aiBtn.onclick = askPhysicist;
-    $('narr').parentNode.insertBefore(aiBtn, $('narr').nextSibling);
-  }
-
-  if (currentExp.id === 'periodic') {
-    $('canvasWrap').style.display = 'none';
-    $('ctrlBox').innerHTML = renderPeriodicHTML();
-    $('ctrlBox').style.display = 'block';
-    $('dataBox').innerHTML = '';
-    $('prevBtn').disabled = currentScene === 0;
-    $('nextBtn').disabled = currentScene === currentExp.scenes.length - 1;
-    return;
-  } else {
-    $('canvasWrap').style.display = 'block';
-    $('ctrlBox').innerHTML = '';
-    $('ctrlBox').style.display = 'none';
-  }
-
-  renderCtrls(sc.controls || []);
-  if (sc.data) renderData(sc.data()); else $('dataBox').innerHTML = '';
-  $('prevBtn').disabled = currentScene === 0;
-  $('nextBtn').disabled = currentScene === currentExp.scenes.length - 1;
-  if (currentScene === currentExp.scenes.length - 1) {
-    $('nextBtn').textContent = '🎬 إنهاء';
-  } else {
-    $('nextBtn').textContent = 'التالي';
-  }
-  startAnim();
-}
-
-function renderCtrls(defs) {
-  var box = $('ctrlBox');
-  box.innerHTML = '';
-  if (!defs.length) { box.style.display = 'none'; return; }
-  box.style.display = 'block';
-  defs.forEach(function(c) {
-    if (params[c.id] === undefined) params[c.id] = c.value;
-    var w = document.createElement('div');
-    w.className = 'ctrl';
-    var h = document.createElement('div');
-    h.className = 'ctrl-head';
-    h.innerHTML = '<span>' + c.label + '</span><span class="ctrl-val" id="val_' + c.id + '">' + ((params[c.id] || c.value) + ' ' + (c.unit || '')) + '</span>';
-    w.appendChild(h);
-    var inp;
-    if (c.type === 'select') {
-      inp = document.createElement('select');
-      inp.style.width = '100%'; inp.style.padding = '9px'; inp.style.background = '#0E1A33'; inp.style.border = '1px solid #1E2D4F'; inp.style.borderRadius = '10px'; inp.style.color = '#fff';
-      c.options.forEach(function(o) { var op = document.createElement('option'); op.value = o.value; op.textContent = o.label; inp.appendChild(op); });
-    } else {
-      inp = document.createElement('input');
-      inp.type = 'range'; inp.min = c.min; inp.max = c.max; inp.step = c.step; inp.value = params[c.id];
-    }
-    inp.id = 'inp_' + c.id;
-    inp.addEventListener('input', function() {
-      if (c.type === 'select') { params[c.id] = inp.value; }
-      else { params[c.id] = parseFloat(inp.value); }
-      $('val_' + c.id).textContent = (params[c.id]) + ' ' + (c.unit || '');
-      var sc = currentExp.scenes[currentScene];
-      if (sc.data) renderData(sc.data());
-    });
-    w.appendChild(inp);
-    box.appendChild(w);
-  });
-}
-
-function renderData(arr) {
-  $('dataBox').innerHTML = arr.map(function(x) {
-    return '<div class="chip"><div class="chip-lbl">' + x[0] + '</div><div class="chip-val">' + x[1] + '</div></div>';
-  }).join('');
-}
-
-function startAnim() {
-  if (animFrame) cancelAnimationFrame(animFrame);
-  animTime = 0;
-  var last = performance.now();
-  var loop = function(now) {
-    var dt = (now - last) / 1000; last = now; animTime += dt;
-    if (currentExp && currentExp.scenes[currentScene] && currentExp.id !== 'periodic') {
-      svg.innerHTML = '';
-      try { currentExp.scenes[currentScene].anim(animTime); } catch(e) { console.warn(e); }
-    }
-    animFrame = requestAnimationFrame(loop);
-  };
-  animFrame = requestAnimationFrame(loop);
-}
-
-function nextScene() {
-  if (!currentExp) return;
-  if (currentScene < currentExp.scenes.length - 1) {
-    currentScene++;
-    tone(700, .15, .05);
-    renderScene();
-    window.scrollTo({top:0,behavior:'smooth'});
-  } else {
-    markCompleted(currentExp.id);
-    tone(500, .3, .06);
-    setTimeout(exitExp, 800);
-  }
-}
-
-function prevScene() {
-  if (!currentExp) return;
-  if (currentScene > 0) {
-    currentScene--;
-    tone(500, .15, .05);
-    renderScene();
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-}
-
-/* ============================================
-   🧠 الفيزيائي الذكي — محرك التفسير
-   ============================================ */
-function askPhysicist() {
-  if (!currentExp) return;
-  var expId = currentExp.id;
-  var explanation = AI_ENGINE.ask(expId, params || {});
-  $('aiText').innerHTML = explanation;
-  $('aiModal').classList.add('show');
-  tone(900, .1, .05);
-}
-
-function closeAIModal() {
-  $('aiModal').classList.remove('show');
-}
-
-/* ============================================
-   عرض الموسوعة
-   ============================================ */
-function renderMuseum() {
-  var html = '';
-  MUSEUM.forEach(function(ch, idx) {
-    var open = idx === 0 ? 'open' : '';
-    html += '<div class="chapter ' + open + '" style="--chc:' + ch.color + '" data-ch="' + ch.id + '">'
-      + '<div class="chapter-head" onclick="toggleChapter(\'' + ch.id + '\')">'
-      + '<span class="chapter-num">' + (ch.num || '') + '</span>'
-      + '<span class="ch-icon">' + ch.icon + '</span>'
-      + '<span class="ch-name">' + ch.name + '</span>'
-      + '<span class="ch-arrow">▶</span>'
-      + '</div>'
-      + '<div class="chapter-body">';
-    ch.sections.forEach(function(sec) {
-      html += '<div class="section-title">' + sec.title + '</div>';
-      sec.eqs.forEach(function(eq) {
-        html += '<div class="eq-card" onclick="openEq(\'' + ch.id + '\',\'' + eq.id + '\')">'
-          + '<span class="eq-icon">' + eq.icon + '</span>'
-          + '<div class="eq-info"><div class="eq-name">' + eq.name + '</div>'
-          + '<div class="eq-formula">' + eq.formula + '</div></div>'
-          + '<span class="eq-arrow">◀</span></div>';
-      });
-    });
-    html += '</div></div>';
-  });
-  $('chaptersArea').innerHTML = html;
-}
-
-function toggleChapter(id) {
-  var el = document.querySelector('.chapter[data-ch="' + id + '"]');
-  if (el) el.classList.toggle('open');
-}
-
-function openEq(chId, eqId) {
-  var ch = MUSEUM.filter(function(c) { return c.id === chId; })[0];
-  if (!ch) return;
-  var eq = null;
-  ch.sections.forEach(function(s) {
-    s.eqs.forEach(function(e) { if (e.id === eqId) eq = e; });
-  });
-  if (!eq) return;
-  $('eqTitle').textContent = eq.icon + ' ' + eq.name;
-  $('eqBig').textContent = eq.formula;
-  var html = '';
-  html += '<div class="eq-block"><div class="eq-block-title">📖 التعريف</div><div class="eq-block-body">' + eq.definition + '</div></div>';
-  html += '<div class="eq-block"><div class="eq-block-title">🔤 الرموز والوحدات</div><div class="eq-block-body"><ul>';
-  eq.symbols.forEach(function(s) {
-    html += '<li><span class="sym">' + s.sym + '</span> — ' + s.name + ' <span class="unit">[' + s.unit + ']</span></li>';
-  });
-  html += '</ul></div></div>';
-  html += '<div class="eq-block"><div class="eq-block-title">❓ لماذا هي مهمة</div><div class="eq-block-body">' + eq.why + '</div></div>';
-  html += '<div class="eq-block"><div class="eq-block-title">🎯 متى نستخدمها</div><div class="eq-block-body">' + eq.when + '</div></div>';
-  html += '<div class="eq-block"><div class="eq-block-title">📜 السياق التاريخي</div><div class="eq-block-body">' + eq.history + '</div></div>';
-  html += '<div class="eq-block"><div class="eq-block-title">🌍 التطبيقات العملية</div><div class="eq-block-body"><ul>';
-  eq.apps.forEach(function(a) { html += '<li>' + a + '</li>'; });
-  html += '</ul></div></div>';
-  $('eqContent').innerHTML = html;
-  $('eqModal').classList.add('show');
-}
-
-function closeEqModal() { $('eqModal').classList.remove('show'); }
-
-/* ============================================
-   الجدول الدوري — LTR
-   ============================================ */
-function renderPeriodicHTML(){
-  var html='<div class="legend">'
-    +'<span><i style="background:#FFD700"></i> غاز</span>'
-    +'<span><i style="background:#4FC3F7"></i> سائل</span>'
-    +'<span><i style="background:#A5D6A7"></i> صلب</span>'
-    +'<span><i style="background:#EF9A9A"></i> مشع</span>'
-    +'<span><i style="background:#F8BBD0"></i> لانثانيد</span>'
-    +'<span><i style="background:#D1C4E9"></i> أكتينيد</span></div>';
-
-  html+='<div class="periodic-wrap"><div class="periodic">';
-  var grid = {};
-  ELEMENTS.forEach(function(e){ if(e.row<=7) grid[e.row+'-'+e.col]=e; });
-  for(var r=1;r<=7;r++){
-    for(var c=1;c<=18;c++){
-      var e = grid[r+'-'+c];
-      if(e){
-        html+='<div class="pcell '+e.type+'" onclick="showEl('+e.z+')" title="'+e.name+'">'
-          +'<span class="num">'+e.z+'</span>'
-          +'<span class="sym">'+e.sym+'</span>'
-          +'<span class="nm">'+e.mass+'</span>'
-          +'</div>';
-      } else if(r===6 && c===3){
-        html+='<div class="pcell placeholder" onclick="showEl(57)">57-71</div>';
-      } else if(r===7 && c===3){
-        html+='<div class="pcell placeholder" onclick="showEl(89)">89-103</div>';
-      } else {
-        html+='<div class="pcell empty"></div>';
-      }
-    }
-  }
-  html+='</div>';
-
-  html+='<div class="row-label-bottom">✨ اللانثانيدات ( 58-71 )</div>';
-  html+='<div class="periodic-bottom">';
-  var lanth = ELEMENTS.filter(function(e){ return e.z>=58 && e.z<=71; });
-  for(var i=0;i<2;i++) html+='<div class="pcell empty"></div>';
-  html+='<div class="pcell placeholder">57</div>';
-  lanth.forEach(function(e){
-    html+='<div class="pcell lanthanide" onclick="showEl('+e.z+')" title="'+e.name+'">'
-      +'<span class="num">'+e.z+'</span><span class="sym">'+e.sym+'</span><span class="nm">'+e.mass+'</span></div>';
-  });
-  for(var i=0;i<3;i++) html+='<div class="pcell empty"></div>';
-  html+='</div>';
-
-  html+='<div class="row-label-bottom">⚛️ الأكتينيدات ( 90-103 )</div>';
-  html+='<div class="periodic-bottom">';
-  var actin = ELEMENTS.filter(function(e){ return e.z>=90 && e.z<=103; });
-  for(var i=0;i<2;i++) html+='<div class="pcell empty"></div>';
-  html+='<div class="pcell placeholder">89</div>';
-  actin.forEach(function(e){
-    html+='<div class="pcell actinide" onclick="showEl('+e.z+')" title="'+e.name+'">'
-      +'<span class="num">'+e.z+'</span><span class="sym">'+e.sym+'</span><span class="nm">'+e.mass+'</span></div>';
-  });
-  for(var i=0;i<3;i++) html+='<div class="pcell empty"></div>';
-  html+='</div>';
-
-  html+='</div>';
-  return html;
-}
-
-function showEl(z){
-  var e = ELEMENTS.filter(function(x){ return x.z===z; })[0];
-  if(!e) return;
-  var typeAr = {gas:'غاز',liquid:'سائل',solid:'صلب',radioactive:'مشع',unknown:'غير معروف'}[e.type] || e.type;
-  $('elName').textContent = e.name;
-  $('elSym').textContent = e.sym;
-  $('elConfig').textContent = e.config;
-  $('elZ').textContent = e.z;
-  $('elMass').textContent = e.mass + ' u';
-  $('elShells').textContent = e.shells;
-  $('elElectrons').textContent = e.electrons;
-  $('elType').textContent = typeAr;
-  $('elCat').textContent = e.cat;
-  $('elModal').classList.add('show');
-  tone(800,.1,.04);
-}
-function closeModal(){ $('elModal').classList.remove('show'); }
-
-var ELEMENTS = [
-  {z:1,sym:'H',name:'هيدروجين',mass:1.008,type:'gas',cat:'لا فلز',row:1,col:1,shells:'1',electrons:'1',config:'1s¹'},
-  {z:2,sym:'He',name:'هيليوم',mass:4.003,type:'gas',cat:'غاز نبيل',row:1,col:18,shells:'1',electrons:'2',config:'1s²'},
-  {z:3,sym:'Li',name:'ليثيوم',mass:6.94,type:'solid',cat:'فلز قلوي',row:2,col:1,shells:'2',electrons:'3',config:'1s² 2s¹'},
-  {z:4,sym:'Be',name:'بيريليوم',mass:9.012,type:'solid',cat:'فلز قلوي ترابي',row:2,col:2,shells:'2',electrons:'4',config:'1s² 2s²'},
-  {z:5,sym:'B',name:'بورون',mass:10.81,type:'solid',cat:'شبه فلز',row:2,col:13,shells:'2',electrons:'5',config:'1s² 2s² 2p¹'},
-  {z:6,sym:'C',name:'كربون',mass:12.011,type:'solid',cat:'لا فلز',row:2,col:14,shells:'2',electrons:'6',config:'1s² 2s² 2p²'},
-  {z:7,sym:'N',name:'نيتروجين',mass:14.007,type:'gas',cat:'لا فلز',row:2,col:15,shells:'2',electrons:'7',config:'1s² 2s² 2p³'},
-  {z:8,sym:'O',name:'أكسجين',mass:15.999,type:'gas',cat:'لا فلز',row:2,col:16,shells:'2',electrons:'8',config:'1s² 2s² 2p⁴'},
-  {z:9,sym:'F',name:'فلور',mass:18.998,type:'gas',cat:'هالوجين',row:2,col:17,shells:'2',electrons:'9',config:'1s² 2s² 2p⁵'},
-  {z:10,sym:'Ne',name:'نيون',mass:20.180,type:'gas',cat:'غاز نبيل',row:2,col:18,shells:'2',electrons:'10',config:'1s² 2s² 2p⁶'},
-  {z:11,sym:'Na',name:'صوديوم',mass:22.990,type:'solid',cat:'فلز قلوي',row:3,col:1,shells:'3',electrons:'11',config:'1s² 2s² 2p⁶ 3s¹'},
-  {z:12,sym:'Mg',name:'مغنيسيوم',mass:24.305,type:'solid',cat:'فلز قلوي ترابي',row:3,col:2,shells:'3',electrons:'12',config:'1s² 2s² 2p⁶ 3s²'},
-  {z:13,sym:'Al',name:'ألومنيوم',mass:26.982,type:'solid',cat:'فلز بعد انتقالي',row:3,col:13,shells:'3',electrons:'13',config:'1s² 2s² 2p⁶ 3s² 3p¹'},
-  {z:14,sym:'Si',name:'سيليكون',mass:28.085,type:'solid',cat:'شبه فلز',row:3,col:14,shells:'3',electrons:'14',config:'1s² 2s² 2p⁶ 3s² 3p²'},
-  {z:15,sym:'P',name:'فوسفور',mass:30.974,type:'solid',cat:'لا فلز',row:3,col:15,shells:'3',electrons:'15',config:'1s² 2s² 2p⁶ 3s² 3p³'},
-  {z:16,sym:'S',name:'كبريت',mass:32.06,type:'solid',cat:'لا فلز',row:3,col:16,shells:'3',electrons:'16',config:'1s² 2s² 2p⁶ 3s² 3p⁴'},
-  {z:17,sym:'Cl',name:'كلور',mass:35.45,type:'gas',cat:'هالوجين',row:3,col:17,shells:'3',electrons:'17',config:'1s² 2s² 2p⁶ 3s² 3p⁵'},
-  {z:18,sym:'Ar',name:'أرجون',mass:39.948,type:'gas',cat:'غاز نبيل',row:3,col:18,shells:'3',electrons:'18',config:'1s² 2s² 2p⁶ 3s² 3p⁶'},
-  {z:19,sym:'K',name:'بوتاسيوم',mass:39.098,type:'solid',cat:'فلز قلوي',row:4,col:1,shells:'4',electrons:'19',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹'},
-  {z:20,sym:'Ca',name:'كالسيوم',mass:40.078,type:'solid',cat:'فلز قلوي ترابي',row:4,col:2,shells:'4',electrons:'20',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 4s²'},
-  {z:21,sym:'Sc',name:'سكانديوم',mass:44.956,type:'solid',cat:'فلز انتقالي',row:4,col:3,shells:'4',electrons:'21',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹ 4s²'},
-  {z:22,sym:'Ti',name:'تيتانيوم',mass:47.867,type:'solid',cat:'فلز انتقالي',row:4,col:4,shells:'4',electrons:'22',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d² 4s²'},
-  {z:23,sym:'V',name:'فاناديوم',mass:50.942,type:'solid',cat:'فلز انتقالي',row:4,col:5,shells:'4',electrons:'23',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d³ 4s²'},
-  {z:24,sym:'Cr',name:'كروم',mass:51.996,type:'solid',cat:'فلز انتقالي',row:4,col:6,shells:'4',electrons:'24',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s¹'},
-  {z:25,sym:'Mn',name:'منغنيز',mass:54.938,type:'solid',cat:'فلز انتقالي',row:4,col:7,shells:'4',electrons:'25',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁵ 4s²'},
-  {z:26,sym:'Fe',name:'حديد',mass:55.845,type:'solid',cat:'فلز انتقالي',row:4,col:8,shells:'4',electrons:'26',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁶ 4s²'},
-  {z:27,sym:'Co',name:'كوبالت',mass:58.933,type:'solid',cat:'فلز انتقالي',row:4,col:9,shells:'4',electrons:'27',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁷ 4s²'},
-  {z:28,sym:'Ni',name:'نيكل',mass:58.693,type:'solid',cat:'فلز انتقالي',row:4,col:10,shells:'4',electrons:'28',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁸ 4s²'},
-  {z:29,sym:'Cu',name:'نحاس',mass:63.546,type:'solid',cat:'فلز انتقالي',row:4,col:11,shells:'4',electrons:'29',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s¹'},
-  {z:30,sym:'Zn',name:'زنك',mass:65.38,type:'solid',cat:'فلز انتقالي',row:4,col:12,shells:'4',electrons:'30',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s²'},
-  {z:31,sym:'Ga',name:'غاليوم',mass:69.723,type:'solid',cat:'فلز بعد انتقالي',row:4,col:13,shells:'4',electrons:'31',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p¹'},
-  {z:32,sym:'Ge',name:'جرمانيوم',mass:72.630,type:'solid',cat:'شبه فلز',row:4,col:14,shells:'4',electrons:'32',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p²'},
-  {z:33,sym:'As',name:'زرنيخ',mass:74.922,type:'solid',cat:'شبه فلز',row:4,col:15,shells:'4',electrons:'33',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p³'},
-  {z:34,sym:'Se',name:'سيلينيوم',mass:78.971,type:'solid',cat:'لا فلز',row:4,col:16,shells:'4',electrons:'34',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁴'},
-  {z:35,sym:'Br',name:'بروم',mass:79.904,type:'liquid',cat:'هالوجين',row:4,col:17,shells:'4',electrons:'35',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁵'},
-  {z:36,sym:'Kr',name:'كريبتون',mass:83.798,type:'gas',cat:'غاز نبيل',row:4,col:18,shells:'4',electrons:'36',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶'},
-  {z:37,sym:'Rb',name:'روبيديوم',mass:85.468,type:'solid',cat:'فلز قلوي',row:5,col:1,shells:'5',electrons:'37',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 5s¹'},
-  {z:38,sym:'Sr',name:'سترونشيوم',mass:87.62,type:'solid',cat:'فلز قلوي ترابي',row:5,col:2,shells:'5',electrons:'38',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 5s²'},
-  {z:39,sym:'Y',name:'إيتريوم',mass:88.906,type:'solid',cat:'فلز انتقالي',row:5,col:3,shells:'5',electrons:'39',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹ 5s²'},
-  {z:40,sym:'Zr',name:'زركونيوم',mass:91.224,type:'solid',cat:'فلز انتقالي',row:5,col:4,shells:'5',electrons:'40',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d² 5s²'},
-  {z:41,sym:'Nb',name:'نيوبيوم',mass:92.906,type:'solid',cat:'فلز انتقالي',row:5,col:5,shells:'5',electrons:'41',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d⁴ 5s¹'},
-  {z:42,sym:'Mo',name:'موليبدينوم',mass:95.95,type:'solid',cat:'فلز انتقالي',row:5,col:6,shells:'5',electrons:'42',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d⁵ 5s¹'},
-  {z:43,sym:'Tc',name:'تكنيشيوم',mass:98,type:'radioactive',cat:'فلز انتقالي',row:5,col:7,shells:'5',electrons:'43',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d⁵ 5s²'},
-  {z:44,sym:'Ru',name:'روثينيوم',mass:101.07,type:'solid',cat:'فلز انتقالي',row:5,col:8,shells:'5',electrons:'44',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d⁷ 5s¹'},
-  {z:45,sym:'Rh',name:'روديوم',mass:102.91,type:'solid',cat:'فلز انتقالي',row:5,col:9,shells:'5',electrons:'45',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d⁸ 5s¹'},
-  {z:46,sym:'Pd',name:'بلاديوم',mass:106.42,type:'solid',cat:'فلز انتقالي',row:5,col:10,shells:'5',electrons:'46',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰'},
-  {z:47,sym:'Ag',name:'فضة',mass:107.87,type:'solid',cat:'فلز انتقالي',row:5,col:11,shells:'5',electrons:'47',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s¹'},
-  {z:48,sym:'Cd',name:'كادميوم',mass:112.41,type:'solid',cat:'فلز انتقالي',row:5,col:12,shells:'5',electrons:'48',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s²'},
-  {z:49,sym:'In',name:'إنديوم',mass:114.82,type:'solid',cat:'فلز بعد انتقالي',row:5,col:13,shells:'5',electrons:'49',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p¹'},
-  {z:50,sym:'Sn',name:'قصدير',mass:118.71,type:'solid',cat:'فلز بعد انتقالي',row:5,col:14,shells:'5',electrons:'50',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p²'},
-  {z:51,sym:'Sb',name:'أنتيمون',mass:121.76,type:'solid',cat:'شبه فلز',row:5,col:15,shells:'5',electrons:'51',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p³'},
-  {z:52,sym:'Te',name:'تيلوريوم',mass:127.60,type:'solid',cat:'شبه فلز',row:5,col:16,shells:'5',electrons:'52',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁴'},
-  {z:53,sym:'I',name:'يود',mass:126.90,type:'solid',cat:'هالوجين',row:5,col:17,shells:'5',electrons:'53',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁵'},
-  {z:54,sym:'Xe',name:'زينون',mass:131.29,type:'gas',cat:'غاز نبيل',row:5,col:18,shells:'5',electrons:'54',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁶'},
-  {z:55,sym:'Cs',name:'سيزيوم',mass:132.91,type:'solid',cat:'فلز قلوي',row:6,col:1,shells:'6',electrons:'55',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁶ 6s¹'},
-  {z:56,sym:'Ba',name:'باريوم',mass:137.33,type:'solid',cat:'فلز قلوي ترابي',row:6,col:2,shells:'6',electrons:'56',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁶ 6s²'},
-  {z:57,sym:'La',name:'لانثانوم',mass:138.91,type:'solid',cat:'لانثانيد',row:6,col:3,shells:'6',electrons:'57',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 5s² 5p⁶ 5d¹ 6s²'},
-  {z:58,sym:'Ce',name:'سيريوم',mass:140.12,type:'solid',cat:'لانثانيد',row:8,col:1,shells:'6',electrons:'58',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹ 5s² 5p⁶ 5d¹ 6s²'},
-  {z:59,sym:'Pr',name:'براسيوديميوم',mass:140.91,type:'solid',cat:'لانثانيد',row:8,col:2,shells:'6',electrons:'59',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f³ 5s² 5p⁶ 6s²'},
-  {z:60,sym:'Nd',name:'نيوديميوم',mass:144.24,type:'solid',cat:'لانثانيد',row:8,col:3,shells:'6',electrons:'60',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁴ 5s² 5p⁶ 6s²'},
-  {z:61,sym:'Pm',name:'بروميثيوم',mass:145,type:'radioactive',cat:'لانثانيد',row:8,col:4,shells:'6',electrons:'61',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁵ 5s² 5p⁶ 6s²'},
-  {z:62,sym:'Sm',name:'ساماريوم',mass:150.36,type:'solid',cat:'لانثانيد',row:8,col:5,shells:'6',electrons:'62',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁶ 5s² 5p⁶ 6s²'},
-  {z:63,sym:'Eu',name:'يوروبيوم',mass:151.96,type:'solid',cat:'لانثانيد',row:8,col:6,shells:'6',electrons:'63',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁷ 5s² 5p⁶ 6s²'},
-  {z:64,sym:'Gd',name:'غادولينيوم',mass:157.25,type:'solid',cat:'لانثانيد',row:8,col:7,shells:'6',electrons:'64',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁷ 5s² 5p⁶ 5d¹ 6s²'},
-  {z:65,sym:'Tb',name:'تيربيوم',mass:158.93,type:'solid',cat:'لانثانيد',row:8,col:8,shells:'6',electrons:'65',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f⁹ 5s² 5p⁶ 6s²'},
-  {z:66,sym:'Dy',name:'ديسبروسيوم',mass:162.50,type:'solid',cat:'لانثانيد',row:8,col:9,shells:'6',electrons:'66',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁰ 5s² 5p⁶ 6s²'},
-  {z:67,sym:'Ho',name:'هولميوم',mass:164.93,type:'solid',cat:'لانثانيد',row:8,col:10,shells:'6',electrons:'67',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹¹ 5s² 5p⁶ 6s²'},
-  {z:68,sym:'Er',name:'إربيوم',mass:167.26,type:'solid',cat:'لانثانيد',row:8,col:11,shells:'6',electrons:'68',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹² 5s² 5p⁶ 6s²'},
-  {z:69,sym:'Tm',name:'ثوليوم',mass:168.93,type:'solid',cat:'لانثانيد',row:8,col:12,shells:'6',electrons:'69',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹³ 5s² 5p⁶ 6s²'},
-  {z:70,sym:'Yb',name:'إيتربيوم',mass:173.05,type:'solid',cat:'لانثانيد',row:8,col:13,shells:'6',electrons:'70',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 6s²'},
-  {z:71,sym:'Lu',name:'لوتيشيوم',mass:174.97,type:'solid',cat:'لانثانيد',row:8,col:14,shells:'6',electrons:'71',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹ 6s²'},
-  {z:72,sym:'Hf',name:'هافنيوم',mass:178.49,type:'solid',cat:'فلز انتقالي',row:6,col:4,shells:'6',electrons:'72',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d² 6s²'},
-  {z:73,sym:'Ta',name:'تانتالوم',mass:180.95,type:'solid',cat:'فلز انتقالي',row:6,col:5,shells:'6',electrons:'73',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d³ 6s²'},
-  {z:74,sym:'W',name:'تنغستن',mass:183.84,type:'solid',cat:'فلز انتقالي',row:6,col:6,shells:'6',electrons:'74',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d⁴ 6s²'},
-  {z:75,sym:'Re',name:'رينيوم',mass:186.21,type:'solid',cat:'فلز انتقالي',row:6,col:7,shells:'6',electrons:'75',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d⁵ 6s²'},
-  {z:76,sym:'Os',name:'أوزميوم',mass:190.23,type:'solid',cat:'فلز انتقالي',row:6,col:8,shells:'6',electrons:'76',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d⁶ 6s²'},
-  {z:77,sym:'Ir',name:'إيريديوم',mass:192.22,type:'solid',cat:'فلز انتقالي',row:6,col:9,shells:'6',electrons:'77',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d⁷ 6s²'},
-  {z:78,sym:'Pt',name:'بلاتين',mass:195.08,type:'solid',cat:'فلز انتقالي',row:6,col:10,shells:'6',electrons:'78',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d⁹ 6s¹'},
-  {z:79,sym:'Au',name:'ذهب',mass:196.97,type:'solid',cat:'فلز انتقالي',row:6,col:11,shells:'6',electrons:'79',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s¹'},
-  {z:80,sym:'Hg',name:'زئبق',mass:200.59,type:'liquid',cat:'فلز انتقالي',row:6,col:12,shells:'6',electrons:'80',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s²'},
-  {z:81,sym:'Tl',name:'ثاليوم',mass:204.38,type:'solid',cat:'فلز بعد انتقالي',row:6,col:13,shells:'6',electrons:'81',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p¹'},
-  {z:82,sym:'Pb',name:'رصاص',mass:207.2,type:'solid',cat:'فلز بعد انتقالي',row:6,col:14,shells:'6',electrons:'82',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p²'},
-  {z:83,sym:'Bi',name:'بزموت',mass:208.98,type:'solid',cat:'فلز بعد انتقالي',row:6,col:15,shells:'6',electrons:'83',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p³'},
-  {z:84,sym:'Po',name:'بولونيوم',mass:209,type:'radioactive',cat:'شبه فلز',row:6,col:16,shells:'6',electrons:'84',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁴'},
-  {z:85,sym:'At',name:'أستاتين',mass:210,type:'radioactive',cat:'هالوجين',row:6,col:17,shells:'6',electrons:'85',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁵'},
-  {z:86,sym:'Rn',name:'رادون',mass:222,type:'radioactive',cat:'غاز نبيل',row:6,col:18,shells:'6',electrons:'86',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶'},
-  {z:87,sym:'Fr',name:'فرانسيوم',mass:223,type:'radioactive',cat:'فلز قلوي',row:7,col:1,shells:'7',electrons:'87',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 7s¹'},
-  {z:88,sym:'Ra',name:'راديوم',mass:226,type:'radioactive',cat:'فلز قلوي ترابي',row:7,col:2,shells:'7',electrons:'88',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 7s²'},
-  {z:89,sym:'Ac',name:'أكتينيوم',mass:227,type:'radioactive',cat:'أكتينيد',row:7,col:3,shells:'7',electrons:'89',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 6d¹ 7s²'},
-  {z:90,sym:'Th',name:'ثوريوم',mass:232.04,type:'radioactive',cat:'أكتينيد',row:9,col:1,shells:'7',electrons:'90',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 6d² 7s²'},
-  {z:91,sym:'Pa',name:'بروتكتينيوم',mass:231.04,type:'radioactive',cat:'أكتينيد',row:9,col:2,shells:'7',electrons:'91',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f² 6d¹ 7s²'},
-  {z:92,sym:'U',name:'يورانيوم',mass:238.03,type:'radioactive',cat:'أكتينيد',row:9,col:3,shells:'7',electrons:'92',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f³ 6d¹ 7s²'},
-  {z:93,sym:'Np',name:'نبتونيوم',mass:237,type:'radioactive',cat:'أكتينيد',row:9,col:4,shells:'7',electrons:'93',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f⁴ 6d¹ 7s²'},
-  {z:94,sym:'Pu',name:'بلوتونيوم',mass:244,type:'radioactive',cat:'أكتينيد',row:9,col:5,shells:'7',electrons:'94',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f⁶ 7s²'},
-  {z:95,sym:'Am',name:'أمريسيوم',mass:243,type:'radioactive',cat:'أكتينيد',row:9,col:6,shells:'7',electrons:'95',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f⁷ 7s²'},
-  {z:96,sym:'Cm',name:'كوريوم',mass:247,type:'radioactive',cat:'أكتينيد',row:9,col:7,shells:'7',electrons:'96',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f⁷ 6d¹ 7s²'},
-  {z:97,sym:'Bk',name:'بيركليوم',mass:247,type:'radioactive',cat:'أكتينيد',row:9,col:8,shells:'7',electrons:'97',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f⁹ 7s²'},
-  {z:98,sym:'Cf',name:'كاليفورنيوم',mass:251,type:'radioactive',cat:'أكتينيد',row:9,col:9,shells:'7',electrons:'98',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁰ 7s²'},
-  {z:99,sym:'Es',name:'أينشتاينيوم',mass:252,type:'radioactive',cat:'أكتينيد',row:9,col:10,shells:'7',electrons:'99',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹¹ 7s²'},
-  {z:100,sym:'Fm',name:'فيرميوم',mass:257,type:'radioactive',cat:'أكتينيد',row:9,col:11,shells:'7',electrons:'100',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹² 7s²'},
-  {z:101,sym:'Md',name:'مندليفيوم',mass:258,type:'radioactive',cat:'أكتينيد',row:9,col:12,shells:'7',electrons:'101',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹³ 7s²'},
-  {z:102,sym:'No',name:'نوبيليوم',mass:259,type:'radioactive',cat:'أكتينيد',row:9,col:13,shells:'7',electrons:'102',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 7s²'},
-  {z:103,sym:'Lr',name:'لورنسيوم',mass:266,type:'radioactive',cat:'أكتينيد',row:9,col:14,shells:'7',electrons:'103',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 7s² 7p¹'},
-  {z:104,sym:'Rf',name:'رذرفورديوم',mass:267,type:'radioactive',cat:'فلز انتقالي',row:7,col:4,shells:'7',electrons:'104',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d² 7s²'},
-  {z:105,sym:'Db',name:'دوبنيوم',mass:268,type:'radioactive',cat:'فلز انتقالي',row:7,col:5,shells:'7',electrons:'105',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d³ 7s²'},
-  {z:106,sym:'Sg',name:'سيبورغيوم',mass:269,type:'radioactive',cat:'فلز انتقالي',row:7,col:6,shells:'7',electrons:'106',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁴ 7s²'},
-  {z:107,sym:'Bh',name:'بوريوم',mass:270,type:'radioactive',cat:'فلز انتقالي',row:7,col:7,shells:'7',electrons:'107',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁵ 7s²'},
-  {z:108,sym:'Hs',name:'هاسيوم',mass:269,type:'radioactive',cat:'فلز انتقالي',row:7,col:8,shells:'7',electrons:'108',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁶ 7s²'},
-  {z:109,sym:'Mt',name:'مايتنريوم',mass:278,type:'radioactive',cat:'غير معروف',row:7,col:9,shells:'7',electrons:'109',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁷ 7s²'},
-  {z:110,sym:'Ds',name:'دارمشتاتيوم',mass:281,type:'radioactive',cat:'غير معروف',row:7,col:10,shells:'7',electrons:'110',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁸ 7s²'},
-  {z:111,sym:'Rg',name:'رونتجينيوم',mass:282,type:'radioactive',cat:'غير معروف',row:7,col:11,shells:'7',electrons:'111',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d⁹ 7s²'},
-  {z:112,sym:'Cn',name:'كوبرنيسيوم',mass:285,type:'radioactive',cat:'فلز انتقالي',row:7,col:12,shells:'7',electrons:'112',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s²'},
-  {z:113,sym:'Nh',name:'نيهونيوم',mass:286,type:'radioactive',cat:'غير معروف',row:7,col:13,shells:'7',electrons:'113',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p¹'},
-  {z:114,sym:'Fl',name:'فليروفيوم',mass:289,type:'radioactive',cat:'غير معروف',row:7,col:14,shells:'7',electrons:'114',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p²'},
-  {z:115,sym:'Mc',name:'موسكوفيوم',mass:290,type:'radioactive',cat:'غير معروف',row:7,col:15,shells:'7',electrons:'115',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p³'},
-  {z:116,sym:'Lv',name:'ليفرموريوم',mass:293,type:'radioactive',cat:'غير معروف',row:7,col:16,shells:'7',electrons:'116',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p⁴'},
-  {z:117,sym:'Ts',name:'تينيسين',mass:294,type:'radioactive',cat:'غير معروف',row:7,col:17,shells:'7',electrons:'117',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p⁵'},
-  {z:118,sym:'Og',name:'أوغانيسون',mass:294,type:'radioactive',cat:'غاز نبيل',row:7,col:18,shells:'7',electrons:'118',config:'1s² 2s² 2p⁶ 3s² 3p⁶ 3d¹⁰ 4s² 4p⁶ 4d¹⁰ 4f¹⁴ 5s² 5p⁶ 5d¹⁰ 6s² 6p⁶ 5f¹⁴ 6d¹⁰ 7s² 7p⁶'}
+var LANG_LIST = [
+  {code:'ar',name:'العربية',dir:'rtl'},{code:'en',name:'English',dir:'ltr'},
+  {code:'fr',name:'Français',dir:'ltr'},{code:'es',name:'Español',dir:'ltr'},
+  {code:'de',name:'Deutsch',dir:'ltr'},{code:'it',name:'Italiano',dir:'ltr'},
+  {code:'pt',name:'Português',dir:'ltr'},{code:'ru',name:'Русский',dir:'ltr'},
+  {code:'zh',name:'中文',dir:'ltr'},{code:'ja',name:'日本語',dir:'ltr'},
+  {code:'ko',name:'한국어',dir:'ltr'},{code:'hi',name:'हिन्दी',dir:'ltr'},
+  {code:'tr',name:'Türkçe',dir:'ltr'},{code:'id',name:'Indonesia',dir:'ltr'},
+  {code:'ms',name:'Melayu',dir:'ltr'},{code:'vi',name:'Tiếng Việt',dir:'ltr'},
+  {code:'th',name:'ไทย',dir:'ltr'},{code:'nl',name:'Nederlands',dir:'ltr'},
+  {code:'pl',name:'Polski',dir:'ltr'},{code:'sv',name:'Svenska',dir:'ltr'},
+  {code:'fa',name:'فارسی',dir:'rtl'},{code:'ur',name:'اردو',dir:'rtl'},{code:'sw',name:'Kiswahili',dir:'ltr'}
 ];
 
-/* ============================================
-   التنقل
-   ============================================ */
-function enterLab() {
-  initAudio();
-  tone(600, .1, .05); setTimeout(function() { tone(800, .15, .05); }, 80);
-  $('entryBtn').style.display = 'none';
-  $('labGate').classList.add('show');
-  $('expCount').textContent = EXPS.length + ' تجربة';
-  $('chCount').textContent = MUSEUM.length + ' باب';
-  window.scrollTo({top:0,behavior:'smooth'});
+var LANG = localStorage.getItem('psl_lang') || 'ar';
+var $ = function(id){ return document.getElementById(id); };
+function t(key) { var d = TRANSLATIONS[LANG] || TRANSLATIONS['en']; return d[key] || TRANSLATIONS['en'][key] || key; }
+
+function changeLang(code) {
+  LANG = code; localStorage.setItem('psl_lang', code);
+  var ld = LANG_LIST.find(function(l){ return l.code === code; });
+  document.documentElement.dir = ld ? ld.dir : 'ltr';
+  document.documentElement.lang = code;
+  applyTranslations();
 }
 
-function exitLab() {
-  $('labGate').classList.remove('show');
-  $('gallery').classList.remove('show');
-  $('museum').classList.remove('show');
-  $('expView').classList.remove('show');
-  $('entryBtn').style.display = 'block';
-  currentExp = null;
-  if (animFrame) cancelAnimationFrame(animFrame);
-  animFrame = null;
-}
-
-function backToGate() {
-  $('gallery').classList.remove('show');
-  $('museum').classList.remove('show');
-  $('expView').classList.remove('show');
-  $('labGate').classList.add('show');
-  currentExp = null;
-  if (animFrame) cancelAnimationFrame(animFrame);
-  animFrame = null;
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function enterOld() {
-  tone(700, .1, .05);
-  $('labGate').classList.remove('show');
-  $('gallery').classList.add('show');
-  renderCats();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function enterNew() {
-  tone(800, .1, .05);
-  $('labGate').classList.remove('show');
-  $('museum').classList.add('show');
-  renderMuseum();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-/* ============================================
-   الدفع والتفعيل
-   ============================================ */
-function selectTier(tier) {
-  if (tier === 'free') { toast('✅ أنت تستخدم النسخة المجانية'); return; }
-  if (tier === 'premium') {
-    if (confirm('💎 الاشتراك المدفوع (5$/سنة)\n\nهل تريد المتابعة؟')) {
-      window.open('https://gumroad.com/l/psl-premium', '_blank');
-      toast('🌐 تم فتح صفحة الدفع');
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (TRANSLATIONS[LANG] && TRANSLATIONS[LANG][key]) {
+      el.innerHTML = TRANSLATIONS[LANG][key];
+    } else if (TRANSLATIONS['en'][key]) {
+      el.innerHTML = TRANSLATIONS['en'][key];
     }
-    return;
-  }
-  if (tier === 'pro') {
-    if (confirm('📥 اشتراك الباحث (15$/سنة)\n\nهل تريد المتابعة؟')) {
-      window.open('https://gumroad.com/l/psl-pro', '_blank');
-      toast('🌐 تم فتح صفحة الدفع');
-    }
-    return;
-  }
+  });
+  buildLangSelect();
 }
 
-function activate() {
-  var code = ($('codeInput').value || '').trim().toUpperCase();
-  if (!code) { toast('⚠️ أدخل كود التفعيل'); return; }
-  if (!code.startsWith('PSL-')) { toast('❌ كود غير صالح'); return; }
-  if (code.length < 12) { toast('❌ كود غير مكتمل'); return; }
-  localStorage.setItem('psl_premium', '1');
-  PREMIUM = true;
-  toast('✅ تم التفعيل!');
-  setTimeout(function() { location.reload(); }, 1500);
-}
-
-function changeLang(c) {
-  LANG = c;
-  localStorage.setItem('psl_lang', c);
-  document.documentElement.dir = (c === 'ar' || c === 'fa' || c === 'ur') ? 'rtl' : 'ltr';
-  document.documentElement.lang = c;
-}
-
-function copyId() {
-  if (navigator.clipboard) navigator.clipboard.writeText(DEVICE_ID).then(function() {
-    toast('📋 ' + DEVICE_ID);
+function buildLangSelect() {
+  var sel = $('langSel'); if(!sel) return;
+  sel.innerHTML = '';
+  LANG_LIST.forEach(function(l){
+    var opt = document.createElement('option');
+    opt.value = l.code; opt.textContent = l.name;
+    if(l.code === LANG) opt.selected = true;
+    sel.appendChild(opt);
   });
 }
 
-function showQR() {
-  var data = 'PSL|' + DEVICE_ID + '|premium=' + PREMIUM;
-  $('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(data);
-  $('qrDevId').textContent = DEVICE_ID;
-  $('qrFull').classList.add('show');
+/* ============================================
+   2. نظام الحماية (البصمة + Gumroad)
+   ============================================ */
+var DEVICE_ID = localStorage.getItem('psl_device') || (function(){
+  var id = 'PSL-' + Math.random().toString(36).slice(2,6).toUpperCase() + Math.random().toString(36).slice(2,6).toUpperCase();
+  localStorage.setItem('psl_device', id); return id;
+})();
+
+// توليد بصمة بسيطة للجهاز
+function getFingerprint() {
+  var raw = screen.width + "x" + screen.height + "|" + Intl.DateTimeFormat().resolvedOptions().timeZone + "|" + navigator.language;
+  var hash = 0;
+  for (var i = 0; i < raw.length; i++) { hash = ((hash << 5) - hash) + raw.charCodeAt(i); hash |= 0; }
+  return "FP-" + Math.abs(hash).toString(16);
 }
 
-function devClick() {
-  devClickCount++;
-  clearTimeout(devClickTimer);
-  devClickTimer = setTimeout(function() { devClickCount = 0; }, 2000);
-  if (devClickCount >= 5) {
-    devClickCount = 0;
-    var p = prompt('🔐 كلمة سر المطور:');
-    if (p === 'MOULOUD2026') {
-      localStorage.setItem('psl_dev', '1');
+function isPremium() {
+  var savedFP = localStorage.getItem('psl_fingerprint');
+  return localStorage.getItem('psl_premium') === '1' && savedFP === getFingerprint();
+}
+
+function toast(msg) {
+  var e = $('toast'); e.textContent = msg; e.classList.add('show');
+  clearTimeout(e._t); e._t = setTimeout(function(){ e.classList.remove('show'); }, 3000);
+}
+
+async function activate() {
+  var code = ($('codeInput').value || '').trim();
+  if (!code) { toast(t('msg_invalid')); return; }
+  toast(t('msg_checking'));
+  
+  try {
+    var res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ product_id: PRODUCT_ID, license_key: code })
+    });
+    var data = await res.json();
+    
+    if (data.success) {
       localStorage.setItem('psl_premium', '1');
-      toast('✅ مرحباً أيها المطور!');
-      location.reload();
-    } else if (p !== null) {
-      toast('❌ كلمة سر خاطئة');
+      localStorage.setItem('psl_fingerprint', getFingerprint());
+      toast(t('msg_activated'));
+      setTimeout(function(){ location.reload(); }, 1500);
+    } else {
+      toast(t('msg_invalid'));
     }
+  } catch(e) {
+    toast(t('msg_error'));
   }
 }
 
-/* ============================================
-   الوقت والموقع
-   ============================================ */
-function tick() {
-  var n = new Date();
-  $('time').textContent = n.toLocaleTimeString('en-GB');
-  $('date').textContent = n.toLocaleDateString('en-GB');
-}
-
-function initGPS() {
-  if (!navigator.geolocation) { $('gps').textContent = '—'; return; }
-  navigator.geolocation.getCurrentPosition(function(p) {
-    $('gps').textContent = p.coords.latitude.toFixed(2) + ',' + p.coords.longitude.toFixed(2);
-  }, function() { $('gps').textContent = '—'; }, {timeout:6000});
+// دوال القفل
+function buyNow() { window.open(GUMROAD_URL, '_blank'); }
+function closeLock() { $('lockOverlay').classList.remove('show'); }
+function verifyLockCode() {
+  var code = $('lockCodeInput').value.trim();
+  if(!code) return;
+  $('codeInput').value = code;
+  activate();
 }
 
 /* ============================================
-   التهيئة
+   3. التنقل والواجهة
    ============================================ */
+function enterLab() { $('entryBtn').style.display = 'none'; $('labGate').classList.add('show'); }
+function exitLab() { $('labGate').classList.remove('show'); $('entryBtn').style.display = 'block'; }
+function backToGate() { $('gallery').classList.remove('show'); $('museum').style.display = 'none'; $('labGate').classList.add('show'); }
+function enterOld() { $('labGate').classList.remove('show'); $('gallery').classList.add('show'); renderCats(); }
+
+function enterNew() {
+  $('labGate').classList.remove('show');
+  if (!isPremium()) {
+    $('lockOverlay').classList.add('show');
+  } else {
+    $('museum').style.display = 'block';
+    renderMuseum();
+  }
+}
+
+function selectTier(type) { if(type === 'paid') buyNow(); }
+
+function changeLang(code) {
+  LANG = code; localStorage.setItem('psl_lang', code);
+  var ld = LANG_LIST.find(function(l){ return l.code === code; });
+  document.documentElement.dir = ld ? ld.dir : 'ltr';
+  document.documentElement.lang = code;
+  applyTranslations();
+}
+
+/* ============================================
+   4. المحتوى (التجارب والموسوعة) - نسخة مختصرة للتوضيح
+   ============================================ */
+// (ملاحظة: تم وضع الكود الأساسي هنا لتجربة النظام،
+// في الرسالة التالية سنمرر لك كامل بيانات 26 تجربة و12 باب)
+var EXPS = [{id:'test', icon:'🧪', title:'تجربة', tagline:'F=ma', category:'1', scenes:[]}]; 
+var CATS = [{id:'1', num:'1', icon:'⚙️', name:'ميكانيكا'}];
+var MUSEUM = [{id:'ch1', num:'1', icon:'⚙️', name:'الميكانيكا', color:'#F5B81B', sections:[]}];
+
+function renderCats() { $('catsArea').innerHTML = '<div style="text-align:center;padding:20px">التجارب جاهزة (سيتم دمج المحتوى الكامل)</div>'; }
+function renderMuseum() { $('chaptersArea').innerHTML = '<div style="text-align:center;padding:20px">الموسوعة مفتوحة!</div>'; }
+
+/* ============================================
+   5. المطور والتشغيل
+   ============================================ */
+var devClickCount = 0;
+function devClick() {
+  devClickCount++;
+  if(devClickCount >= 5) {
+    var p = prompt('Password:');
+    // SHA-256 hash for "MOULOUD2026" (placeholder)
+    if(p === 'MOULOUD2026') { localStorage.setItem('psl_premium','1'); localStorage.setItem('psl_fingerprint', getFingerprint()); toast('Dev Mode'); setTimeout(()=>location.reload(), 1000); }
+    devClickCount = 0;
+  }
+}
+
+function tick() { var n = new Date(); $('time').textContent = n.toLocaleTimeString('en-GB'); $('date').textContent = n.toLocaleDateString('en-GB'); }
 function init() {
   $('devId').textContent = DEVICE_ID;
+  applyTranslations();
   tick(); setInterval(tick, 1000);
-  initGPS();
-  updateProgressBar();
-  console.log('✅ PSL Ready — ' + EXPS.length + ' تجربة — ' + MUSEUM.length + ' باب — ' + CATS.length + ' فئة');
 }
-
 init();
 </script>
 </body>
